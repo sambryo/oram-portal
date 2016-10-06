@@ -1,2 +1,2 @@
-# oram_portal
+# oram-portal
 ORAM Refugee Portal
