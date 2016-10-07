@@ -1,8 +1,8 @@
-Entry Video: https://www.youtube.com/watch?v=3xY_o0nvMN0
-Screencasts:
-  Genevieve Tran <link>
-  Kai-Li Yen <link>
-  Michael Chen <link>
-  Michael Do <link>
-  Nhi Quach <link>
-  Wenhao Liao <link>
+Entry Video: https://www.youtube.com/watch?v=3xY_o0nvMN0\n
+Screencasts:\n
+  Genevieve Tran\n
+  Kai-Li Yen\n
+  Michael Chen\n
+  Michael Do\n
+  Nhi Quach\n
+  Wenhao Liao\n
