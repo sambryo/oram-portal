@@ -1,5 +1,6 @@
-Entry Video: https://www.youtube.com/watch?v=3xY_o0nvMN0  
-Screencasts:  
+###### Entry Video  
+https://www.youtube.com/watch?v=3xY_o0nvMN0  
+###### Screencasts
   Genevieve Tran:  
   Kai-Li Yen:  
   Michael Chen:  
