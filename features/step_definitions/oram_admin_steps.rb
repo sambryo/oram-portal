@@ -4,3 +4,7 @@ Given /the following referrers exist/ do |referrers_rable|
   #   Referrers.create!(referrer)
   # end
 end
+
+Then /I should see all case documents/ do |case_documents_table|
+  pending
+end
