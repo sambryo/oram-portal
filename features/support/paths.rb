@@ -17,14 +17,6 @@ module NavigationHelpers
       '/'
     when /^the application\s?page$/
     '/'
-    when /^ "Incomplete Applications"$/
-    '/'
-    when /^ "Complete Applications"$/
-    '/'
-    when /^"Notify of Application incompleteness" button$/
-    '/'
-    when /^"Approve" button$/
-    '/'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
