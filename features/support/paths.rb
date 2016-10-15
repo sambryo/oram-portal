@@ -25,6 +25,9 @@ module NavigationHelpers
     when /^the invite lawyers page$/
       '/' #change later
 
+    when /^the login page$/
+      '/' #change later
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
