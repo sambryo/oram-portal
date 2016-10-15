@@ -27,6 +27,22 @@ module NavigationHelpers
 
     when /^the login page$/
       '/' #change later
+
+    when /^the referrer profile creation page$/
+      '/' #change later
+
+    when /^the referrer profile pending approval page$/
+      '/'
+
+    when /^the pending referrer profiles page$/
+      '/'
+
+    when /^the referrer profile approved page$/
+      '/'
+
+    when /^the referrer profile rejected page$/
+      '/'
+
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
