@@ -16,6 +16,12 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
 
+    when /^the employee invitation status page/
+      '/'
+
+    when /^the new employee invitation page/
+      '/'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
