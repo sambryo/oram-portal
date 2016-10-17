@@ -15,6 +15,8 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+    when /^the application\s?page$/
+    '/'
 
     when /^the employee invitation status page/
       '/'
