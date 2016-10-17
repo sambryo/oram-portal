@@ -5,7 +5,7 @@ Given /the following referrers exist/ do |referrers_table|
   pending
 end
 
-Given /I am an ORAM Administrator/ do
+Given /I am an ORAM administrator/ do
 	pending
 end
 

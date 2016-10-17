@@ -13,19 +13,14 @@ Scenario: Creating the referrer profile
 Scenario: ORAM administrator accessing the pending referrer profile page
 	Given I am an ORAM administrator
 	When I follow "Pending Referrer Profiles"
-	Then I should be on the pending referrer profiles page 
+	Then I should be on the pending referrer profiles page
 
 Scenario: Approving the referrer profile
 	Given I am on the pending referrer profiles page
 	When I press "Approve"
 	Then I should be on the referrer profile approved page
 
-Scenario: Rejecting the referrer profile 
+Scenario: Rejecting the referrer profile
 	Given I am on the pending referrer profiles page
 	When I press "Reject"
 	Then I should be on the referrer profile rejected page
-
-
-
-
-

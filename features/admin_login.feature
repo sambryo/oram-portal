@@ -28,4 +28,4 @@ Scenario: Administrator login info does not exist
 Scenario: Administrator should be able to invite lawyers to view relevant cases
   Given I am on the admin user profile page
   When I press "Invite Lawyers"
-  Then I should see be on the invite lawyers page
+  Then I should be on the invite lawyers page
