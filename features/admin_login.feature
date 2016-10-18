@@ -20,12 +20,12 @@ Scenario: Administrator login info does not exist
  When I fill in "Password" with "invalid_password"
  Then I should see "Log In Unsuccessful"
 
- Scenario: Administrator should be able to view all case documents
-  Given I am on the admin user profile page
-  When I press "All Cases"
-  Then I should see all case documents
+# Scenario: Administrator should be able to view all case documents
+#  Given I am on the admin user profile page
+#  When I press "All Cases"
+#  Then I should see all case documents
 
-Scenario: Administrator should be able to invite lawyers to view relevant cases
-  Given I am on the admin user profile page
-  When I press "Invite Lawyers"
-  Then I should be on the invite lawyers page
+# Scenario: Administrator should be able to invite lawyers to view relevant cases
+#  Given I am on the admin user profile page
+#  When I press "Invite Lawyers"
+#  Then I should be on the invite lawyers page
