@@ -1,3 +1,13 @@
 language: ruby
 rvm:
  - 2.2.4
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec
+  - bundle exec cucumber
+after_script:
+  - bundle exec rake send_to_codeclimate
+addons:
+    code_climate:
+        repo_token: 682ef54e166a4483fb548e84a7628e59489b60ff0c88119a4c7962fff25409f0
