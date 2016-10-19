@@ -34,7 +34,7 @@ module NavigationHelpers
       '/' #change later
 
     when /^the login page$/
-      '/' #change later
+      '/users/sign_in'
 
     when /^the referrer profile creation page$/
       '/' #change later
