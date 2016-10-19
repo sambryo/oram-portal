@@ -16,7 +16,7 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
     when /^the application\s?page$/
-    '/'
+      '/'
 
     when /^the employee invitation status page/
       '/'
@@ -34,7 +34,10 @@ module NavigationHelpers
       '/' #change later
 
     when /^the login page$/
-      '/' #change later
+      '/users/sign_in'
+
+    when /^the admin login page$/
+      '/admins/sign_in'
 
     when /^the referrer profile creation page$/
       '/' #change later
