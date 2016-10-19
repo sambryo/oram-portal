@@ -50,13 +50,11 @@ When /^(?:|I )go to (.+)$/ do |page_name|
 end
 
 When /^(?:|I )press "([^"]*)"$/ do |button|
-  pending
-  #click_button(button)
+  click_button(button)
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
-  pending
-  #click_link(link)
+  click_link(link)
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
