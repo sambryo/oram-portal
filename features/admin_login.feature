@@ -3,22 +3,33 @@ Feature: Administrator Login Portal
   In order to view all case documents
   I should be able to login under my user profile
 
+Background: Admins in the database
+  Given the following admins exist:
+    | first_name  | last_name | email               | password   |
+    | oram        | admin     | admin321@gmail.com  | oramadmin  |
+
 Scenario: Accessing the login page
   Given I am on the home page
-  When I press "Log In"
-  Then I should be on the login page
+  When I follow "Admin login portal"
+  Then I should be on the admin login page
+  And I should not see "Sign up"
 
 Scenario: Valid administrator logging in
-  Given I am on the login page
-  When I fill in "Username" with "admin_username"
-  When I fill in "Password" with "admin_password"
-  Then I should be on the admin user profile page
+  Given I am on the admin login page
+  Then I should see "Admin Log in"
+  When I fill in "admin_email" with "admin321@gmail.com"
+  When I fill in "admin_password" with "oramadmin"
+  And I press "Log in"
+  Then I should not see "Invalid Email or password."
+  And I should be on the home page
 
 Scenario: Administrator login info does not exist
- Given I am on the login page
- When I fill in "Username" with "invalid_username"
- When I fill in "Password" with "invalid_password"
- Then I should see "Log In Unsuccessful"
+ Given I am on the admin login page
+ When I fill in "admin_email" with "invalid_email"
+ When I fill in "admin_password" with "invalid_password"
+ And I press "Log in"
+ Then I should be on the admin login page
+ Then I should see "Invalid Email or password."
 
 # Scenario: Administrator should be able to view all case documents
 #  Given I am on the admin user profile page
