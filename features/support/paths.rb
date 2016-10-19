@@ -26,7 +26,7 @@ module NavigationHelpers
 
     when /^the admin user profile page$/
       '/' #change later
-    
+
     when /^the user profile page$/
       '/' #change later
 
@@ -40,10 +40,10 @@ module NavigationHelpers
       '/admins/sign_in'
 
     when /^the referrer profile creation page$/
-      '/' #change later
+      '/users/sign_up' #change later
 
     when /^the referrer profile pending approval page$/
-      '/'
+      '/users'
 
     when /^the pending referrer profiles page$/
       '/'
@@ -54,7 +54,7 @@ module NavigationHelpers
     when /^the referrer profile rejected page$/
       '/'
 
-      
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
