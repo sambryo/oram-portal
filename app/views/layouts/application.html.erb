@@ -7,7 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <% if admin_signed_in? %>
+    <%= render 'layouts/admin_header' %>
+  <% elsif user_signed_in? %>
+    <%= render 'layouts/user_header' %>
+  <% else %>
+    <%= render 'layouts/user_header' %>
+  <% end %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
@@ -15,22 +21,3 @@
 
 </body>
 </html>
-
-
-<% if admin_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>        
-  </li>
-<% elsif user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>    
-  </li>
-<% else %>
-  <p>
-      <%= link_to "Log In as an User", new_user_session_path %>
-  </p>
-  
-  <p>
-      <%= link_to "Log In as an Admin", new_admin_session_path %>
-  </p>
-<% end %>
