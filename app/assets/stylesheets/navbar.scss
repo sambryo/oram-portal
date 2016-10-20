@@ -1,0 +1,21 @@
+
+.panel-default {
+	width: 50%;
+	margin: auto;
+}
+
+.navbar {
+	background-color: #274472;
+}
+
+.oram-logo {
+	float: left;
+}
+
+.navbar-default .navbar-nav > li > a {
+ color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #63b2f5;
+}
