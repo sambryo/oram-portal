@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/Users/nhiquach/oram-portal/app/models/referrer.rb": [
+      "/Users/michaeldo/oram_portal/app/models/referrer.rb": [
         1,
         1,
         null,
@@ -17,7 +17,7 @@
         1,
         null
       ],
-      "/Users/nhiquach/oram-portal/app/models/admin.rb": [
+      "/Users/michaeldo/oram_portal/app/models/admin.rb": [
         1,
         null,
         null,
@@ -25,7 +25,7 @@
         null,
         null
       ],
-      "/Users/nhiquach/oram-portal/app/models/user.rb": [
+      "/Users/michaeldo/oram_portal/app/models/user.rb": [
         1,
         1,
         null,
@@ -35,13 +35,13 @@
         null,
         null
       ],
-      "/Users/nhiquach/oram-portal/app/controllers/welcome_controller.rb": [
+      "/Users/michaeldo/oram_portal/app/controllers/welcome_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/nhiquach/oram-portal/app/controllers/application_controller.rb": [
+      "/Users/michaeldo/oram_portal/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -57,19 +57,19 @@
         null,
         null
       ],
-      "/Users/nhiquach/oram-portal/app/helpers/application_helper.rb": [
+      "/Users/michaeldo/oram_portal/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/nhiquach/oram-portal/app/helpers/users_helper.rb": [
+      "/Users/michaeldo/oram_portal/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/nhiquach/oram-portal/app/helpers/welcome_helper.rb": [
+      "/Users/michaeldo/oram_portal/app/helpers/welcome_helper.rb": [
         1,
         null
       ]
     },
-    "timestamp": 1476919483
+    "timestamp": 1476929603
   }
 }
