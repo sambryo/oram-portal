@@ -11,3 +11,7 @@ end
 Then /I should see all case documents/ do |case_documents_table|
   pending
 end
+
+Given /the following referrers exist/ do |t|
+  pending
+end

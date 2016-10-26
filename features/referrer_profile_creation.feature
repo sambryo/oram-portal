@@ -7,20 +7,5 @@ Scenario: Creating the referrer profile
 	Given I am on the referrer profile creation page
 	When I fill in "user_first_name" with "First"
 	When I fill in "user_last_name" with "Last"
-	When I press "Sign up"
-	Then I should be on the referrer profile pending approval page
-
-#Scenario: ORAM administrator accessing the pending referrer profile page
-#	Given I am an ORAM administrator
-#	When I follow "Pending Referrer Profiles"
-#	Then I should be on the pending referrer profiles page
-
-#Scenario: Approving the referrer profile
-#	Given I am on the pending referrer profiles page
-#	When I press "Approve"
-#	Then I should be on the referrer profile approved page
-
-#Scenario: Rejecting the referrer profile
-#	Given I am on the pending referrer profiles page
-#	When I press "Reject"
-#	Then I should be on the referrer profile rejected page
+	When I press "Submit"
+	Then I should be on the home page

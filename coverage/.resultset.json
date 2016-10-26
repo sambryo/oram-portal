@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/Users/michaeldo/oram_portal/app/models/referrer.rb": [
+      "c:/Users/Kelly/cs169/oram-portal/app/models/referrer.rb": [
         1,
         1,
         null,
@@ -12,20 +12,21 @@
         null,
         1,
         null,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/michaeldo/oram_portal/app/models/admin.rb": [
-        1,
         null,
         null,
         1,
         null,
         null
       ],
-      "/Users/michaeldo/oram_portal/app/models/user.rb": [
+      "c:/Users/Kelly/cs169/oram-portal/app/models/admin.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "c:/Users/Kelly/cs169/oram-portal/app/models/user.rb": [
         1,
         1,
         null,
@@ -35,13 +36,13 @@
         null,
         null
       ],
-      "/Users/michaeldo/oram_portal/app/controllers/welcome_controller.rb": [
+      "c:/Users/Kelly/cs169/oram-portal/app/controllers/welcome_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/michaeldo/oram_portal/app/controllers/application_controller.rb": [
+      "c:/Users/Kelly/cs169/oram-portal/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -52,24 +53,24 @@
         null,
         null,
         1,
-        14,
+        13,
         null,
         null,
         null
       ],
-      "/Users/michaeldo/oram_portal/app/helpers/application_helper.rb": [
+      "c:/Users/Kelly/cs169/oram-portal/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/michaeldo/oram_portal/app/helpers/users_helper.rb": [
+      "c:/Users/Kelly/cs169/oram-portal/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/michaeldo/oram_portal/app/helpers/welcome_helper.rb": [
+      "c:/Users/Kelly/cs169/oram-portal/app/helpers/welcome_helper.rb": [
         1,
         null
       ]
     },
-    "timestamp": 1476929603
+    "timestamp": 1477525433
   }
 }

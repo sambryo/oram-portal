@@ -15,8 +15,6 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    when /^the application\s?page$/
-      '/'
 
     when /^the employee invitation status page/
       '/'
@@ -42,17 +40,9 @@ module NavigationHelpers
     when /^the referrer profile creation page$/
       '/users/sign_up' #change later
 
-    when /^the referrer profile pending approval page$/
-      '/users'
+    when /^the referrer profiles page$/
+      pending
 
-    when /^the pending referrer profiles page$/
-      '/'
-
-    when /^the referrer profile approved page$/
-      '/'
-
-    when /^the referrer profile rejected page$/
-      '/'
 
 
     # Add more mappings here.
