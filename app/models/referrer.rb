@@ -11,4 +11,5 @@ class Referrer < ActiveRecord::Base
             :allow_nil => true
 
   scopify
+
 end

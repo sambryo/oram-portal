@@ -3,18 +3,46 @@ Feature: Vetting a Referrer
 	In order to vet referrers
 	I should be able to view referrer profiles and approve or deny their profile request
 
-#Scenario: ORAM administrator visiting the prospective Referrer profile
-#	Given I am an ORAM administrator
-#	When I follow "Pending Referrer Profiles"
-#	Then I should be on the pending referrer profiles page
+Background: referrers in the database
 
+	Given the following referrers exist:
+	    | name             | status		 | 
+	 	| Bryan Adams      | complete 	 | 
+	 	| Hannah Montana   | incomplete  |
+	  	| Hillary Clinton  | rejected    |
+	  	| Adrian Greenberg | approved    |
+	  	| Donald Trump	   | incomplete  |
 
-#Scenario: Approving the prospective Referrer profile
-#	Given I am on the pending referrer profile page
-#	When I click "Approve"
-#	Then I should be on the approved profiles page
+	And I am an ORAM administrator
 
-#Scenario: Rejecting the prosepctive Referrer profile
-#	Given I am on the pending referrer profile page
-#	When I click "Reject"
-#	Then I should be on the rejected profiles page
+Scenario: Approving the prospective Referrer profile
+	Given I am on the referrer profiles page
+	When I go to the review page for "Bryan Adams"
+	And I press "Approve"
+	Then I should be on the review page for "Bryan Adams"
+	And I should see "Approved"
+
+Scenario: Index should show approved status
+	Given I am on the referrer profiles page
+	And I go to the review page for "Bryan Adams"
+	And I press "Approve"
+	When I press "Back to Referrer Profiles"
+	And I choose "Approved Profiles"
+	Then I should see "Adrian Greenberg"
+	And I should see "Bryan Adams"
+
+Scenario: Rejecting the prospective Referrer profile
+	Given I am on the referrer profiles page
+	When I go to the review page for "Bryan Adams"
+	And I press "Reject"
+	Then I should be on the review page for "Bryan Adams"
+	And I should see "Rejected"
+
+Scenario: Index should show approved status
+	Given I am on the referrer profiles page
+	And I go to the review page for "Bryan Adams"
+	And I press "Reject"
+	When I press "Back to Referrer Profiles"
+	And I choose "Rejected Profiles"
+	Then I should see "Hillary Clinton"
+	And I should see "Bryan Adams"
