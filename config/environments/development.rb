@@ -40,4 +40,5 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  # change to true to allow email to be sent during development
 end
