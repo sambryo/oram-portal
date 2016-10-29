@@ -6,9 +6,9 @@ Feature: Vetting a Referrer
 Background: referrers in the database
 
 	Given the following referrers exist:
-	    | name             | status		 | 
-	 	| Bryan Adams      | complete 	 | 
-	 	| Hannah Montana   | incomplete  |
+	    | name             | status		 	 |
+	 		| Bryan Adams      | complete 	 |
+	 		| Hannah Montana   | incomplete  |
 	  	| Hillary Clinton  | rejected    |
 	  	| Adrian Greenberg | approved    |
 	  	| Donald Trump	   | incomplete  |

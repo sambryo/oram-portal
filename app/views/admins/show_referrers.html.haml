@@ -1,0 +1,11 @@
+%h1 List of Referrers
+%table#referrers
+  %thead
+    %tr
+      %th First Name 
+      %th Last Name
+  %tbody
+    - @referrers.each do |referrer|
+      %tr
+        %td= referrer.first_name
+        %td= referrer.last_name

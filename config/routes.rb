@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
 
   get 'users/:id' => 'users#show'
+  get 'admins/referrers' => 'admins#show_referrers', :as => "referrers"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

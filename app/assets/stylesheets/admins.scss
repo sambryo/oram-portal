@@ -1,0 +1,17 @@
+table#referrers {
+  margin: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+
+table#referrers th {
+  border: 2px solid white;
+  font-weight: bold;
+  background-color: blue;
+}
+
+table#referrers th, table#referrers td {
+  padding: 4px;
+  text-align: left;
+}
