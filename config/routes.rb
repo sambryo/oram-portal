@@ -1,17 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  root 'welcome#index'
+  devise_for :admins, :controllers => { :invitations => 'admins/invitations' }
   devise_for :users
 
 
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root 'welcome#index'
-
 
   get 'users/:id' => 'users#show'
+  get 'admins/:id' => 'admins#show'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
