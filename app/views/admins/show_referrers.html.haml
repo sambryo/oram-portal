@@ -4,8 +4,10 @@
     %tr
       %th First Name 
       %th Last Name
+      %th 
   %tbody
     - @referrers.each do |referrer|
       %tr
         %td= referrer.first_name
         %td= referrer.last_name
+        %td= link_to 'More Info', referrer_profile_path(referrer)
