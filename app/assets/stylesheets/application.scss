@@ -14,4 +14,15 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
  @import 'devise_bootstrap_views';
- @import 'navbar.scss'
+ @import 'navbar.scss';
+ @import 'welcome.scss';
+ @import 'users.scss';
+
+@font-face {
+    font-family: Arimo;
+    src: font-url("Arimo-Regular.ttf");
+}
+
+body {
+	font-family: Arimo;
+}

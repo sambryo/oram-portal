@@ -1,3 +1,19 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.landing-image {
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("http://www.universalgiving.org/photo/image.do?id=6182");
+	background-size: cover;
+	color: white;
+}
+
+.landing-title {
+	font-size: 36px;
+	text-align: center;
+}
+
+.landing-subtitle {
+	font-size: 18px;
+	text-align: center;
+}
