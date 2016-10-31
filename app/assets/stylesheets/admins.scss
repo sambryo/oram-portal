@@ -1,23 +1,37 @@
-<<<<<<< HEAD
-table#referrers {
-  margin: 10px;
-  border-collapse: collapse;
-  width: 100%;
-  border-bottom: 2px solid black;
-}
-
-table#referrers th {
-  border: 2px solid white;
+#referrer_list_title {
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: "lato";
   font-weight: bold;
-  background-color: blue;
 }
 
-table#referrers th, table#referrers td {
-  padding: 4px;
-  text-align: left;
+#referrers {
+  border-collapse: collapse;
+  margin: auto;
+  width: 80%;
+  border: hidden;
+  border-bottom-style: solid;
+  border-bottom-color: #98a6bc;
+  font-family: "lato";
 }
-=======
-// Place all the styles related to the Admins controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
->>>>>>> master
+
+#referrers tr:nth-child(even) td {
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+#referrers th {
+  padding: 25px;
+  text-align: center;
+}
+
+#referrers thead {
+  background-color: #98a6bc;
+  color: white;
+  font-size: 14pt;
+}
+
+#referrers td {
+  padding: 10px;
+  text-align: center;
+}

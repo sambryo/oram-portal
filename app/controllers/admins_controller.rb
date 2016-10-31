@@ -23,6 +23,7 @@ class AdminsController < ApplicationController
 		@referrer.approved = false
 		@referrer.save
 		redirect_to :show_referrers
+	end
 
   def show
 		@user = Admin.find(params[:id])
