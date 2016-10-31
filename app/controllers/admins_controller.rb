@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
 		@referrers = User.with_role :referrer
 		render :show_referrers
 	end
-	
+
 	def show_referrer_profile
 		@referrer = User.find(params[:id])
 		render :referrer_profile
@@ -23,5 +23,8 @@ class AdminsController < ApplicationController
 		@referrer.approved = false
 		@referrer.save
 		redirect_to :show_referrers
+
+  def show
+		@user = Admin.find(params[:id])
 	end
 end
