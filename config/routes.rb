@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'referrers/:id' => 'admins#show_referrer_profile', :as => "referrer_profile"
   get 'referrers/:id/approve' => 'admins#mark_referrer_approved', :as => 'mark_referrer_approved'
   get 'referrers/:id/reject' => 'admins#mark_referrer_rejected', :as => 'mark_referrer_rejected'
-  
+  get 'referrer/:id' => 'admins#show_referrer_profile', :as => 'referrer'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
