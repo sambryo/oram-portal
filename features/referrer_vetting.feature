@@ -6,12 +6,12 @@ Feature: Vetting a Referrer
 Background: referrers in the database
 
 	Given the following referrers exist:
-	    | name             | status		 	 |
-	 		| Bryan Adams      | complete 	 |
-	 		| Hannah Montana   | incomplete  |
-	  	| Hillary Clinton  | rejected    |
-	  	| Adrian Greenberg | approved    |
-	  	| Donald Trump	   | incomplete  |
+	    | name             | status		 |
+	 	| Bryan Adams      | Complete 	 |
+	 	| Hannah Montana   | Incomplete  |
+	  	| Hillary Clinton  | Rejected    |
+	  	| Adrian Greenberg | Approved    |
+	  	| Donald Trump	   | Incomplete  |
 
 	And I am an ORAM administrator
 
