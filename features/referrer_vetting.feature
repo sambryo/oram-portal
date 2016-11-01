@@ -18,31 +18,31 @@ Background: referrers in the database
 Scenario: Approving the prospective Referrer profile
 	Given I am on the referrers page
 	When I go to the profile page for "Bryan Adams"
-	And I click "Approve"
+	And I press "Approve"
 	Then I should be on the referrers page
 	And I should see "Bryan Adams has been approved"
 
 Scenario: Index should show approved status
 	Given I am on the referrers page
 	And I go to the profile page for "Bryan Adams"
-	And I click "Approve"
+	And I press "Approve"
 	Then I should be on the referrers page
-	And I click "Approved Profiles"
+	And I press "Approved Profiles"
 	Then I should see "Adrian Greenberg"
 	And I should see "Bryan Adams"
 
 Scenario: Rejecting the prospective Referrer profile
 	Given I am on the referrers page
 	When I go to the review page for "Bryan Adams"
-	And I click "Reject"
+	And I press "Reject"
 	Then I should be on the referrers page
 	And I should see "Bryan Adams has been rejected"
 
 Scenario: Index should show approved status
 	Given I am on the referrers page
 	And I go to the review page for "Bryan Adams"
-	And I click "Reject"
+	And I press "Reject"
 	Then I should be on the referrers page
-	And I click "Rejected Profiles"
+	And I press "Rejected Profiles"
 	Then I should see "Hillary Clinton"
 	And I should see "Bryan Adams"

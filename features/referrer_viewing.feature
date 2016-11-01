@@ -22,7 +22,7 @@ Scenario: ORAM administrator visiting the prospective Referrer profile
 
 Scenario: filter for incomplete applications
 	Given I am on the referrers page
-	When I click "Incomplete Applications"
+	When I press "Incomplete Applications"
 	Then I should see "Hannah Montana" 
 	And I should see "Donald Trump"
 	And I should not see "Bryan Adams"
@@ -31,7 +31,7 @@ Scenario: filter for incomplete applications
 
 Scenario: filter through all of the complete applications
 	Given I am on the referrers page
-	When I click "Complete Applications"
+	When I press "Complete Applications"
 	Then I should see "Bryan Adams"
 	And I should not see "Hannah Montana"
 	And I should not see "Hillary Clinton"
@@ -40,7 +40,7 @@ Scenario: filter through all of the complete applications
 
 Scenario: filter through all of the rejected applications
 	Given I am on the referrers page
-	When I click "Rejected Applications"
+	When I press "Rejected Applications"
 	Then I should see "Hillary Clinton"
 	And I should not see "Bryan Adams"
 	And I should not see "Hannah Montana"
@@ -49,7 +49,7 @@ Scenario: filter through all of the rejected applications
 
 Scenario: filter through all of the approved applications
 	Given I am on the referrers page
-	When I click "Approved Applications"
+	When I press "Approved Applications"
 	Then I should see "Adrian Greenberg"
 	And I should not see "Bryan Adams"
 	And I should not see "Hannah Montana"
