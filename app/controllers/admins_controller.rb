@@ -12,7 +12,7 @@ class AdminsController < ApplicationController
 	def mark_referrer_approved
 		id = [params[:id]]
 		@referrer = User.find_by_id(id)
-		@referrer.approved = true
+		@referrer.status = "Approved"
 		@referrer.save
 		redirect_to referrers_path
 	end
@@ -20,8 +20,7 @@ class AdminsController < ApplicationController
 	def mark_referrer_rejected
 		id = [params[:id]]
 		@referrer = User.find_by_id(id)
-		@referrer.update_attribute(:approved, false)
-		@referrer.update_attribute(:rejected, true)
+		@referrer.status = "Rejected"
 		@referrer.save
 		redirect_to referrers_path
 	end
