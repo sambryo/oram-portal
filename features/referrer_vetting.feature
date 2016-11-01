@@ -20,7 +20,7 @@ Scenario: Approving the prospective Referrer profile
 	When I go to the profile page for "Bryan Adams"
 	And I press "Approve"
 	Then I should be on the referrers page
-	And I should see "Bryan Adams has been approved"
+	And I should see "Bryan Adams has been marked as approved"
 
 Scenario: Index should show approved status
 	Given I am on the referrers page
@@ -36,7 +36,14 @@ Scenario: Rejecting the prospective Referrer profile
 	When I go to the review page for "Bryan Adams"
 	And I press "Reject"
 	Then I should be on the referrers page
-	And I should see "Bryan Adams has been rejected"
+	And I should see "Bryan Adams has been marked as rejected"
+	
+Scenario: Marking the prospective Referrer profile as incomplete
+	Given I am on the referrers page
+	When I go to the review page for "Bryan Adams"
+	And I press "Incomplete"
+	Then I should be on the referrers page
+	And I should see "Bryan Adams has been marked as incomplete"
 
 Scenario: Index should show approved status
 	Given I am on the referrers page
