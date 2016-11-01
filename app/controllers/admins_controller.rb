@@ -8,22 +8,40 @@ class AdminsController < ApplicationController
 		@referrer = User.find_by_id(params[:id])
 		render :referrer_profile
 	end
-
-	def mark_referrer_approved
-		id = [params[:id]]
+	
+	def mark_referrer_status
+		id = params[:id]
+		status = params[:status]
+		# status = "Approved"
 		@referrer = User.find_by_id(id)
-		@referrer.status = "Approved"
-		@referrer.save
+		@referrer.status = status
+		@referrer.save!
 		redirect_to referrers_path
 	end
 
-	def mark_referrer_rejected
-		id = [params[:id]]
-		@referrer = User.find_by_id(id)
-		@referrer.status = "Rejected"
-		@referrer.save
-		redirect_to referrers_path
-	end
+	# def mark_referrer_approved
+	# 	id = [params[:id]]
+	# 	@referrer = User.find_by_id(id)
+	# 	@referrer.status = "Approved"
+	# 	@referrer.save
+	# 	redirect_to referrers_path
+	# end
+
+	# def mark_referrer_rejected
+	# 	id = [params[:id]]
+	# 	@referrer = User.find_by_id(id)
+	# 	@referrer.status = "Rejected"
+	# 	@referrer.save
+	# 	redirect_to referrers_path
+	# end
+	
+	# def mark_referrer_incomplete
+	# 	id = [params[:id]]
+	# 	@referrer = User.find_by_id(id)
+	# 	@referrer.status = "Incomplete"
+	# 	@referrer.save
+	# 	redirect_to referrers_path
+	# end
 
   def show
 		@user = Admin.find_by_id(params[:id])

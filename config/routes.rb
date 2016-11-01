@@ -11,8 +11,10 @@ Rails.application.routes.draw do
 
   get 'referrers' => 'admins#show_referrers', :as => "referrers"
   get 'referrers/:id' => 'admins#show_referrer_profile', :as => "referrer_profile"
-  get 'referrers/:id/approve' => 'admins#mark_referrer_approved', :as => 'mark_referrer_approved'
-  get 'referrers/:id/reject' => 'admins#mark_referrer_rejected', :as => 'mark_referrer_rejected'
+  # get 'referrers/:id/approve' => 'admins#mark_referrer_approved', :as => 'mark_referrer_approved'
+  # get 'referrers/:id/reject' => 'admins#mark_referrer_rejected', :as => 'mark_referrer_rejected'
+  # get 'referrers/:id/incomplete' => 'admins#mark_referrer_incomplete', :as => 'mark_referrer_incomplete'
+  post 'referrers/:id/update_status' => 'admins#mark_referrer_status', :as => 'mark_referrer_status'
   get 'referrer/:id' => 'admins#show_referrer_profile', :as => 'referrer'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

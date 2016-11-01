@@ -1,3 +1,4 @@
 %h1= @referrer.full_name
-= button_to 'Approve', mark_referrer_approved_path, {:method => 'get'}
-= button_to 'Reject', mark_referrer_rejected_path, {:method => 'get'}
+= button_to 'Approve', mark_referrer_status_path(:status => "Approved"), {:method => 'post'}
+= button_to 'Reject', mark_referrer_status_path(:status => "Rejected"), {:method => 'post'}
+= button_to 'Incomplete', mark_referrer_status_path(:status => "Incomplete"), {:method => 'post'}
