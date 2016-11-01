@@ -12,10 +12,10 @@ class AdminsController < ApplicationController
 	def mark_referrer_status
 		id = params[:id]
 		status = params[:status]
-		# status = "Approved"
 		@referrer = User.find_by_id(id)
 		@referrer.status = status
 		@referrer.save
+		flash[:message] = "#{@referrer.first_name} #{@referrer.last_name} has been marked as #{@referrer.status.downcase}"
 		redirect_to referrers_path
 	end
 
