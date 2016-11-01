@@ -2,3 +2,7 @@
 <p>
  	The time is now: <%= Time.now %>
 </p>
+
+<% if current_admin %>
+  <%= button_to "Display Referrers", referrers_path, :value => "display_referrers_button", :method => :get %>
+<% end %>

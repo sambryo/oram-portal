@@ -27,8 +27,14 @@ gem 'rename'
 # Gems for authenticating users and giving them roles
 gem 'rolify'
 gem 'cancancan'
+
+# haml gem
+gem 'haml'
+
+# devise gems
 gem 'devise',           '~> 4.2'
 gem 'devise_invitable', '~> 1.7.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
