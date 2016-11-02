@@ -12,6 +12,10 @@ Then /I should see all case documents/ do |case_documents_table|
   pending
 end
 
-Given /the following referrers exist/ do |t|
-  pending
+Given /the following referrers exist/ do |referrers_table|
+    referrers_table.hashes.each do |referrer|
+      user = User.create(referrer)
+      user.add_role :referrer
+      user.save!
+    end
 end

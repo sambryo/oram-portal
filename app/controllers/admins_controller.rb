@@ -19,7 +19,7 @@ class AdminsController < ApplicationController
 		@referrer = User.find_by_id(id)
 		@referrer.status = status
 		@referrer.save
-		flash[:message] = "#{@referrer.first_name} #{@referrer.last_name} has been marked as #{@referrer.status.downcase}"
+		flash[:notice] = "#{@referrer.first_name} #{@referrer.last_name} has been marked as #{@referrer.status.downcase}"
 		redirect_to referrers_path
 	end
 
