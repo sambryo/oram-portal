@@ -17,4 +17,5 @@ And /I am logged in as the following admin/ do |admin_table|
     fill_in("admin_email", :with => @admin.email)
     fill_in("admin_password", :with => @admin.password)
     click("Log in")
+    expect(current_user.admin?).to_be_truthy
 end
