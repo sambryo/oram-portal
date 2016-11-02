@@ -4,16 +4,13 @@
     %tr
       %th First Name
       %th Last Name
-      %th Status
+      %th= select_tag "status",
+            options_for_select(["Status", "Incomplete", "Complete", "Approved", "Rejected"], @status),
+            id: 'select_button',
+            class: 'filter',
+            :onchange => "filter_by_status(this.value)"
       %th
   %tbody
-    -[1, 2, 3, 4, 5].each do |num|
-      %tr
-        %td.first_name= "Test First Name " + num.to_s
-        %td.last_name= "Test Last Name " + num.to_s
-        %td.status= "Pending"
-        %td.more_info= link_to "View profile"
-
     - @referrers.each do |referrer|
       %tr
         %td.first_name= referrer.first_name

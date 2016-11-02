@@ -1,6 +1,10 @@
 class AdminsController < ApplicationController
 	def show_referrers
-		@referrers = User.with_role :referrer
+		@referrers = User.with_role(:referrer)
+		if params[:status] and params[:status] != 'Status'
+			@referrers = @referrers.where(status: params[:status]).all
+		end
+		@status = params[:status]
 		render :show_referrers
 	end
 
