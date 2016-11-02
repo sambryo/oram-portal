@@ -1,48 +1,112 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "c:/Users/Kelly/cs169/oram-portal/app/models/referrer.rb": [
+      "/home/ubuntu/workspace/oram-portal/app/models/user_role.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/oram-portal/app/models/admin.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/oram-portal/app/models/user.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         1,
         null,
-        1,
-        null,
-        null,
-        null,
         null,
         1,
         null,
         null,
-        null,
         1,
+        0,
         null,
         null
       ],
-      "c:/Users/Kelly/cs169/oram-portal/app/models/admin.rb": [
+      "/home/ubuntu/workspace/oram-portal/app/controllers/welcome_controller.rb": [
         1,
-        null,
-        null,
         1,
+        4,
         null,
         null
       ],
-      "c:/Users/Kelly/cs169/oram-portal/app/models/user.rb": [
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "c:/Users/Kelly/cs169/oram-portal/app/controllers/welcome_controller.rb": [
-        1,
-        1,
-        null,
-        null
-      ],
-      "c:/Users/Kelly/cs169/oram-portal/app/controllers/application_controller.rb": [
+      "/home/ubuntu/workspace/oram-portal/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -56,21 +120,29 @@
         13,
         null,
         null,
+        null,
+        1,
+        0,
+        null,
         null
       ],
-      "c:/Users/Kelly/cs169/oram-portal/app/helpers/application_helper.rb": [
+      "/home/ubuntu/workspace/oram-portal/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "c:/Users/Kelly/cs169/oram-portal/app/helpers/users_helper.rb": [
+      "/home/ubuntu/workspace/oram-portal/app/helpers/admins_helper.rb": [
         1,
         null
       ],
-      "c:/Users/Kelly/cs169/oram-portal/app/helpers/welcome_helper.rb": [
+      "/home/ubuntu/workspace/oram-portal/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/oram-portal/app/helpers/welcome_helper.rb": [
         1,
         null
       ]
     },
-    "timestamp": 1477525433
+    "timestamp": 1478073482
   }
 }

@@ -7,14 +7,16 @@ Feature: update the status of a pending application
 Background: referrers in the database
 
 	Given the following referrers exist:
-	    | name             | status		 | 
-	 	| Bryan Adams      | Complete 	 | 
-	 	| Hannah Montana   | Incomplete  |
-	  	| Hillary Clinton  | Rejected    |
-	  	| Adrian Greenberg | Approved    |
-	  	| Donald Trump	   | Incomplete  |
+	    | first_name	| last_name	| email             	| status		|
+	 	| Bryan			| Adams     | bryan@adams.com		| Complete 		|
+	 	| Hannah		| Montana   | hannah@montana.com	| Incomplete	|
+	  	| Hillary		| Clinton	| hillary@clinton.com	| Rejected  	|
+	  	| Adrian		| Greenberg | adrian@greenberg.com	| Approved  	|
+	  	| Donald		| Trump		| donald@trump.com		| Incomplete	|
 
-	And I am an ORAM administrator
+	And I am logged in as the following admin:
+	    | first_name  | last_name | email               | password   |
+	    | oram        | admin     | admin321@gmail.com  | oramadmin  |
 
 Scenario: ORAM administrator visiting the prospective Referrer profile
 	When I follow "Referrer Profiles"
