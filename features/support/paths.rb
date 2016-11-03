@@ -43,7 +43,11 @@ module NavigationHelpers
     when /^the referrers page$/
       referrers_path
 
+    when /^the referrers index page$/
+      '/users'
 
+    when '^the new user invitation page$'
+      '/users/invitation/new'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
