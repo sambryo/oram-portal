@@ -1,3 +1,5 @@
+=link_to "Back to home", root_path
+
 %h1#referrer_list_title Referrers
 %table#referrers
   %thead
@@ -16,4 +18,4 @@
         %td.first_name= referrer.first_name
         %td.last_name= referrer.last_name
         %td.status= referrer.status
-        %td.more_info= link_to "More Info", referrer_profile_path(referrer)
+        %td.more_info= link_to "View Profile", referrer_profile_path(referrer)

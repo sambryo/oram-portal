@@ -6,50 +6,34 @@ Feature: Vetting a Referrer
 Background: referrers in the database
 
 	Given the following referrers exist:
-	    | name             | status		 |
-	 	| Bryan Adams      | Complete 	 |
-	 	| Hannah Montana   | Incomplete  |
-	  	| Hillary Clinton  | Rejected    |
-	  	| Adrian Greenberg | Approved    |
-	  	| Donald Trump	   | Incomplete  |
+	    | first_name	| last_name	| email             	| status		| password	|
+	 	| Bryan			| Adams     | bryan@adams.com		| Complete 		| oram123	|
+	 	| Hannah		| Montana   | hannah@montana.com	| Incomplete	| oram123	|
+	  	| Hillary		| Clinton	| hillary@clinton.com	| Rejected  	| oram123	|
+	  	| Adrian		| Greenberg | adrian@greenberg.com	| Approved  	| oram123	|
+	  	| Donald		| Trump		| donald@trump.com		| Incomplete	| oram123	|
 
-	And I am an ORAM administrator
+	And I am logged in as the following admin:
+	    | first_name  | last_name | email               | password   |
+	    | oram        | admin     | admin321@gmail.com  | oramadmin  |
 
 Scenario: Approving the prospective Referrer profile
 	Given I am on the referrers page
-	When I go to the profile page for "Bryan Adams"
+	When I view the profile of "Bryan Adams"
 	And I press "Approve"
 	Then I should be on the referrers page
 	And I should see "Bryan Adams has been marked as approved"
 
-Scenario: Index should show approved status
-	Given I am on the referrers page
-	And I go to the profile page for "Bryan Adams"
-	And I press "Approve"
-	Then I should be on the referrers page
-	And I press "Approved Profiles"
-	Then I should see "Adrian Greenberg"
-	And I should see "Bryan Adams"
-
 Scenario: Rejecting the prospective Referrer profile
 	Given I am on the referrers page
-	When I go to the review page for "Bryan Adams"
+	When I view the profile of "Bryan Adams"
 	And I press "Reject"
 	Then I should be on the referrers page
 	And I should see "Bryan Adams has been marked as rejected"
 	
 Scenario: Marking the prospective Referrer profile as incomplete
 	Given I am on the referrers page
-	When I go to the review page for "Bryan Adams"
+	When I view the profile of "Bryan Adams"
 	And I press "Incomplete"
 	Then I should be on the referrers page
 	And I should see "Bryan Adams has been marked as incomplete"
-
-Scenario: Index should show approved status
-	Given I am on the referrers page
-	And I go to the review page for "Bryan Adams"
-	And I press "Reject"
-	Then I should be on the referrers page
-	And I press "Rejected Profiles"
-	Then I should see "Hillary Clinton"
-	And I should see "Bryan Adams"

@@ -40,8 +40,8 @@ module NavigationHelpers
     when /^the referrer profile creation page$/
       '/users/sign_up' #change later
 
-    when /^the referrer profiles page$/
-      pending
+    when /^the referrers page$/
+      referrers_path
 
 
 

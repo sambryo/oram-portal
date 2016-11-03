@@ -7,22 +7,24 @@ Feature: update the status of a pending application
 Background: referrers in the database
 
 	Given the following referrers exist:
-	    | name             | status		 | 
-	 	| Bryan Adams      | Complete 	 | 
-	 	| Hannah Montana   | Incomplete  |
-	  	| Hillary Clinton  | Rejected    |
-	  	| Adrian Greenberg | Approved    |
-	  	| Donald Trump	   | Incomplete  |
+	    | first_name	| last_name	| email             	| status		| password	|
+	 	| Bryan			| Adams     | bryan@adams.com		| Complete 		| oram123	|
+	 	| Hannah		| Montana   | hannah@montana.com	| Incomplete	| oram123	|
+	  	| Hillary		| Clinton	| hillary@clinton.com	| Rejected  	| oram123	|
+	  	| Adrian		| Greenberg | adrian@greenberg.com	| Approved  	| oram123	|
+	  	| Donald		| Trump		| donald@trump.com		| Incomplete	| oram123	|
 
-	And I am an ORAM administrator
+	And I am logged in as the following admin:
+	    | first_name  | last_name | email               | password   |
+	    | oram        | admin     | admin321@gmail.com  | oramadmin  |
 
 Scenario: ORAM administrator visiting the prospective Referrer profile
-	When I follow "Referrer Profiles"
+	When I press "Display Referrers"
 	Then I should be on the referrers page
 
 Scenario: filter for incomplete applications
 	Given I am on the referrers page
-	When I press "Incomplete Applications"
+	When I select "Incomplete" from the status dropdown
 	Then I should see "Hannah Montana" 
 	And I should see "Donald Trump"
 	And I should not see "Bryan Adams"
@@ -31,7 +33,7 @@ Scenario: filter for incomplete applications
 
 Scenario: filter through all of the complete applications
 	Given I am on the referrers page
-	When I press "Complete Applications"
+	When I select "Complete" from the status dropdown
 	Then I should see "Bryan Adams"
 	And I should not see "Hannah Montana"
 	And I should not see "Hillary Clinton"
@@ -40,7 +42,7 @@ Scenario: filter through all of the complete applications
 
 Scenario: filter through all of the rejected applications
 	Given I am on the referrers page
-	When I press "Rejected Applications"
+	When I select "Rejected" from the status dropdown
 	Then I should see "Hillary Clinton"
 	And I should not see "Bryan Adams"
 	And I should not see "Hannah Montana"
@@ -49,7 +51,7 @@ Scenario: filter through all of the rejected applications
 
 Scenario: filter through all of the approved applications
 	Given I am on the referrers page
-	When I press "Approved Applications"
+	When I select "Approved" from the status dropdown
 	Then I should see "Adrian Greenberg"
 	And I should not see "Bryan Adams"
 	And I should not see "Hannah Montana"

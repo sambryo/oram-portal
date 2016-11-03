@@ -12,24 +12,18 @@ class AdminsController < ApplicationController
 		@referrer = User.find_by_id(params[:id])
 		render :referrer_profile
 	end
-
-	def mark_referrer_approved
-		id = [params[:id]]
+	
+	def mark_referrer_status
+		id = params[:id]
+		status = params[:status]
 		@referrer = User.find_by_id(id)
-		@referrer.status = "Approved"
+		@referrer.status = status
 		@referrer.save
+		flash[:notice] = "#{@referrer.first_name} #{@referrer.last_name} has been marked as #{@referrer.status.downcase}"
 		redirect_to referrers_path
 	end
 
-	def mark_referrer_rejected
-		id = [params[:id]]
-		@referrer = User.find_by_id(id)
-		@referrer.status = "Rejected"
-		@referrer.save
-		redirect_to referrers_path
-	end
-
-  def show
+	def show
 		@user = Admin.find_by_id(params[:id])
 	end
 end
