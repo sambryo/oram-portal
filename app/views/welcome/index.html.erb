@@ -5,4 +5,5 @@
 
 <% if current_admin %>
   <%= button_to "Display Referrers", referrers_path, :value => "display_referrers_button", :method => :get %>
+  <%= link_to 'Invite User', new_user_invitation_path %>
 <% end %>
