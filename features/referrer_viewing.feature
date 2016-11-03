@@ -8,21 +8,21 @@ Background: referrers in the database
 
 	Given the following referrers exist:
 	    | name             | status		 | 
-	 	| Bryan Adams      | complete 	 | 
-	 	| Hannah Montana   | incomplete  |
-	  	| Hillary Clinton  | rejected    |
-	  	| Adrian Greenberg | approved    |
-	  	| Donald Trump	   | incomplete  |
+	 	| Bryan Adams      | Complete 	 | 
+	 	| Hannah Montana   | Incomplete  |
+	  	| Hillary Clinton  | Rejected    |
+	  	| Adrian Greenberg | Approved    |
+	  	| Donald Trump	   | Incomplete  |
 
 	And I am an ORAM administrator
 
 Scenario: ORAM administrator visiting the prospective Referrer profile
 	When I follow "Referrer Profiles"
-	Then I should be on the referrer profiles page
+	Then I should be on the referrers page
 
 Scenario: filter for incomplete applications
-	Given I am on the referrer profiles page
-	When I choose "Incomplete Applications"
+	Given I am on the referrers page
+	When I press "Incomplete Applications"
 	Then I should see "Hannah Montana" 
 	And I should see "Donald Trump"
 	And I should not see "Bryan Adams"
@@ -30,8 +30,8 @@ Scenario: filter for incomplete applications
 	And I should not see "Adrian Greenberg"
 
 Scenario: filter through all of the complete applications
-	Given I am on the referrer profiles page
-	When I choose "Complete Applications"
+	Given I am on the referrers page
+	When I press "Complete Applications"
 	Then I should see "Bryan Adams"
 	And I should not see "Hannah Montana"
 	And I should not see "Hillary Clinton"
@@ -39,8 +39,8 @@ Scenario: filter through all of the complete applications
 	And I should not see "Donald Trump"
 
 Scenario: filter through all of the rejected applications
-	Given I am on the referrer profiles page
-	When I choose "Rejected Applications"
+	Given I am on the referrers page
+	When I press "Rejected Applications"
 	Then I should see "Hillary Clinton"
 	And I should not see "Bryan Adams"
 	And I should not see "Hannah Montana"
@@ -48,8 +48,8 @@ Scenario: filter through all of the rejected applications
 	And I should not see "Donald Trump"
 
 Scenario: filter through all of the approved applications
-	Given I am on the referrer profiles page
-	When I choose "Approved Applications"
+	Given I am on the referrers page
+	When I press "Approved Applications"
 	Then I should see "Adrian Greenberg"
 	And I should not see "Bryan Adams"
 	And I should not see "Hannah Montana"

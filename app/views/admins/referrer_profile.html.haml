@@ -1,0 +1,3 @@
+%h1= @referrer.full_name
+= button_to 'Approve', mark_referrer_approved_path, {:method => 'get'}
+= button_to 'Reject', mark_referrer_rejected_path, {:method => 'get'}

@@ -5,19 +5,22 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <% if admin_signed_in? %>
-    <%= render 'layouts/admin_header' %>
-  <% elsif user_signed_in? %>
-    <%= render 'layouts/user_header' %>
-  <% else %>
-    <%= render 'layouts/user_header' %>
-  <% end %>
-<!-- <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p> -->
-
-<%= yield %>
-
+  <div class="wrapper">
+    <% if admin_signed_in? %>
+      <%= render 'layouts/admin_header' %>
+    <% elsif user_signed_in? %>
+      <%= render 'layouts/user_header' %>
+    <% else %>
+      <%= render 'layouts/user_header' %>
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+</div>
 </body>
 </html>

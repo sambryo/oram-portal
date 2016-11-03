@@ -15,14 +15,25 @@
  @import 'bootstrap';
  @import 'devise_bootstrap_views';
  @import 'navbar.scss';
+ @import 'footer.scss';
  @import 'welcome.scss';
  @import 'users.scss';
+ @import 'admins.scss';
 
-@font-face {
-    font-family: Arimo;
-    src: font-url("Arimo-Regular.ttf");
+
+html, body {
+	height: 100%;
 }
 
-body {
-	font-family: Arimo;
+.wrapper {
+	position: relative;
+	min-height: 100%;
+	padding-bottom: 50px;
+}
+
+.notice, .alert {
+	text-align: center;
+	opacity: 0.8;
+	padding: 0;
+	margin: 0;
 }
