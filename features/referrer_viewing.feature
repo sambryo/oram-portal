@@ -19,44 +19,29 @@ Background: referrers in the database
 	    | oram        | admin     | admin321@gmail.com  | oramadmin  |
 
 Scenario: ORAM administrator visiting the prospective Referrer profile
-	When I press "Display Referrers"
+	When I follow "Display Referrers"
 	Then I should be on the referrers page
 
 Scenario: filter for incomplete applications
 	Given I am on the referrers page
 	When I select "Incomplete" from the status dropdown
-	Then I should see "Hannah Montana" 
+	Then I should see "Hannah Montana"
 	And I should see "Donald Trump"
-	And I should not see "Bryan Adams"
-	And I should not see "Hillary Clinton"
-	And I should not see "Adrian Greenberg"
 
 Scenario: filter through all of the complete applications
 	Given I am on the referrers page
 	When I select "Complete" from the status dropdown
 	Then I should see "Bryan Adams"
-	And I should not see "Hannah Montana"
-	And I should not see "Hillary Clinton"
-	And I should not see "Adrian Greenberg"
-	And I should not see "Donald Trump"
 
 Scenario: filter through all of the rejected applications
 	Given I am on the referrers page
 	When I select "Rejected" from the status dropdown
 	Then I should see "Hillary Clinton"
-	And I should not see "Bryan Adams"
-	And I should not see "Hannah Montana"
-	And I should not see "Adrian Greenberg"
-	And I should not see "Donald Trump"
 
 Scenario: filter through all of the approved applications
 	Given I am on the referrers page
 	When I select "Approved" from the status dropdown
 	Then I should see "Adrian Greenberg"
-	And I should not see "Bryan Adams"
-	And I should not see "Hannah Montana"
-	And I should not see "Hillary Clinton"
-	And I should not see "Donald Trump"
 
 #Scenario: send a notification to a referrer with an incomplete application
 #  When I go to the applications page

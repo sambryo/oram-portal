@@ -3,6 +3,7 @@
  			<%= link_to "ORAM Website", "http://oramrefugee.org", :class => "link-element" %>
 	 		<% if current_admin %>
 				<%= link_to "Display Referrers", referrers_path, :value => "display_referrers_button", :method => :get, :class => "link-element" %>
+				<%= link_to 'Invite User', new_user_invitation_path, :class => "link-element"%>
 			<% end %>
 			<% if current_user %>
 				<%= link_to "User Action", root_path, :value => "home_button", :method => :get, :class => "link-element" %>
@@ -11,15 +12,11 @@
 	<div class="about-oram">
 		<div class="landing-title">About</div>
 
-		<div class="about-text"> 
+		<div class="about-text">
 			ORAM’s mission is to enable the international community to protect exceptionally vulnerable refugees and asylum seekers. To this end, we are dedicated to delivering innovative tools, cutting-edge research and empirically-based assessment programs for refugee professionals around the world.
 			We work closely with governments of refugee-receiving and transit countries, the United Nations, international NGOs, community and faith-based organizations, and academic institutions. Drawing upon our leadership, know-how and trailblazing work on sexual and gender minority refugees, we assist the panoply of exceptionally vulnerable refugees facing extreme persecution and in desperate need of help.
 			Through our capacity-building programs, we have trained thousands of professionals on refugee protection and claims adjudication. Our tools are utilized by thousands of refugee professionals and agencies worldwide. We are trusted by governments, international agencies and communities to develop and deliver rare expertise in our constantly evolving field. By training refugee professionals and making our tools accessible to them, we reach hundreds of thousands who seek refuge and asylum.
 	  </div>
 	 </div>
-	 
+
 </div>
-
-
-
-

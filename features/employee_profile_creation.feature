@@ -4,21 +4,21 @@ Feature: update the status of a pending application
   In order to create profiles for ORAM employees
   I should be able to send a portal link to allow employees to sign up and create their profile
 
-#Background: Invitations in the database
+Background: Logging in as an admin
 
-#  Given the following invitations exist:
-#    | name       | email               | status    |
-#    | John Doe   | johndoe@gmail.com   | pending   |
-#    | Jane Smith | janesmith@gmail.com | pending   |
-#    | Mike Do    | mikeyd@gmail.com    | completed |
+  Given I am logged in as the following admin:
+    | first_name  | last_name | email               | password   |
+    | oram        | admin     | admin321@gmail.com  | oramadmin  |
 
-#Scenario: Generate employee invitation link and send to email
-#  Given I am an ORAM administrator
-#  When I am on the new employee invitation page
-#  And I fill in "Name" with "ORAM"
-#  And I fill in "Invite Employee" with "cs169.team13@gmail.com"
-#  And I press "Send invitation"
-#  Then I should see "Employee invitation has been sent to inbox of cs169.team13@gmail.com"
+Scenario: Admins can invite users to make an account
+  When I follow "Invite User"
+  Then I should be on the new user invitation page
+
+Scenario: Admins can invite users by email
+  When I am on the new user invitation page
+  And I fill in "Email" with "inviteduser@email.com"
+  And I press "Send an invitation"
+  Then I should see "An invitation email has been sent to inviteduser@email.com"
 
 #Scenario: View statuses of sent employee invitations
 #  Given I am an ORAM administrator
