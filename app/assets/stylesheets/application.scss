@@ -15,4 +15,25 @@
  @import 'bootstrap';
  @import 'devise_bootstrap_views';
  @import 'navbar.scss';
+ @import 'footer.scss';
+ @import 'welcome.scss';
+ @import 'users.scss';
  @import 'admins.scss';
+
+
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	position: relative;
+	min-height: 100%;
+	padding-bottom: 50px;
+}
+
+.notice, .alert {
+	text-align: center;
+	opacity: 0.8;
+	padding: 0;
+	margin: 0;
+}

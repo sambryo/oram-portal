@@ -19,7 +19,7 @@ Background: referrers in the database
 	    | oram        | admin     | admin321@gmail.com  | oramadmin  |
 
 Scenario: ORAM administrator visiting the prospective Referrer profile
-	When I press "Display Referrers"
+	When I follow "Display Referrers"
 	Then I should be on the referrers page
 
 Scenario: filter for incomplete applications
