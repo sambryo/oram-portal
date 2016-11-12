@@ -31,8 +31,8 @@ class User < ActiveRecord::Base
   rolify :role_cname => 'UserRole'
   	# Include default devise modules. Others available are:
   	# :confirmable, :lockable, :timeoutable and :omniauthable
-  	devise :invitable, :database_authenticatable, :registerable,
-    	:recoverable, :rememberable, :trackable, :validatable
+  	devise :invitable, :database_authenticatable, :recoverable,
+     :rememberable, :trackable, :validatable
 
     def full_name
         first_name + " " + last_name
