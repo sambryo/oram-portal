@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   get 'admins/:id' => 'admins#show'
 
   get 'referrers' => 'admins#show_referrers', :as => "referrers"
-  get 'referrers/:id' => 'admins#show_referrer_profile', :as => "referrer_profile"
+  get 'referrers/:id' => 'users#show', :as => "referrer"
   post 'referrers/:id/update_status' => 'admins#mark_referrer_status', :as => 'mark_referrer_status'
-  get 'referrer/:id' => 'admins#show_referrer_profile', :as => 'referrer'
 
 
   # Example of regular route:
