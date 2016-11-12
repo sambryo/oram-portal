@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
+		if @user.has_role? :referrer
+			render :referrer_profile
+		end
 	end
 
 	private

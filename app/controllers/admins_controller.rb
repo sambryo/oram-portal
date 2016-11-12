@@ -1,4 +1,7 @@
 class AdminsController < ApplicationController
+
+	before_filter :authenticate_admin!
+
 	def show_referrers
 		@referrers = User.with_role(:referrer)
 		if params[:status] and params[:status] != 'Status'
@@ -8,11 +11,6 @@ class AdminsController < ApplicationController
 		render :show_referrers
 	end
 
-	def show_referrer_profile
-		@referrer = User.find_by_id(params[:id])
-		render :referrer_profile
-	end
-	
 	def mark_referrer_status
 		id = params[:id]
 		status = params[:status]
