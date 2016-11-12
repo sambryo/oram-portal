@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   devise_for :admins, :controllers => { :invitations => 'admins/invitations' }
-  devise_for :users
-
+  devise_for :users, :controllers => { :invitations => 'users/invitations'}
 
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
@@ -13,8 +12,8 @@ Rails.application.routes.draw do
   get 'referrers/:id' => 'admins#show_referrer_profile', :as => "referrer_profile"
   post 'referrers/:id/update_status' => 'admins#mark_referrer_status', :as => 'mark_referrer_status'
   get 'referrer/:id' => 'admins#show_referrer_profile', :as => 'referrer'
-  
-  
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
