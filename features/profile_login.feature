@@ -4,10 +4,10 @@ Feature: Login Portal
   I should be able to login under my user profile
 
 Background: Users in the database
-  
+
   Given the following users exist:
     | first_name  | last_name | email               | password |
-    | oram        | boys      | oram123@gmail.com   | oram123  |
+    | oram        | account      | oram123@gmail.com   | oram123  |
 
 Scenario: Accessing the login page
   Given I am on the home page
