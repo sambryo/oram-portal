@@ -6,10 +6,13 @@
 	<div class="panel-body">
 		<%= form_tag("/referrers/#{@referrer.id}", method: :put) do %>
 			<%= label_tag("form_response[info1]", "Form Info 1:") %>
-			<%= text_field_tag("form_response[info1]") %>
+			<%= text_field_tag("form_response[Country of Origin]") %>
 			<br />
 			<%= label_tag("form_response[info2]", "Form Info 2:") %>
 			<%= text_field_tag("form_response[info2]") %>
+			<br />
+			<%= label_tag("form_response[Hello thereE]", "Form Info 3:") %>
+			<%= text_field_tag("form_response[Hello thereE]") %>
 			<br />
 			<%= submit_tag("Submit") %>
 		<% end %>
