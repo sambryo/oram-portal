@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'referrers' => 'admins#show_referrers', :as => "referrers"
   get 'referrers/:id' => 'admins#show_referrer_profile', :as => "referrer_profile"
+  get 'referrers/:id/edit' => 'admins#edit_referrer_profile', :as => "referrer_edit"
+  put 'referrers/:id' => 'admins#update_referrer_profile', :as => "referrer_update"
   post 'referrers/:id/update_status' => 'admins#mark_referrer_status', :as => 'mark_referrer_status'
   get 'referrer/:id' => 'admins#show_referrer_profile', :as => 'referrer'
   

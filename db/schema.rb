@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101002159) do
+ActiveRecord::Schema.define(version: 20161112111645) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(version: 20161101002159) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "referrers", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "referrers", ["name", "resource_type", "resource_id"], name: "index_referrers_on_name_and_resource_type_and_resource_id"
+  add_index "referrers", ["name"], name: "index_referrers_on_name"
 
   create_table "user_roles", force: :cascade do |t|
     t.string   "name"
@@ -68,6 +79,7 @@ ActiveRecord::Schema.define(version: 20161101002159) do
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
     t.string   "status",                 default: "Incomplete"
+    t.string   "formJSON",               default: ""
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -75,6 +87,13 @@ ActiveRecord::Schema.define(version: 20161101002159) do
   add_index "users", ["invitations_count"], name: "index_users_on_invitations_count"
   add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "users_referrers", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "referrer_id"
+  end
+
+  add_index "users_referrers", ["user_id", "referrer_id"], name: "index_users_referrers_on_user_id_and_referrer_id"
 
   create_table "users_user_roles", id: false, force: :cascade do |t|
     t.integer "user_id"

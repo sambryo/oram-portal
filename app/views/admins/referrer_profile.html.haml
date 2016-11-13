@@ -1,4 +1,11 @@
-%h1= @referrer.full_name
-= button_to 'Approve', mark_referrer_status_path(:status => "Approved"), {:method => 'post'}
-= button_to 'Reject', mark_referrer_status_path(:status => "Rejected"), {:method => 'post'}
-= button_to 'Incomplete', mark_referrer_status_path(:status => "Incomplete"), {:method => 'post'}
+.panel.panel-default
+	.panel-heading
+		%h3= @referrer.full_name
+	.panel-body
+		= button_to 'Approve', mark_referrer_status_path(:status => "Approved"), {:method => 'post'}
+		= button_to 'Reject', mark_referrer_status_path(:status => "Rejected"), {:method => 'post'}
+		= button_to 'Incomplete', mark_referrer_status_path(:status => "Incomplete"), {:method => 'post'}
+		- @form_hash.each do |key, value|
+			.referrer-info
+				= key
+				= value
