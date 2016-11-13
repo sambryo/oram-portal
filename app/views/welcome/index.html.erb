@@ -1,13 +1,6 @@
 <div class="landing-content">
 	<div class="landing-links">
- 			<%= link_to "ORAM Website", "http://oramrefugee.org", :class => "link-element" %>
-	 		<% if current_admin %>
-				<%= link_to "Display Referrers", referrers_path, :value => "display_referrers_button", :method => :get, :class => "link-element" %>
-				<%= link_to 'Invite User', new_user_invitation_path, :class => "link-element"%>
-			<% end %>
-			<% if current_user %>
-				<%= link_to "User Action", root_path, :value => "home_button", :method => :get, :class => "link-element" %>
-			<% end %>
+
 	 </div>
 	<div class="about-oram">
 		<div class="landing-title">About</div>
