@@ -10,7 +10,7 @@ class AdminsController < ApplicationController
 		@status = params[:status]
 		render :show_referrers
 	end
-
+	
 	def mark_referrer_status
 		id = params[:id]
 		status = params[:status]
