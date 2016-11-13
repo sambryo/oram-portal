@@ -25,6 +25,7 @@
 #  invited_by_id          :integer
 #  invited_by_type        :string
 #  invitations_count      :integer          default(0)
+#  status                 :string           default("Incomplete")
 #
 
 class User < ActiveRecord::Base
@@ -34,6 +35,8 @@ class User < ActiveRecord::Base
   	devise :invitable, :database_authenticatable, :recoverable,
      :rememberable, :trackable, :validatable
 
+    has_many :forms
+    
     def full_name
         first_name + " " + last_name
     end
