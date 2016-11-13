@@ -2,12 +2,14 @@
 .navbar {
   background-color: #274472;
   margin: 0;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: 0;
 }
 
 .oram-logo {
   float: left;
+  max-width: 80px;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -16,4 +18,24 @@
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #63b2f5;
+}
+
+.content-links {
+	height: 50px;
+	width: 100%;
+	background-color: #E1E1E1;
+}
+
+.content-link {
+	display: inline-block;
+}
+
+.content-link :hover {
+	border-bottom: 1px black solid;
+	transition: border-bottom 1s;
+}
+
+.nav > li {
+	display: inline-block;
+	float: none;
 }

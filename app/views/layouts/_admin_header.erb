@@ -25,3 +25,11 @@
     </div>
   </div>
 </nav>
+
+<div class="content-links">
+  <ul class="nav navbar-nav">
+    <li class="header-link content-link hvr-underline-from-center"><%= link_to "ORAM Website", "http://oramrefugee.org" %> </li>
+    <li class="header-link content-link hvr-underline-from-center"><%= link_to "Display Referrers", referrers_path, :value => "display_referrers_button", :method => :get %> </li>
+    <li class="header-link content-link hvr-underline-from-center"><%= link_to 'Invite User', new_user_invitation_path %> </li>
+  </ul>
+</div>
