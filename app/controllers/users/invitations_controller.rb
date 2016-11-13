@@ -21,4 +21,15 @@ class Users::InvitationsController < Devise::InvitationsController
   def update_sanitized_params
     devise_parameter_sanitizer.permit(:accept_invitation, keys: [:first_name, :last_name, :password, :password_confirmation])
   end
+
+  private
+
+  def invite_resource
+     role = UserRole.find(params[:user][:id]).name
+     resource_class.invite!(invite_params, current_inviter) do |invitable|
+        invitable.add_role(role)
+     end
+  end
+
+
 end
