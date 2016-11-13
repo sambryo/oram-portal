@@ -7,9 +7,10 @@
 		<%= form_tag("/referrers/#{@referrer.id}", method: :put) do %>
 			<%= label_tag("form_response[info1]", "Form Info 1:") %>
 			<%= text_field_tag("form_response[info1]") %>
-
+			<br />
 			<%= label_tag("form_response[info2]", "Form Info 2:") %>
 			<%= text_field_tag("form_response[info2]") %>
+			<br />
 			<%= submit_tag("Submit") %>
 		<% end %>
 	</div>

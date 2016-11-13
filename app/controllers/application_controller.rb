@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # If you have extra params to permit, append them to the sanitizer.
   def configure_permitted_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password, :password_confirmation])
-    # devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation) }
+    devise_parameter_sanitizer.permit(:accept_invitation, keys: [:first_name, :last_name])
   end
 
   def authenticate_inviter!
