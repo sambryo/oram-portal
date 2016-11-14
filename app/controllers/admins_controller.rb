@@ -18,6 +18,10 @@ class AdminsController < ApplicationController
 		@referrer.status = status
 		@referrer.save
 		flash[:notice] = "#{@referrer.first_name} #{@referrer.last_name} has been marked as #{@referrer.status.downcase}"
+		if status == "Incomplete"
+			# send notification to them via email
+			NotifierMailer.incomplete_referrer_profile(@referrer).deliver_now # sends the email
+		end
 		redirect_to referrers_path
 	end
 
