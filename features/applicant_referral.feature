@@ -4,12 +4,12 @@ Feature: Applicant Referral Form
   I should be able to fill out the applicant referral form.
 
 Background: Applicant in the database
-  Given I am logged in as the following applicant:
+  Given the following referrers exist:
   | first_name	| last_name	| email             	| status		 | password	|
   | Bryan			  | Adams     | bryan@adams.com		  | Pending 	 | oram123	|
 
 Scenario: Submitting the form successfully
-  Given I am logged in as "Bryan Adams"
+  Given I am logged in as the referrer "Bryan Adams"
   And I am on the applicant home page
   And I press "Profile"
   And I should be on the applicant profile form page
