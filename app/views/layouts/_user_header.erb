@@ -29,5 +29,11 @@
 <div class="content-links">
   <ul class="nav navbar-nav">
     <li class="header-link content-link"><%= link_to "ORAM Website", "http://oramrefugee.org", class: "hvr-float-shadow"%> </li>
+    <% if user_signed_in? && current_user.has_role?(:referrer) %>
+      <li class="header-link content-link"><%= link_to "Referrer Profile", referrer_profile_path(current_user.id), class: "hvr-float-shadow"%> </li>
+      <% if current_user.status == "Approved" %>
+        <li class="header-link content-link"><%= link_to "Referrals", referrer_referrals_path(current_user.id), class: "hvr-float-shadow"%> </li>
+      <% end %>
+    <% end %>
   </ul>
 </div>

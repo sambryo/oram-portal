@@ -10,8 +10,10 @@ Rails.application.routes.draw do
 
   get 'referrers' => 'admins#show_referrers', :as => "referrers"
   get 'referrers/:id/edit' => 'users#edit_referrer_profile', :as => "referrer_edit"
-  put 'referrers/:id' => 'users#update_referrer_profile', :as => "referrer_update"
   get 'referrers/:id' => 'users#show', :as => "referrer"
+  get 'referrers/:id' => 'users#show_referrer_profile', :as => "referrer_profile"
+  get 'referrers/:id/referrals' => 'users#show_referrer_referrals', :as => "referrer_referrals"
+  put 'referrers/:id' => 'users#update_referrer_profile', :as => "referrer_update"
   post 'referrers/:id/update_status' => 'admins#mark_referrer_status', :as => 'mark_referrer_status'
 
 
