@@ -76,6 +76,7 @@ group :test do
   gem 'factory_girl_rails' # if using FactoryGirl
   gem 'metric_fu'        # collect code metrics
   gem 'codeclimate-test-reporter', require: nil
+  gem 'faker'
 end
 
 group :production do
