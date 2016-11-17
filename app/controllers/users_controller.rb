@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	before_action :require_login
+
 	def show
 		@user = User.find(params[:id])
 		@form_hash = {}
@@ -41,4 +43,19 @@ class UsersController < ApplicationController
 				end
 			end
 		end
+
+		def require_login
+			if current_user
+				if current_user.id != params[:id].to_i
+					flash[:error] = "You are not currently logged in to have access to this section"
+	      	redirect_to root_path and return
+				end
+				return
+			end
+			if !current_admin
+				flash[:error] = "You are not currently logged in to have access to this section"
+	      redirect_to root_path
+			end
+		end
+
 end
