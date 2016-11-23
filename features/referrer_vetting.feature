@@ -6,12 +6,12 @@ Feature: Vetting a Referrer
 Background: referrers in the database
 
 	Given the following referrers exist:
-	    | first_name	| last_name	| email             	| status		| password	|
-	 	| Bryan			| Adams     | bryan@adams.com		| Complete 		| oram123	|
-	 	| Hannah		| Montana   | hannah@montana.com	| Incomplete	| oram123	|
-	  	| Hillary		| Clinton	| hillary@clinton.com	| Rejected  	| oram123	|
-	  	| Adrian		| Greenberg | adrian@greenberg.com	| Approved  	| oram123	|
-	  	| Donald		| Trump		| donald@trump.com		| Incomplete	| oram123	|
+	    | first_name	| last_name	| email             	| status		| password	| invitation_accepted_at |
+	 	  | Bryan			| Adams     | bryan@adams.com		| Complete 		| oram123	| 'test' |
+	 	  | Hannah		| Montana   | hannah@montana.com	| Incomplete	| oram123	| 'test' |
+	  	| Hillary		| Clinton	| hillary@clinton.com	| Rejected  	| oram123	| 'test' |
+	  	| Adrian		| Greenberg | adrian@greenberg.com	| Approved  	| oram123	| 'test' |
+	  	| Donald		| Trump		| donald@trump.com		| Incomplete	| oram123	| 'test' |
 
 	And I am logged in as the following admin:
 	    | first_name  | last_name | email               | password   |
@@ -30,7 +30,7 @@ Scenario: Rejecting the prospective Referrer profile
 	And I press "Reject"
 	Then I should be on the referrers page
 	And I should see "Bryan Adams has been marked as rejected"
-	
+
 Scenario: Marking the prospective Referrer profile as incomplete
 	Given I am on the referrers page
 	When I view the profile of "Bryan Adams"

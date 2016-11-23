@@ -7,19 +7,19 @@ Feature: update the status of a pending application
 Background: referrers in the database
 
 	Given the following referrers exist:
-	    | first_name	| last_name	| email             	| status		| password	|
-	 	| Bryan			| Adams     | bryan@adams.com		| Complete 		| oram123	|
-	 	| Hannah		| Montana   | hannah@montana.com	| Incomplete	| oram123	|
-	  	| Hillary		| Clinton	| hillary@clinton.com	| Rejected  	| oram123	|
-	  	| Adrian		| Greenberg | adrian@greenberg.com	| Approved  	| oram123	|
-	  	| Donald		| Trump		| donald@trump.com		| Incomplete	| oram123	|
+	    | first_name	| last_name	| email             	| status		| password	| invitation_accepted_at |
+	 	| Bryan			| Adams     | bryan@adams.com		| Complete 		| oram123	| 'test' |
+	 	| Hannah		| Montana   | hannah@montana.com	| Incomplete	| oram123	| 'test' |
+	  	| Hillary		| Clinton	| hillary@clinton.com	| Rejected  	| oram123	| 'test' |
+	  	| Adrian		| Greenberg | adrian@greenberg.com	| Approved  	| oram123	| 'test' |
+	  	| Donald		| Trump		| donald@trump.com		| Incomplete	| oram123	| 'test' |
 
 	And I am logged in as the following admin:
 	    | first_name  | last_name | email               | password   |
 	    | oram        | admin     | admin321@gmail.com  | oramadmin  |
 
 Scenario: ORAM administrator visiting the prospective Referrer profile
-	When I follow "Display Referrers"
+	When I follow "Referrers"
 	Then I should be on the referrers page
 
 Scenario: filter for incomplete applications

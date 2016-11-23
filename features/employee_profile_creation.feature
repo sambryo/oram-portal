@@ -17,7 +17,7 @@ Scenario: Admins can invite users to make an account
 Scenario: Admins can invite users by email
   When I am on the new user invitation page
   And I fill in "Email" with "inviteduser@email.com"
-  And I select "referrer" from "user_id"
+  And I select "Referrer" from "user_id"
   And I press "Send an invitation"
   Then I should see "An invitation email has been sent to inviteduser@email.com"
 
