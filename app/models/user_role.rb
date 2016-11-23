@@ -21,4 +21,8 @@ class UserRole < ActiveRecord::Base
             :allow_nil => true
 
   scopify
+
+  def capitalize_name
+    name.capitalize
+  end
 end
