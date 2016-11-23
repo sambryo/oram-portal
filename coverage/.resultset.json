@@ -25,6 +25,10 @@
         null,
         null,
         1,
+        null,
+        1,
+        2,
+        null,
         null
       ],
       "/Users/nhiquach/oram-portal/app/models/admin.rb": [
@@ -312,7 +316,7 @@
         null
       ]
     },
-    "timestamp": 1479369107
+    "timestamp": 1479937374
   },
   "RSpec": {
     "coverage": {

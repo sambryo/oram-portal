@@ -5,8 +5,8 @@ Feature: Referrer Profile Form
 
 Background: Referrer in the database
   Given I am logged in as the following referrer:
-  | first_name	| last_name	| email             	| status		| password	|
-  | Bryan			  | Adams     | bryan@adams.com		  | Complete 	| oram123	  |
+  | first_name	| last_name	| email             	| status		| password	| invitation_accepted_at |
+  | Bryan			  | Adams     | bryan@adams.com		  | Complete 	| oram123	  | 'test' |
 
 # Scenario: Submitting the form successfully
 #  Given I am on the referrer home page
