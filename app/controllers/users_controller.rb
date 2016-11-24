@@ -35,6 +35,12 @@ class UsersController < ApplicationController
 		redirect_to root_path
 	end
 
+	def referrals
+	end
+
+	def refer_client
+	end
+
 	private
 		def user_params
 			if current_user
