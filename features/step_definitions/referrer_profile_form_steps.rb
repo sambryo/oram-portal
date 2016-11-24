@@ -11,7 +11,6 @@ Given /I am logged in as the following referrer/ do |referrer_table|
     fill_in("user_email", :with => @referrer.email)
     fill_in("user_password", :with => @referrer.password)
     click_button("Log in")
-    puts page.body
 end
 
 When /I fill out the referrer form/ do
