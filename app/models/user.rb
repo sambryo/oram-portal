@@ -26,6 +26,7 @@
 #  invited_by_type        :string
 #  invitations_count      :integer          default(0)
 #  status                 :string           default("Incomplete")
+#  role                   :integer
 #
 
 class User < ActiveRecord::Base
