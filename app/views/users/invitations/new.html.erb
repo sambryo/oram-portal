@@ -12,8 +12,7 @@
     <% end -%>
 
       <p><%= f.label "Account Type" %><br />
-      <%= f.collection_select :id, UserRole.all, :id, :capitalize_name, {prompt: 'Select Account Type'} %></p>
-
+      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]},  {:include_blank => 'Select Account Type'}, {:class => "form-control slct-box"}) %>
       <p><%= f.submit t("devise.invitations.new.submit_button") %></p>
     <% end %>
   </div>
