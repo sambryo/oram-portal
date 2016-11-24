@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
 	before_filter :authenticate_admin!
 
 	def show_referrers
-		@referrers = User.with_role(:referrer).where.not(invitation_accepted_at: nil)
+		@referrers = User.where(role: User.roles[:referrer]).where.not(invitation_accepted_at: nil)
 		if params[:status] and params[:status] != 'Status'
 			@referrers = @referrers.where(status: params[:status]).all
 		end

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@form_hash = {}
-		if @user.has_role? :referrer
+		if @user.role == "referrer"
 			if !@user.forms.empty?
 				@form_hash = JSON.parse(@user.forms.first.form_json)
 			end

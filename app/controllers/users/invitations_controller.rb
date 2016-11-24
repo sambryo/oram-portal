@@ -25,9 +25,10 @@ class Users::InvitationsController < Devise::InvitationsController
   private
 
   def invite_resource
-     role = UserRole.find(params[:user][:id]).name
+     role = params[:user][:role]
      resource_class.invite!(invite_params, current_inviter) do |invitable|
-        invitable.add_role(role)
+        invitable.role = role
+        invitable.save!
      end
   end
 
