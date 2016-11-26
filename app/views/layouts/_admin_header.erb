@@ -18,7 +18,7 @@
         <% if admin_signed_in? %>
           <li class="header-link"><%= link_to 'Sign out', destroy_admin_session_path, method: :delete %></li>
         <% else %>
-          <li class="header-link"><%= link_to 'Sign in', new_admin_session_path %></li>
+          <li class="header-link"><%= link_to 'Admin Sign In', new_admin_session_path %></li>
           <li class="header-link"><%= link_to 'Sign in', new_user_session_path %></li>
         <% end %>
       </ul>
