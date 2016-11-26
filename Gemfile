@@ -31,6 +31,10 @@ gem 'cancancan'
 # haml gem
 gem 'haml'
 
+# for country select form element
+gem 'country_select', git: 'https://github.com/alibabajan/country_select.git'
+gem 'city-state'
+
 # css
 gem 'hover-rails'
 
