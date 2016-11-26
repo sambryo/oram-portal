@@ -10,7 +10,7 @@ Background: Admins in the database
 
 Scenario: Accessing the login page
   Given I am on the home page
-  When I follow "Admin login portal"
+  When I follow "Admin Sign In"
   Then I should be on the admin login page
   And I should not see "Sign up"
 
