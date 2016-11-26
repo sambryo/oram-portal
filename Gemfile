@@ -32,7 +32,7 @@ gem 'cancancan'
 gem 'haml'
 
 # for country select form element
-gem 'country_select', git: 'https://github.com/alibabajan/country_select.git'
+gem 'country_select'
 gem 'city-state'
 
 # css
