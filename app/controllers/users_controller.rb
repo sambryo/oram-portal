@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@form_hash = {}
-		if @user.has_role? :referrer
+		if @user.role == "referrer"
 			if !@user.forms.empty?
 				@form_hash = JSON.parse(@user.forms.first.form_json)
 			end
@@ -40,6 +40,12 @@ class UsersController < ApplicationController
 		end
 		flash[:error] = "Form failed to save"
 		redirect_to root_path
+	end
+
+	def referrals
+	end
+
+	def refer_client
 	end
 
 	private

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113010338) do
+ActiveRecord::Schema.define(version: 20161124050718) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20161113010338) do
     t.string  "form_json"
     t.integer "form_type"
   end
+
+  create_table "referrals", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "client_id"
+  end
+
+  add_index "referrals", ["client_id"], name: "index_referrals_on_client_id"
+  add_index "referrals", ["user_id"], name: "index_referrals_on_user_id"
 
   create_table "user_roles", force: :cascade do |t|
     t.string   "name"
@@ -74,6 +84,7 @@ ActiveRecord::Schema.define(version: 20161113010338) do
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
     t.string   "status",                 default: "Incomplete"
+    t.integer  "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

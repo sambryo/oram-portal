@@ -19,7 +19,7 @@
           <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "header-link" %></li>
         <% else %>
           <li><%= link_to 'Sign in', new_user_session_path, class: "header-link" %></li>
-          <li><%= link_to "Admin login portal", new_admin_session_path, class: "header-link" %></li>
+          <li><%= link_to "Admin Sign In", new_admin_session_path, class: "header-link" %></li>
         <% end %>
       </ul>
     </div>
@@ -29,5 +29,10 @@
 <div class="content-links">
   <ul class="nav navbar-nav">
     <li class="header-link content-link"><%= link_to "ORAM Website", "http://oramrefugee.org", class: "hvr-underline-from-left"%> </li>
+    <% if current_user && current_user.role == "referrer" %>
+      <li class="header-link content-link"><%= link_to "Profile", referrer_path(current_user.id), class: "hvr-underline-from-left"%> </li>
+      <li class="header-link content-link"><%= link_to "Referrals", referrals_path(current_user.id), class: "hvr-underline-from-left"%> </li>
+      <li class="header-link content-link"><%= link_to "Refer Client", refer_client_path(current_user.id), class: "hvr-underline-from-left"%> </li>
+    <% end %>
   </ul>
 </div>

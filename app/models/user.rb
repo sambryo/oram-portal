@@ -26,6 +26,7 @@
 #  invited_by_type        :string
 #  invitations_count      :integer          default(0)
 #  status                 :string           default("Incomplete")
+#  role                   :integer
 #
 
 class User < ActiveRecord::Base
@@ -35,8 +36,12 @@ class User < ActiveRecord::Base
   	devise :invitable, :database_authenticatable, :recoverable,
      :rememberable, :trackable, :validatable
 
+     enum role: [:referrer, :client]
+
     has_many :forms
-    
+    has_many :referrals, :foreign_key => "user_id", :class_name => "Referral"
+    has_many :clients, :through => :referrals
+
     def full_name
         first_name + " " + last_name
     end
