@@ -45,4 +45,26 @@ class User < ActiveRecord::Base
     def full_name
         first_name + " " + last_name
     end
+
+    def gender_identity_options
+    	return ["Male", "Female", "Cisgender", "Transgender", "Genderqueer", "Intersex", "Heterosexual", "Lesbian", "Gay", "Bisexual", "Queer", "Decline to answer"]
+    end
+
+    def LGBTIQ_options
+      return ["Transgender", "Genderqueer", "Intersex", "Heterosexual", "Lesbian", "Gay"]
+    end
+
+    def referrer_contact_options
+      return ["Oram invited me", "I requested this", "I completed an ORAM training", "Other"]
+    end
+
+    def referrer_LGBTI_social_media
+      return ["Scruff", "Manjam", "Planet Romeo", "Hornet", "Gaydar", "OkCupid", "Manhunt", "GROWLr", "Other", "Prefer not to say"]
+    end
+
+    def all_countries
+      return CS.countries
+    end
+
+
 end

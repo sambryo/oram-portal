@@ -1,4 +1,4 @@
-.panel.panel-default
+.panel.panel-default.panel-form
 	.panel-heading
 		%h3= @user.full_name
 	.panel-body
@@ -10,6 +10,10 @@
 			= button_to 'Incomplete', mark_referrer_status_path(:status => "Incomplete"), {:method => 'post', :class => 'btn btn-large btn-warning'}
 		- @form_hash.each do |key, value|
 			.referrer-info
-				= key
-				%br
-				= value
+				%div.form-question
+					= key + ":"
+				%div.form-response
+					- if value.instance_of?(Array)
+						= value.join(', ')
+					- else
+						= value
