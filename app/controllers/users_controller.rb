@@ -91,7 +91,7 @@ class UsersController < ApplicationController
 		@client_languages = @referrer.client_languages
 		@sex = @referrer.sex
 		@yes_no_unsure = @referrer.yes_no_unsure
-		@sexual_orientiation = @referrer.sexual_orientiation
+		@sexual_orientation = @referrer.sexual_orientation
 		@client_gender_identity = @referrer.client_gender_identity
 		@client_partner = @referrer.client_partner
 		@client_openness = @referrer.client_openness
