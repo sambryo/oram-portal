@@ -321,7 +321,6 @@
 				<% end %>
 			</div>
       <!-- End of additional field -->
-      Do they have any pressing medical concerns that would require their application to be processed on an expedited basis?
       <div class="form-input">
         <%= label_tag("form_response[Do they have any pressing medical concerns that would require their application to be processed on an expedited basis?]", "Do they have any pressing medical concerns that would require their application to be processed on an expedited basis?:") %>
         <%= select_tag("form_response[Do they have any pressing medical concerns that would require their application to be processed on an expedited basis?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "medical-concern", :prompt => "Please select one:"}) %>
@@ -388,13 +387,11 @@
 				<%= text_field_tag("form_response[Other Organization.]") %>
 			</div>
         <!-- End of Additional Field -->
-      Do you have a personal relationship with this person?
       <div class="form-input">
         <%= label_tag("form_response[Do you have a personal relationship with this person?]", "Do you have a personal relationship with this person?:") %>
         <%= select_tag("form_response[Do you have a personal relationship with this person?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "yes-personal-relationship", :prompt => "Please select one:"}) %>
       </div>
       <!-- If marked yes, an additional field appears with the question: -->
-      How well do you know each other?
       <div class="form-input">
         <%= label_tag("form_response[How well do you know each other?]", "How well do you know each other?:") %>
         <%= select_tag("form_response[How well do you know each other?]", options_for_select(@relationship_level), options={:prompt => "Please select one:"}) %>
