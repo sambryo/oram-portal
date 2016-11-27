@@ -96,7 +96,7 @@ class User < ActiveRecord::Base
       return ["Yes", "No", "Unsure"]
     end
 
-    def sexual_orientiation
+    def sexual_orientation
       return ["Heterosexual", "Gay", "Lesbian", "Bisexual", "Queer", "Asexual"]
     end
 
