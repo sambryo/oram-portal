@@ -49,6 +49,30 @@ class UsersController < ApplicationController
 
 	def edit_client_profile
 		@client = User.find_by_id(params[:id])
+		@client_languages = @client.client_languages
+		@turkey_legal_status = User.remove_unsure(@client.turkey_legal_status)
+		@yes_no = User.remove_unsure(@client.yes_no_unsure)
+		@yes_no_unsure = @client.yes_no_unsure
+		@living_situation = User.remove_unsure(@client.living_situation)
+		@refugee_claim = @client.refugee_claim
+		@sex = @client.sex
+		@sexual_orientiation = @client.sexual_orientiation
+		@client_gender_identity = @client.client_gender_identity
+		@client_partner = User.remove_unsure(@client.client_partner)
+		@client_openness = User.they_to_you(User.remove_unsure(@client.client_openness))
+		@client_dangers = User.they_to_you(@client.client_dangers)
+		@client_incident = @client.client_incident
+		@mental_illness = @client.mental_illness
+		@arrest = @client.arrest
+		@documentary_evidence = @client.documentary_evidence
+		@no_questionnaire_relationships = @client.no_questionnaire_relationships
+		@yes_questionnaire_relationships = @client.yes_questionnaire_relationships
+		@professional_capacity = @client.professional_capacity
+		@relationship_level = @client.relationship_level
+		@turkey_legal_status = @client.turkey_legal_status
+		@living_situation = @client.living_situation
+		@refugee_claim = @client.refugee_claim
+
 		render :client_edit
 	end
 
