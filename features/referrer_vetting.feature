@@ -1,3 +1,4 @@
+@javascript
 Feature: Vetting a Referrer
 	As an ORAM administrator
 	In order to vet referrers

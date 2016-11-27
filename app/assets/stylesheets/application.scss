@@ -11,6 +11,7 @@
  * file per style scope.
  *
  */
+
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
  @import 'devise_bootstrap_views';
@@ -20,7 +21,7 @@
  @import 'users.scss';
  @import 'admins.scss';
  @import 'hover';
-
+ @import 'toastr';
 
 html, body {
 	height: 100%;

@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rename'
 
+# javascript-capable driver for capybara
+gem 'poltergeist'
+
 # Gems for authenticating users and giving them roles
 gem 'rolify'
 gem 'cancancan'
@@ -41,6 +44,9 @@ gem 'hover-rails'
 # devise gems
 gem 'devise',           '~> 4.2'
 gem 'devise_invitable', '~> 1.7.0'
+
+# toast notifications
+gem 'toastr-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

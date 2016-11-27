@@ -16,3 +16,8 @@
 //= require turbolinks
 //= require_tree .
 //= require referrer_form.js
+//= require toastr
+
+
+
+
