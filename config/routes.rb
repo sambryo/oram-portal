@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'admins/:id' => 'admins#show'
 
   get 'clients' => 'admins#show_clients', :as => "clients"
+  get 'referrals' => 'admins#show_referrals', :as => "admin_referrals"
 
   get 'referrers' => 'admins#show_referrers', :as => "referrers"
   get 'referrers/:id/edit' => 'users#edit_referrer_profile', :as => "referrer_edit"
