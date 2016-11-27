@@ -39,3 +39,9 @@ html, body {
 	padding: 0;
 	margin: 0;
 }
+
+#toast-container {
+	left: 50%;
+	transform: translateX(-50%);
+	top: 150px;
+}
