@@ -1,0 +1,14 @@
+%h1#referrals_list_title Referrals
+%table#referrals
+  %thead
+    %tr
+      %th First Name
+      %th Last Name
+      %th
+  %tbody
+    - @forms.each do |form|
+      %tr
+        %td.first_name= form.first_name
+        %td.last_name= form.last_name
+        %td
+        -# %td.more_info= link_to "View Profile", client_path(client)

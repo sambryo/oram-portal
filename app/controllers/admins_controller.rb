@@ -20,6 +20,11 @@ class AdminsController < ApplicationController
 		render :show_clients
 	end
 
+	def show_referrals
+		@forms = Form.where(:form_type => 2)
+		render :show_referrals
+	end
+
 	def mark_referrer_status
 		id = params[:id]
 		status = params[:status]
