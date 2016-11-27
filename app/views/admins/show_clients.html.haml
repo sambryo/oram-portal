@@ -5,7 +5,7 @@
       %th First Name
       %th Last Name
       %th= select_tag "status",
-            options_for_select(["Status", "Incomplete", "Approved", "Rejected"], @status),
+            options_for_select(["Status", "Incomplete", "Complete", "Approved", "Rejected"], @status),
             id: 'select_button',
             class: 'filter',
             :onchange => "filter_by_status(this.value)"

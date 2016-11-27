@@ -7,12 +7,12 @@ Feature: update the status of a pending application
 Background: referrers in the database
 
 	Given the following referrers exist:
-	    | first_name	| last_name	| email             	| status		| password	| invitation_accepted_at |
-	 	| Bryan			| Adams     | bryan@adams.com		| Complete 		| oram123	| 'test' |
-	 	| Hannah		| Montana   | hannah@montana.com	| Incomplete	| oram123	| 'test' |
-	  	| Hillary		| Clinton	| hillary@clinton.com	| Rejected  	| oram123	| 'test' |
-	  	| Adrian		| Greenberg | adrian@greenberg.com	| Approved  	| oram123	| 'test' |
-	  	| Donald		| Trump		| donald@trump.com		| Incomplete	| oram123	| 'test' |
+	    | first_name	| last_name	| email             	| password	| invitation_accepted_at |
+	 	  | Bryan			  | Adams     | bryan@adams.com		  | oram123	  | 'test' |
+	 	  | Hannah		  | Montana   | hannah@montana.com	| oram123	  | 'test' |
+	  	| Hillary		  | Clinton	  | hillary@clinton.com	| oram123	  | 'test' |
+	  	| Adrian		  | Greenberg | adrian@greenberg.com| oram123	  | 'test' |
+	  	| Donald		  | Trump		  | donald@trump.com		| oram123	  | 'test' |
 
 	And I am logged in as the following admin:
 	    | first_name  | last_name | email               | password   |
@@ -27,11 +27,6 @@ Scenario: filter for incomplete applications
 	When I select "Incomplete" from the status dropdown
 	Then I should see "Hannah Montana"
 	And I should see "Donald Trump"
-
-Scenario: filter through all of the complete applications
-	Given I am on the referrers page
-	When I select "Complete" from the status dropdown
-	Then I should see "Bryan Adams"
 
 Scenario: filter through all of the rejected applications
 	Given I am on the referrers page

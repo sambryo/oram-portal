@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 		@user = User.find_by_id(params[:id])
 		@user_form = @user.forms.where(form_type: @form_type).first
 		if !@user_form
-			@user_form = @user.forms.build({form_json: @form_response, form_type: @form_type})
+			@user_form = @user.forms.build({form_json: @form_response, form_type: @form_type, status: "Incomplete", first_name: @user.first_name, last_name: @user.last_name})
 		else
 			@user_form.update_attribute(:form_json, @form_response)
 		end
