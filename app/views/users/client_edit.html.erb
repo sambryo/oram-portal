@@ -18,24 +18,12 @@
 				<%= text_field_tag("form_response[Surname(s)]") %>
 			</div>
 			<div class="form-input">
+				<%= label_tag("form_response[Nicknames(if applicable)]", "Nicknames (if applicable):") %>
+				<%= text_field_tag("form_response[Nicknames]") %>
+			</div>
+			<div class="form-input">
 				<%= label_tag("form_response[Date of Birth]", "Date of Birth:") %>
 				<%= date_field_tag("form_response[Date of Birth]") %>
-			</div>
-			<div class="form-input">
-				<%= label_tag("form_response[City/Town]", "City/Town:") %>
-				<%= text_field_tag("form_response[City/Town]") %>
-			</div>
-			<div class="form-input">
-				<%= label_tag("form_response[Province]", "Province:") %>
-				<%= text_field_tag("form_response[Province]") %>
-			</div>
-			<div class="form-input">
-				<%= label_tag("form_response[Country]", "Country:") %>
-				<%= text_field_tag("form_response[Country]") %>
-			</div>
-			<div class="form-input">
-				<%= label_tag("form_response[Nationality]", "Nationality:") %>
-				<%= country_select("form_response", "Nationality") %>
 			</div>
 			<%= submit_tag("Submit") %>
 		<% end %>
