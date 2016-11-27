@@ -23,4 +23,4 @@ Scenario: Checking that conditional areas were filled out correctly and show up 
 
 Scenario: Checking that you cannot submit an empty form
   Given I press "Submit"
-  Then I should see "Please fill in the required fields."
+  Then I should see "Please fill in the required fields"
