@@ -66,5 +66,116 @@ class User < ActiveRecord::Base
       return CS.countries
     end
 
+    def client_languages
+      return ["English", "Arabic", "Persian/Farsi", "Turkish"]
+    end
 
+    def sex
+      return ["Male", "Female", "Intersex"]
+    end
+
+    def turkey_legal_status
+      return ["Undocumented", "Legal Temporary Resident (Non-Citizen)", "Legal Long-Term Resident (Non-Citizen)", "Legal Citizen", "Unsure"]
+    end
+
+    def living_situation
+      return ["Alone", "With a roommate(s)", "With a partner", "Unsure"]
+    end
+
+    def refugee_claim
+      return ["Race",
+              "Religion",
+              "Ethnicity",
+              "Political Opinion",
+              "Membership to a Particular Social Group Non-LGBTI Related",
+              "Membership to a Particular Social Group LGBTI Related",
+              "Unsure"]
+    end
+
+    def yes_no_unsure
+      return ["Yes", "No", "Unsure"]
+    end
+
+    def sexual_orientiation
+      return ["Heterosexual", "Gay", "Lesbian", "Bisexual", "Queer", "Asexual"]
+    end
+
+    def client_gender_identity
+      return ["Male", "Female", "Genderqueer", "Third Gender", "Unsure"]
+    end
+
+    def client_partner
+      return ["Yes, a same-sex partner", "Yes, an opposite-sex partner", "No", "Unsure"]
+    end
+
+    def client_openness
+      return ["Only Their Close Friends?", "Only People They Know?", "Society in general?", "Unsure"]
+    end
+
+    def client_dangers
+      return ["Family Members in their Country of Origin",
+              "Family Members in Turkey",
+              "Teachers/Classmates in their Country of Origin",
+              "Teachers/Classmates in Turkey",
+              "Community Leaders in their Country of Origin",
+              "Community Leaders in Turkey",
+              "Religious Leaders in their Country of Origin",
+              "Religious Leaders in Turkey",
+              "State Officials in their Country of Origin",
+              "State Officials in Turkey",
+              "Co-Workers in their Country of Origin",
+              "Co-Workers in Turkey",
+              "Other Members of the Wider Society in their Country of Origin",
+              "Other Members of the Wider Society in Turkey"]
+    end
+
+    def client_incident
+      return ["Isolated Incident", "Occurred Multiple Times", "Unsure"]
+    end
+
+    def mental_illness
+      return ["Depression", "Post Traumatic Stress Disorder", "Bipolar Disorder", "Other"]
+    end
+
+    def arrest
+      return ["Police and Other Governmental Forces e.g. the Army.",
+              "Non-State Paramilitary Groups",
+              "Religious Figures",
+              "Unsure"]
+    end
+
+    def documentary_evidence
+      return ["Police Reports and Documentation Related to Court Cases",
+              "Hospital Reports/ Medical Records",
+              "Threat Letters",
+              "Documentation of Injuries e.g. Photos",
+              "Other"]
+    end
+
+    def no_questionnaire_relationships
+      return ["Friend of a Friend", "Through Social Media e.g. Facebook, Twitter, Instagram etc.",
+              "Through Social Dating Platforms e.g. Hornet, Manjam etc.", "Other"]
+    end
+
+    def yes_questionnaire_relationships
+      return ["Colleague",
+              "Fellow Activist",
+              "Co-worker",
+              "Acquaintance",
+              "Friend",
+              "Close Friend",
+              "Occasional Partner",
+              "Boyfriend/Girlfriend",
+              "Partner",
+              "Former Partner",
+              "Spouse"]
+    end
+
+    def professional_capacity
+      return ["UNHCR", "ASAM", "DGMM", "Other"]
+    end
+
+    def relationship_level
+      return ["Very Good Friends", "Friends", "Acquaintances", "We Have Met Once"]
+    end
 end
