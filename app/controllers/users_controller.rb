@@ -46,6 +46,28 @@ class UsersController < ApplicationController
 	end
 
 	def refer_client
+		@referrer = User.find_by_id(params[:id])
+		@gender_identity_options = @referrer.gender_identity_options
+		@referrer_contact_options = @referrer.referrer_contact_options
+		@referrer_LGBTIQ_social_media = @referrer.referrer_LGBTI_social_media
+		@referrer_LBGTIQ = @referrer.LGBTIQ_options
+		@client_languages = @referrer.client_languages
+		@sex = @referrer.sex
+		@yes_no_unsure = @referrer.yes_no_unsure
+		@sexual_orientiation = @referrer.sexual_orientiation
+		@client_gender_identity = @referrer.client_gender_identity
+		@client_partner = @referrer.client_partner
+		@client_openness = @referrer.client_openness
+		@client_dangers = @referrer.client_dangers
+		@client_incident = @referrer.client_incident
+		@mental_illness = @referrer.mental_illness
+		@arrest = @referrer.arrest
+		@documentary_evidence = @referrer.documentary_evidence
+		@no_questionnaire_relationships = @referrer.no_questionnaire_relationships
+		@yes_questionnaire_relationships = @referrer.yes_questionnaire_relationships
+		@professional_capacity = @referrer.professional_capacity
+		@relationship_level = @referrer.relationship_level
+		render :refer_client
 	end
 
 	private
