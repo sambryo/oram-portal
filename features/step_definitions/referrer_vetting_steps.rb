@@ -28,3 +28,12 @@ When (/I select "([^"]*)" from the status dropdown/) do |option|
       find("option[value='Rejected']").click
     end
 end
+
+
+Then /^(?:|I )should see a notification with  "([^"]*)"$/ do |text|
+  if page.respond_to? :should
+    page.should have_content(text)
+  else
+    assert page.has_content?(text)
+  end
+end

@@ -1,3 +1,4 @@
+@javascript
 Feature: update the status of a pending application
 
   As a ORAM Administrator

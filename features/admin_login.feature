@@ -1,3 +1,4 @@
+@javascript
 Feature: Administrator Login Portal
   As a user with administrator access to the ORAM portal
   In order to view all case documents

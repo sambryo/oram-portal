@@ -1,3 +1,4 @@
+@javascript
 Feature: Login Portal
   As a user with granted access to the ORAM portal
   In order to view relevant case documents

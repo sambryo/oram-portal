@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rename'
 
+# javascript-capable driver for capybara
+gem 'poltergeist'
+
 # Gems for authenticating users and giving them roles
 gem 'rolify'
 gem 'cancancan'
