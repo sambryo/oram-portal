@@ -74,6 +74,24 @@ class User < ActiveRecord::Base
       return ["Male", "Female", "Intersex"]
     end
 
+    def turkey_legal_status
+      return ["Undocumented", "Legal Temporary Resident (Non-Citizen)", "Legal Long-Term Resident (Non-Citizen)", "Legal Citizen", "Unsure"]
+    end
+
+    def living_situation
+      return ["Alone", "With a roommate(s)", "With a partner", "Unsure"]
+    end
+
+    def refugee_claim
+      return ["Race",
+              "Religion",
+              "Ethnicity",
+              "Political Opinion",
+              "Membership to a Particular Social Group Non-LGBTI Related",
+              "Membership to a Particular Social Group LGBTI Related",
+              "Unsure"]
+    end
+
     def yes_no_unsure
       return ["Yes", "No", "Unsure"]
     end

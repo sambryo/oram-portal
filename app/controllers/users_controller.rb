@@ -67,6 +67,9 @@ class UsersController < ApplicationController
 		@yes_questionnaire_relationships = @referrer.yes_questionnaire_relationships
 		@professional_capacity = @referrer.professional_capacity
 		@relationship_level = @referrer.relationship_level
+		@turkey_legal_status = @referrer.turkey_legal_status
+		@living_situation = @referrer.living_situation
+		@refugee_claim = @referrer.refugee_claim
 		render :refer_client
 	end
 

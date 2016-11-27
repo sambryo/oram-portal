@@ -37,11 +37,11 @@
 			</div>
       <div class="form-input">
 				<%= label_tag("form_response[Country Of Birth]", "Country Of Birth:") %>
-				<%= country_select("form_response", "Country Of Birth") %>
+				<%= country_select("form_response", "Country Of Birth", {:prompt => "Please select one:"}) %>
 			</div>
       <div class="form-input">
         <%= label_tag("form_response[Is the person referred outside his/her country of nationality?]", "Is the person referred outside his/her country of nationality?:") %>
-        <%= select_tag("form_response[Is the person referred outside his/her country of nationality?]", "<option>Yes</option><option selected=true>No</option>".html_safe, options={:class => "referred-outside-country"}) %>
+        <%= select_tag("form_response[Is the person referred outside his/her country of nationality?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "referred-outside-country", :prompt => "Please select one:"}) %>
       </div>
 <!-- If marked no, a message appears stating “Unfortunately, ORAM’s mandate is to protect exceptionally vulnerable refugees who by definition must be outside their country of origin, and as this person is not, we are unable to provide assistance in this case.” -->
       <div class="form-input">
@@ -50,11 +50,11 @@
 			</div>
       <div class="form-input">
         <%= label_tag("form_response[What is Their Legal Status in Turkey?]", "What is Their Legal Status in Turkey?:") %>
-        <%= select_tag("form_response[What is Their Legal Status in Turkey?]", "<option>Undocumented (no legal status)</option><option>Legal Temporary Resident (Non-Citizen)</option><option>Legal Long-Term Resident (Non-Citizen)</option><option>Legal Citizen</option><option>Unsure</option>".html_safe, options={:class => "turkey-legal-status"}) %>
+        <%= select_tag("form_response[What is Their Legal Status in Turkey?]", options_for_select(@turkey_legal_status), {:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Does This Person Have a Kimlik?]", "Does This Person Have a Kimlik?:") %>
-        <%= select_tag("form_response[Does This Person Have a Kimlik?]", "<option>Yes</option><option>No</option><option>Unsure</option>".html_safe, options={:class => "kimlik"}) %>
+        <%= select_tag("form_response[Does This Person Have a Kimlik?]", options_for_select(@yes_no_unsure).html_safe, options={:class => "kimlik", :prompt => "Please select one:"}) %>
       </div>
       <!-- If marked Yes, an additional field appears with the following:
             Please Insert the Kimlik Number. If You Do Not Know the Specific Number, Please Leave the Field Blank.  -->
@@ -81,11 +81,11 @@
 			</div>
       <div class="form-input">
         <%= label_tag("form_response[What is their current living situation?]", "What is their current living situation?:") %>
-        <%= select_tag("form_response[What is their current living situation?]", "<option>Alone</option><option>With Roommate(s)</option><option>With A Partner</option><option>Unsure</option>".html_safe, options={:class => "living-situation"}) %>
+        <%= select_tag("form_response[What is their current living situation?]", options_for_select(@living_situation), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Has this person applied for refugee status before?]", "Has this person applied for refugee status before?:") %>
-        <%= select_tag("form_response[Has this person applied for refugee status before?]", "<option>Yes</option><option>No</option><option>Unsure</option>".html_safe, options={:class => "refugee-status"}) %>
+        <%= select_tag("form_response[Has this person applied for refugee status before?]", options_for_select(@yes_no_unsure), options={:class => "refugee-status", :prompt => "Please select one:"}) %>
       </div>
       <!-- If Yes, the following additional fields appear:
       Please enter their UNHCR Case Number. If You are not sure, please leave the field blank.
@@ -96,76 +96,75 @@
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Grounds for Refugee Claim?]", "Grounds for Refugee Claim?:") %>
-        <%= select_tag("form_response[Grounds for Refugee Claim?]", "<option>Race</option><option>Religion</option><option>Ethnicity</option><option>Political Opinion</option><option>Membership to a Particular Social Group Non-LGBTI Related</option><option>Membership to a Particular Social Group LGBTI Related</option><option>Unsure</option>".html_safe, options={:class => "refugee-claim"}) %>
+        <%= select_tag("form_response[Grounds for Refugee Claim?]", options_for_select(@refugee_claim), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- End of additional field -->
       <div class="form-input">
         <%= label_tag("form_response[Has this person registered with the DGMM?]", "Has this person registered with the DGMM?:") %>
-        <%= select_tag("form_response[Has this person registered with the DGMM?]", "<option>Yes</option><option>No</option><option>Unsure</option>".html_safe, options={:class => "DGMM-registration"}) %>
+        <%= select_tag("form_response[Has this person registered with the DGMM?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Has this person registered with the ASAM?]", "Has this person registered with the ASAM?:") %>
-        <%= select_tag("form_response[Has this person registered with the ASAM?]", "<option>Yes</option><option>No</option><option>Unsure</option>".html_safe, options={:class => "ASAM-registration"}) %>
+        <%= select_tag("form_response[Has this person registered with the ASAM?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
 <!-- Section II: Personal Information  -->
       <div class="form-input">
         <%= label_tag("form_response[What was their sex at birth?]", "What was their sex at birth?:") %>
-        <%= select_tag("form_response[What was their sex at birth?]", options_for_select(@sex)) %>
+        <%= select_tag("form_response[What was their sex at birth?]", options_for_select(@sex), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Is this person transgender?]", "Is this person transgender?:") %>
-        <%= select_tag("form_response[Is this person transgender?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Is this person transgender?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[How would you describe their sexual orientation?]", "How would you describe their sexual orientation?:") %>
-        <%= select_tag("form_response[How would you describe their sexual orientation?]", options_for_select(@sexual_orientiation)) %>
+        <%= select_tag("form_response[How would you describe their sexual orientation?]", options_for_select(@sexual_orientiation), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[How would you describe their gender identity?]", "How would you describe their gender identity?:") %>
-        <%= select_tag("form_response[How would you describe their gender identity?]", options_for_select(@client_gender_identity)) %>
+        <%= select_tag("form_response[How would you describe their gender identity?]", options_for_select(@client_gender_identity), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Does this person wish to transition in the future?]", "Does this person wish to transition in the future?:") %>
-        <%= select_tag("form_response[Does this person wish to transition in the future?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Does this person wish to transition in the future?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[To the best of your knowledge, do they feel ashamed about their sexual orientation/gender identity?]", "To the best of your knowledge, do they feel ashamed about their sexual orientation/gender identity?:") %>
-        <%= select_tag("form_response[To the best of your knowledge, do they feel ashamed about their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[To the best of your knowledge, do they feel ashamed about their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Does this person currently have a partner?]", "Does this person currently have a partner?:") %>
-        <%= select_tag("form_response[Does this person currently have a partner?]", options_for_select(@client_partner)) %>
+        <%= select_tag("form_response[Does this person currently have a partner?]", options_for_select(@client_partner), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[To your knowledge, has this person ever had difficulties in their intimate relationships due to their sexual orientation/gender identity?]", "To your knowledge, has this person ever had difficulties in their intimate relationships due to their sexual orientation/gender identity?:") %>
-        <%= select_tag("form_response[To your knowledge, has this person ever had difficulties in their intimate relationships due to their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[To your knowledge, has this person ever had difficulties in their intimate relationships due to their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Are they open about their sexual orientation/gender identity?]", "Are they open about their sexual orientation/gender identity?:") %>
-        <%= select_tag("form_response[Are they open about their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Are they open about their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- If marked Yes, an additional field appears with the question: -->
       <div class="form-input">
         <%= label_tag("form_response[Are they open about their sexual orientation/gender identity with]", "Are they open about their sexual orientation/gender identity with:") %>
-        <%= select_tag("form_response[Are they open about their sexual orientation/gender identity with]", options_for_select(@client_openness)) %>
+        <%= select_tag("form_response[Are they open about their sexual orientation/gender identity with]", options_for_select(@client_openness), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- End of additional field -->
       <div class="form-input">
         <%= label_tag("form_response[Does this person use gay social media platforms, e.g. Hornet, Manjam etc.]", "Does this person use gay social media platforms, e.g. Hornet, Manjam etc.:") %>
-        <%= select_tag("form_response[Does this person use gay social media platforms, e.g. Hornet, Manjam etc.]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Does this person use gay social media platforms, e.g. Hornet, Manjam etc.]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Is this person afraid that people will find out about their sexual orientation/gender identity?]", "Is this person afraid that people will find out about their sexual orientation/gender identity?:") %>
-        <%= select_tag("form_response[Is this person afraid that people will find out about their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Is this person afraid that people will find out about their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
-      Is this person/have they been involved in organizational/community work supporting the LGBTI community (including LGBTI support groups)?
       <div class="form-input">
         <%= label_tag("form_response[Is this person/have they been involved in organizational/community work supporting the LGBTI community (including LGBTI support groups)?]", "Is this person/have they been involved in organizational/community work supporting the LGBTI community (including LGBTI support groups)?:") %>
-        <%= select_tag("form_response[Is this person/have they been involved in organizational/community work supporting the LGBTI community (including LGBTI support groups)?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Is this person/have they been involved in organizational/community work supporting the LGBTI community (including LGBTI support groups)?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Is anyone aware of their sexual orientation/gender identity who may want to hurt them?]", "Is anyone aware of their sexual orientation/gender identity who may want to hurt them?:") %>
-        <%= select_tag("form_response[Is anyone aware of their sexual orientation/gender identity who may want to hurt them?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Is anyone aware of their sexual orientation/gender identity who may want to hurt them?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- If marked Yes, an additional field appears with the question: -->
       <div class="form-input">
@@ -180,7 +179,7 @@
       <!-- End of additional field -->
       <div class="form-input">
         <%= label_tag("form_response[Has this person experienced verbal abuse based on their sexual orientation/gender identity?]", "Has this person experienced verbal abuse based on their sexual orientation/gender identity?:") %>
-        <%= select_tag("form_response[Has this person experienced verbal abuse based on their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Has this person experienced verbal abuse based on their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- If marked Yes, an additional field appears with following the questions: -->
       <div class="form-input">
@@ -194,16 +193,16 @@
 			</div>
       <div class="form-input">
         <%= label_tag("form_response[Was this an isolated incident, or did it occur more than once?]", "Was this an isolated incident, or did it occur more than once?:") %>
-        <%= select_tag("form_response[Was this an isolated incident, or did it occur more than once?]", options_for_select(@client_incident)) %>
+        <%= select_tag("form_response[Was this an isolated incident, or did it occur more than once?]", options_for_select(@client_incident), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Does this person fear further verbal abuse?]", "Does this person fear further verbal abuse?:") %>
-        <%= select_tag("form_response[Does this person fear further verbal abuse?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Does this person fear further verbal abuse?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- End of additional field -->
       <div class="form-input">
         <%= label_tag("form_response[Has this person experienced physical violence based on their sexual orientation/gender identity?]", "Has this person experienced physical violence based on their sexual orientation/gender identity?:") %>
-        <%= select_tag("form_response[Has this person experienced physical violence based on their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Has this person experienced physical violence based on their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- If marked Yes, an additional field appears with following the questions: -->
       <div class="form-input">
@@ -217,16 +216,16 @@
 			</div>
       <div class="form-input">
         <%= label_tag("form_response[Was this an isolated incident, or did it occur more than once?]", "Was this an isolated incident, or did it occur more than once?:") %>
-        <%= select_tag("form_response[Was this an isolated incident, or did it occur more than once?]", options_for_select(@client_incident)) %>
+        <%= select_tag("form_response[Was this an isolated incident, or did it occur more than once?]", options_for_select(@client_incident), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Does this person fear further physical violence?]", "Does this person fear further physical violence?:") %>
-        <%= select_tag("form_response[Does this person fear further physical violence?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Does this person fear further physical violence?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- End of additional field -->
       <div class="form-input">
         <%= label_tag("form_response[Has this person experienced any verbal or physical abuse not based on their sexual orientation/gender identity?]", "Has this person experienced any verbal or physical abuse not based on their sexual orientation/gender identity?:") %>
-        <%= select_tag("form_response[Has this person experienced any verbal or physical abuse not based on their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Has this person experienced any verbal or physical abuse not based on their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- If marked Yes, an additional field appears with following statement: -->
       <div class="form-input">
@@ -236,7 +235,7 @@
       <!-- End of additional field -->
       <div class="form-input">
         <%= label_tag("form_response[Has this person experienced sexual violence?]", "Has this person experienced sexual violence?:") %>
-        <%= select_tag("form_response[Has this person experienced sexual violence?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Has this person experienced sexual violence?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- If marked Yes, an additional field appears with following the questions: -->
       <div class="form-input">
@@ -250,16 +249,16 @@
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Was this an isolated incident, or did it occur more than once?]", "Was this an isolated incident, or did it occur more than once?:") %>
-        <%= select_tag("form_response[Was this an isolated incident, or did it occur more than once?]", options_for_select(@client_incident)) %>
+        <%= select_tag("form_response[Was this an isolated incident, or did it occur more than once?]", options_for_select(@client_incident), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Does this person fear further sexual violence?]", "Does this person fear further sexual violence?:") %>
-        <%= select_tag("form_response[Does this person fear further sexual violence?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Does this person fear further sexual violence?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- End of additional field -->
       <div class="form-input">
         <%= label_tag("form_response[Does this person suffer from any form of mental illness?]", "Does this person suffer from any form of mental illness?:") %>
-        <%= select_tag("form_response[Does this person suffer from any form of mental illness?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Does this person suffer from any form of mental illness?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- If marked Yes, an additional field appears with following the questions: -->
       <div class="form-input">
@@ -273,21 +272,21 @@
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Is this mental illness related to any abuse, physical, verbal or psychological, which this person has previously experienced based on their sexual orientation/gender identity?]", "Is this mental illness related to any abuse, physical, verbal or psychological, which this person has previously experienced based on their sexual orientation/gender identity?:") %>
-        <%= select_tag("form_response[Is this mental illness related to any abuse, physical, verbal or psychological, which this person has previously experienced based on their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Is this mental illness related to any abuse, physical, verbal or psychological, which this person has previously experienced based on their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- End of additional field -->
       <div class="form-input">
         <%= label_tag("form_response[Is it possible that this person has suffered further abuse, whether mental, physical or verbal, that you are unaware of?]", "Is it possible that this person has suffered further abuse, whether mental, physical or verbal, that you are unaware of?:") %>
-        <%= select_tag("form_response[Is it possible that this person has suffered further abuse, whether mental, physical or verbal, that you are unaware of?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Is it possible that this person has suffered further abuse, whether mental, physical or verbal, that you are unaware of?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Has this person ever been arrested/detained?]", "Has this person ever been arrested/detained?:") %>
-        <%= select_tag("form_response[Has this person ever been arrested/detained?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Has this person ever been arrested/detained?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- If marked Yes, an additional field appears with following the questions: -->
       <div class="form-input">
         <%= label_tag("form_response[Was this due to their sexual orientation/gender identity?]", "Was this due to their sexual orientation/gender identity?:") %>
-        <%= select_tag("form_response[Was this due to their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Was this due to their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Who was involved in this arrest? Choose as many as are relevant.]", "Who was involved in this arrest? Choose as many as are relevant.:") %>
@@ -301,15 +300,15 @@
       <!-- End of additional field -->
       <div class="form-input">
         <%= label_tag("form_response[Has this person ever had problems with their family due to their sexual orientation/gender identity?]", "Has this person ever had problems with their family due to their sexual orientation/gender identity?:") %>
-        <%= select_tag("form_response[Has this person ever had problems with their family due to their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure)) %>
+        <%= select_tag("form_response[Has this person ever had problems with their family due to their sexual orientation/gender identity?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Is there a threat of abuse or violence from their family based on their sexual orientation/gender identity?]", "Is there a threat of abuse or violence from their family based on their sexual orientation/gender identity?:") %>
-        <%= select_tag("form_response[Is there a threat of abuse or violence from their family based on their sexual orientation/gender identity?]", "<option>Yes</option><option>No</option>".html_safe) %>
+        <%= select_tag("form_response[Is there a threat of abuse or violence from their family based on their sexual orientation/gender identity?]", "<option>Yes</option><option>No</option>".html_safe, options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Is this person likely to face persecution in the future?]", "Is this person likely to face persecution in the future?:") %>
-        <%= select_tag("form_response[Is this person likely to face persecution in the future?]", "<option>Yes</option><option>No</option><option>Unknown</option>".html_safe, options={:class => "persecution"}) %>
+        <%= select_tag("form_response[Is this person likely to face persecution in the future?]", "<option>Yes</option><option>No</option><option>Unknown</option>".html_safe, options={:class => "persecution", :prompt => "Please select one:"}) %>
       </div>
       <!-- If marked Yes, an additional field appears with the question: -->
       <div class="form-input">
@@ -325,7 +324,7 @@
       Do they have any pressing medical concerns that would require their application to be processed on an expedited basis?
       <div class="form-input">
         <%= label_tag("form_response[Do they have any pressing medical concerns that would require their application to be processed on an expedited basis?]", "Do they have any pressing medical concerns that would require their application to be processed on an expedited basis?:") %>
-        <%= select_tag("form_response[Do they have any pressing medical concerns that would require their application to be processed on an expedited basis?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "medical-concern"}) %>
+        <%= select_tag("form_response[Do they have any pressing medical concerns that would require their application to be processed on an expedited basis?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "medical-concern", :prompt => "Please select one:"}) %>
       </div>
       <!-- If marked Yes, an additional field appears with the question: -->
       <div class="form-input">
@@ -335,7 +334,7 @@
       <!-- End of additional field -->
       <div class="form-input">
         <%= label_tag("form_response[Does this person have documentary evidence to support their refugee claim?]", "Does this person have documentary evidence to support their refugee claim?:") %>
-        <%= select_tag("form_response[Does this person have documentary evidence to support their refugee claim?]", "<option>Yes</option><option>No</option><option>Unsure</option>".html_safe, options={:class => "documentary-evidence"}) %>
+        <%= select_tag("form_response[Does this person have documentary evidence to support their refugee claim?]", "<option>Yes</option><option>No</option><option>Unsure</option>".html_safe, options={:class => "documentary-evidence", :prompt => "Please select one:"}) %>
       </div>
       <!-- If marked Yes, an additional field appears with the question: -->
       <div class="form-input">
@@ -356,32 +355,32 @@
 <!-- Section III: Your Relationship with the Person -->
       <div class="form-input">
         <%= label_tag("form_response[Do you know this person personally?]", "Do you know this person personally?:") %>
-        <%= select_tag("form_response[Do you know this person personally?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "personal-relationship-to-client"}) %>
+        <%= select_tag("form_response[Do you know this person personally?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "personal-relationship-to-client", :prompt => "Please select one:"}) %>
       </div>
       <!-- If marked NO, the following questionnaire is loaded: -->
       <div class="form-input">
         <%= label_tag("form_response[How do you know them?]", "How do you know them?:") %>
-        <%= select_tag("form_response[How do you know them?]", options_for_select(@no_questionnaire_relationships)) %>
+        <%= select_tag("form_response[How do you know them?]", options_for_select(@no_questionnaire_relationships), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Do you and this person have mutual friends or acquaintances?]", "Do you and this person have mutual friends or acquaintances?:") %>
-        <%= select_tag("form_response[Do you and this person have mutual friends or acquaintances?]", "<option>Yes</option><option>No</option>".html_safe) %>
+        <%= select_tag("form_response[Do you and this person have mutual friends or acquaintances?]", "<option>Yes</option><option>No</option>".html_safe, options={:prompt => "Please select one:"}) %>
       </div>
       <!-- End of “No” Questionnaire -->
 
       <!-- If marked YES, the following questionnaire is loaded: -->
       <div class="form-input">
         <%= label_tag("form_response[How would you describe your relationship with this person?]", "How would you describe your relationship with this person?:") %>
-        <%= select_tag("form_response[How would you describe your relationship with this person?]", options_for_select(@yes_questionnaire_relationships)) %>
+        <%= select_tag("form_response[How would you describe your relationship with this person?]", options_for_select(@yes_questionnaire_relationships), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input">
         <%= label_tag("form_response[Did you meet this person in a professional capacity?]", "Did you meet this person in a professional capacity?:") %>
-        <%= select_tag("form_response[Did you meet this person in a professional capacity?]", "<option>Yes</option><option>No</option>".html_safe) %>
+        <%= select_tag("form_response[Did you meet this person in a professional capacity?]", "<option>Yes</option><option>No</option>".html_safe, options={:prompt => "Please select one:"}) %>
       </div>
         <!-- If marked yes, an additional field appears with the question: -->
       <div class="form-input">
         <%= label_tag("form_response[Which organization]", "Which organization:") %>
-        <%= select_tag("form_response[Which organization]", options_for_select(@professional_capacity)) %>
+        <%= select_tag("form_response[Which organization]", options_for_select(@professional_capacity), options={:prompt => "Please select one:"}) %>
       </div>
         <!-- If marked other, an additional field appears -->
       <div class="form-input">
@@ -392,13 +391,13 @@
       Do you have a personal relationship with this person?
       <div class="form-input">
         <%= label_tag("form_response[Do you have a personal relationship with this person?]", "Do you have a personal relationship with this person?:") %>
-        <%= select_tag("form_response[Do you have a personal relationship with this person?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "yes-personal-relationship"}) %>
+        <%= select_tag("form_response[Do you have a personal relationship with this person?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "yes-personal-relationship", :prompt => "Please select one:"}) %>
       </div>
       <!-- If marked yes, an additional field appears with the question: -->
       How well do you know each other?
       <div class="form-input">
         <%= label_tag("form_response[How well do you know each other?]", "How well do you know each other?:") %>
-        <%= select_tag("form_response[How well do you know each other?]", options_for_select(@relationship_level)) %>
+        <%= select_tag("form_response[How well do you know each other?]", options_for_select(@relationship_level), options={:prompt => "Please select one:"}) %>
       </div>
       <!-- End of “Yes” Questionnaire -->
 <!-- Section IV: Additional Information  -->
