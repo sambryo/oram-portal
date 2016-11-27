@@ -1,0 +1,19 @@
+.panel.panel-default.panel-form
+	.panel-heading
+		%h3= @user.full_name
+	.panel-body
+		- if current_user && current_user.role == "client" && @user.id == current_user.id
+			= link_to 'Edit', client_edit_path(@user.id)
+		/ - if current_admin
+		/ 	= button_to 'Approve', mark_referrer_status_path(:status => "Approved"), {:method => 'post', :class => 'btn btn-large btn-success'}
+		/ 	= button_to 'Reject', mark_referrer_status_path(:status => "Rejected"), {:method => 'post', :class => 'btn btn-large btn-danger'}
+		/ 	= button_to 'Incomplete', mark_referrer_status_path(:status => "Incomplete"), {:method => 'post', :class => 'btn btn-large btn-warning'}
+		/ - @form_hash.each do |key, value|
+		/ 	.referrer-info
+		/ 		%div.form-question
+		/ 			= key + ":"
+		/ 		%div.form-response
+		/ 			- if value.instance_of?(Array)
+		/ 				= value.join(', ')
+		/ 			- else
+		/ 				= value

@@ -9,6 +9,11 @@ class UsersController < ApplicationController
 				@form_hash = JSON.parse(@user.forms.first.form_json)
 			end
 			render :referrer_profile
+		elsif @user.role == "client"
+			if !@user.forms.empty?
+				@form_hash = JSON.parse(@user.forms.first.form_json)
+			end
+			render :client_profile
 		end
 	end
 
@@ -40,6 +45,11 @@ class UsersController < ApplicationController
 		end
 		flash[:error] = "Form failed to save"
 		redirect_to root_path
+	end
+
+	def edit_client_profile
+		@client = User.find_by_id(params[:id])
+		render :client_edit
 	end
 
 	def referrals

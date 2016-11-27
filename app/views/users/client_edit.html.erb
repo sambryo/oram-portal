@@ -1,0 +1,43 @@
+
+<div class="panel panel-default panel-form">
+  <div class="panel-heading">
+  	<h4> Edit Client Profile </h4>
+  </div>
+	<div class="panel-body">
+		<%= form_tag("/clients/#{@client.id}", method: :put) do %>
+			<div class="form-input">
+				<%= label_tag("form_response[First Name]", "First Name:") %>
+				<%= text_field_tag("form_response[First Name]") %>
+			</div>
+			<div class="form-input">
+				<%= label_tag("form_response[Middle Name(s)]", "Middle Name(s):") %>
+				<%= text_field_tag("form_response[Middle Name(s)]") %>
+			</div>
+			<div class="form-input">
+				<%= label_tag("form_response[Surname(s)]", "Surname(s):") %>
+				<%= text_field_tag("form_response[Surname(s)]") %>
+			</div>
+			<div class="form-input">
+				<%= label_tag("form_response[Date of Birth]", "Date of Birth:") %>
+				<%= date_field_tag("form_response[Date of Birth]") %>
+			</div>
+			<div class="form-input">
+				<%= label_tag("form_response[City/Town]", "City/Town:") %>
+				<%= text_field_tag("form_response[City/Town]") %>
+			</div>
+			<div class="form-input">
+				<%= label_tag("form_response[Province]", "Province:") %>
+				<%= text_field_tag("form_response[Province]") %>
+			</div>
+			<div class="form-input">
+				<%= label_tag("form_response[Country]", "Country:") %>
+				<%= text_field_tag("form_response[Country]") %>
+			</div>
+			<div class="form-input">
+				<%= label_tag("form_response[Nationality]", "Nationality:") %>
+				<%= country_select("form_response", "Nationality") %>
+			</div>
+			<%= submit_tag("Submit") %>
+		<% end %>
+	</div>
+</div>
