@@ -43,6 +43,9 @@ class UsersController < ApplicationController
 	end
 
 	def referrals
+		referrer = User.find_by_id(current_user.id)
+		@clients = referrer.clients
+		render "referrals"
 	end
 
 	def refer_client
