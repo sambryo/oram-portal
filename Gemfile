@@ -42,6 +42,9 @@ gem 'hover-rails'
 gem 'devise',           '~> 4.2'
 gem 'devise_invitable', '~> 1.7.0'
 
+# toast notifications
+gem 'toastr-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
