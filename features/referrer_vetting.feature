@@ -7,12 +7,12 @@ Feature: Vetting a Referrer
 Background: referrers in the database
 
 	Given the following referrers exist:
-	    | first_name	| last_name	| email             	| status		| password	| invitation_accepted_at |
-	 	  | Bryan			| Adams     | bryan@adams.com		| Complete 		| oram123	| 'test' |
-	 	  | Hannah		| Montana   | hannah@montana.com	| Incomplete	| oram123	| 'test' |
-	  	| Hillary		| Clinton	| hillary@clinton.com	| Rejected  	| oram123	| 'test' |
-	  	| Adrian		| Greenberg | adrian@greenberg.com	| Approved  	| oram123	| 'test' |
-	  	| Donald		| Trump		| donald@trump.com		| Incomplete	| oram123	| 'test' |
+	    | first_name	| last_name	| email             	| password	| invitation_accepted_at |
+	 	  | Bryan			  | Adams     | bryan@adams.com		  | oram123	  | 'test' |
+	 	  | Hannah		  | Montana   | hannah@montana.com	| oram123	  | 'test' |
+	  	| Hillary		  | Clinton	  | hillary@clinton.com	| oram123	  | 'test' |
+	  	| Adrian		  | Greenberg | adrian@greenberg.com| oram123	  | 'test' |
+	  	| Donald		  | Trump		  | donald@trump.com		| oram123	  | 'test' |
 
 	And I am logged in as the following admin:
 	    | first_name  | last_name | email               | password   |
