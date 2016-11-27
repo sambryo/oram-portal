@@ -56,7 +56,7 @@ class UsersController < ApplicationController
 		@living_situation = User.remove_unsure(@client.living_situation)
 		@refugee_claim = @client.refugee_claim
 		@sex = @client.sex
-		@sexual_orientiation = @client.sexual_orientiation
+		@sexual_orientiation = @client.sexual_orientation
 		@client_gender_identity = @client.client_gender_identity
 		@client_partner = User.remove_unsure(@client.client_partner)
 		@client_openness = User.they_to_you(User.remove_unsure(@client.client_openness))
