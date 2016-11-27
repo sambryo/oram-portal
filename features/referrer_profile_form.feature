@@ -21,6 +21,6 @@ Scenario: Checking that conditional areas were filled out correctly and show up 
   And I press "Submit"
   Then I should see "I was the founder of the organization."
 
-Scenario: Checking that you cannot submit an empty form
-  Given I press "Submit"
-  Then I should see "Please fill in the required fields"
+# Scenario: Checking that you cannot submit an empty form
+#  Given I press "Submit"
+#  Then I should see "Please fill in the required fields"
