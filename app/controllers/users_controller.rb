@@ -118,10 +118,12 @@ class UsersController < ApplicationController
 			country = ISO3166::Country[country_code]
 			params["form_response"]["Country Of Birth"] = country.name
 		end
+		client_first_name = params["form_response"]["First Name"]
+		client_last_name = params["form_response"]["Surname(s)"]
 		@form_response = params["form_response"].to_json
 		@form_type = 2
 		@user = User.find_by_id(params[:id])
-		@user_form = @user.forms.build({form_json: @form_response, form_type: @form_type})
+		@user_form = @user.forms.build({first_name: client_first_name, last_name: client_last_name, status: "Incomplete", form_json: @form_response, form_type: @form_type})
 		if @user_form.save
 			flash[:notice] = "Form successfully saved"
 			redirect_to referrals_path(@user) and return
