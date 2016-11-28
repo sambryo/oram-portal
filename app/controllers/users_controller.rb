@@ -22,9 +22,10 @@ class UsersController < ApplicationController
 	end
 
 	def update_referrer_profile
-		if params["form_response"]["Nationality"]
-			country = ISO3166::Country[params["form_response"]["Nationality"]]
-			params["form_response"]["Nationality"] = country.name
+		country_code = params["form_response"]["Country Of Birth"]
+		if !country_code.nil? && !country_code.empty?
+			country = ISO3166::Country[country_code]
+			params["form_response"]["Country Of Birth"] = country.name
 		end
 		@form_response = params["form_response"].to_json
 		@form_type = 1
@@ -36,6 +37,7 @@ class UsersController < ApplicationController
 			@user_form.update_attribute(:form_json, @form_response)
 		end
 		if @user_form.save
+			flash[:notice] = "Form successfully saved"
 			redirect_to referrer_path(@user) and return
 		end
 		flash[:error] = "Form failed to save"
@@ -44,7 +46,7 @@ class UsersController < ApplicationController
 
 	def referrals
 		referrer = User.find_by_id(current_user.id)
-		@clients = referrer.clients
+		@referrals = referrer.forms.where(:form_type => 2)
 		render "referrals"
 	end
 
@@ -74,6 +76,25 @@ class UsersController < ApplicationController
 		@living_situation = @referrer.living_situation
 		@refugee_claim = @referrer.refugee_claim
 		render :refer_client
+	end
+
+	def create_referral
+		country_code = params["form_response"]["Country Of Birth"]
+		if !country_code.nil? && !country_code.empty?
+			country = ISO3166::Country[country_code]
+			params["form_response"]["Country Of Birth"] = country.name
+		end
+		@form_response = params["form_response"].to_json
+		@form_type = 2
+		@user = User.find_by_id(params[:id])
+		@user_form = @user.forms.build({form_json: @form_response, form_type: @form_type})
+		if @user_form.save
+			flash[:notice] = "Form successfully saved"
+			redirect_to referrals_path(@user) and return
+		end
+		flash[:error] = "Form failed to save"
+		redirect_to root_path
+
 	end
 
 	private

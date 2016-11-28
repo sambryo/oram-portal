@@ -1,5 +1,5 @@
-%h1#client_list_title Clients
-%table#clients
+%h1#referral_list_title Referrals
+%table#referrals
   %thead
     %tr
       %th First Name
@@ -11,10 +11,10 @@
             :onchange => "filter_by_status(this.value)"
       %th
   %tbody
-    - @clients.each do |client|
+    - @referrals.each do |referral|
       %tr
-        %td.first_name= client.first_name
-        %td.last_name= client.last_name
-        %td.status= client.status
+        %td.first_name= referral.first_name
+        %td.last_name= referral.last_name
+        %td.status= referral.status
         %td
         -# %td.more_info= link_to "View Profile", client_path(client)

@@ -4,7 +4,7 @@
   	<h4> Refer Client </h4>
   </div>
 	<div class="panel-body">
-		<%= form_tag("/referrers/#{@referrer.id}", method: :put) do %>
+		<%= form_tag("/referrers/#{@referrer.id}/create_referral", method: :post) do %>
 <!-- Section I: Basic Information  -->
 			<div class="form-input">
 				<%= label_tag("form_response[First Name]", "First Name:") %>

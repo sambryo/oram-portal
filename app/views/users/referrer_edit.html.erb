@@ -35,7 +35,7 @@
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Nationality]", "Nationality:") %>
-				<%= country_select("form_response", "Nationality") %>
+				<%= country_select("form_response", "Nationality", {:prompt => "Please select one:"}) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Gender Identity]", "I identify as (please select all that apply):") %>
