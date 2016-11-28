@@ -4,11 +4,11 @@
     %tr
       %th First Name
       %th Last Name
-      %th
+      %th Status
   %tbody
     - @forms.each do |form|
       %tr
         %td.first_name= form.first_name
         %td.last_name= form.last_name
-        %td
+        %td.status= form.status
         -# %td.more_info= link_to "View Profile", client_path(client)

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'referrers/:id/referrals' => 'users#referrals', :as => "referrals"
   get 'referrers/:id/refer_client' => 'users#refer_client', :as => "refer_client"
   post 'referrers/:id/update_status' => 'admins#mark_referrer_status', :as => 'mark_referrer_status'
+  post 'referrers/:id/create_referral' => 'users#create_referral', :as => 'create_referral'
 
   get 'clients/:id' => 'users#show', :as => "client"
   get 'clients/:id/edit' => 'users#edit_client_profile', :as => "client_edit"
