@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   post 'referrers/:id/update_status' => 'admins#mark_referrer_status', :as => 'mark_referrer_status'
   post 'referrers/:id/create_referral' => 'users#create_referral', :as => 'create_referral'
 
+  get 'clients/:id' => 'users#show', :as => "client"
+  get 'clients/:id/edit' => 'users#edit_client_profile', :as => "client_edit"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
