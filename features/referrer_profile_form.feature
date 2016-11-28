@@ -5,8 +5,8 @@ Feature: Referrer Profile Form
 
 Background: Referrer in the database
   Given I am logged in as the following referrer:
-  | first_name	| last_name	| email             	| status		| password	| invitation_accepted_at | role        |
-  | Bryan			  | Adams     | bryan@adams.com		  | Complete 	| oram123	  | 'test'                 | referrer    |
+  | first_name	| last_name	| email             	| password	| invitation_accepted_at | role        |
+  | Bryan			  | Adams     | bryan@adams.com		  | oram123	  | 'test'                 | referrer    |
 
   Given I follow "Profile"
   And I follow "Edit"

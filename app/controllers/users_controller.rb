@@ -9,6 +9,11 @@ class UsersController < ApplicationController
 				@form_hash = JSON.parse(@user.forms.first.form_json)
 			end
 			render :referrer_profile
+		elsif @user.role == "client"
+			if !@user.forms.empty?
+				@form_hash = JSON.parse(@user.forms.first.form_json)
+			end
+			render :client_profile
 		end
 	end
 
@@ -31,7 +36,7 @@ class UsersController < ApplicationController
 		@user = User.find_by_id(params[:id])
 		@user_form = @user.forms.where(form_type: @form_type).first
 		if !@user_form
-			@user_form = @user.forms.build({form_json: @form_response, form_type: @form_type})
+			@user_form = @user.forms.build({form_json: @form_response, form_type: @form_type, status: "Incomplete", first_name: @user.first_name, last_name: @user.last_name})
 		else
 			@user_form.update_attribute(:form_json, @form_response)
 		end
@@ -42,9 +47,38 @@ class UsersController < ApplicationController
 		redirect_to root_path
 	end
 
+	def edit_client_profile
+		@client = User.find_by_id(params[:id])
+		@client_languages = @client.client_languages
+		@turkey_legal_status = User.remove_unsure(@client.turkey_legal_status)
+		@yes_no = User.remove_unsure(@client.yes_no_unsure)
+		@yes_no_unsure = @client.yes_no_unsure
+		@living_situation = User.remove_unsure(@client.living_situation)
+		@refugee_claim = @client.refugee_claim
+		@sex = @client.sex
+		@sexual_orientiation = @client.sexual_orientation
+		@client_gender_identity = @client.client_gender_identity
+		@client_partner = User.remove_unsure(@client.client_partner)
+		@client_openness = User.they_to_you(User.remove_unsure(@client.client_openness))
+		@client_dangers = User.they_to_you(@client.client_dangers)
+		@client_incident = @client.client_incident
+		@mental_illness = @client.mental_illness
+		@arrest = @client.arrest
+		@documentary_evidence = @client.documentary_evidence
+		@no_questionnaire_relationships = @client.no_questionnaire_relationships
+		@yes_questionnaire_relationships = @client.yes_questionnaire_relationships
+		@professional_capacity = @client.professional_capacity
+		@relationship_level = @client.relationship_level
+		@turkey_legal_status = @client.turkey_legal_status
+		@living_situation = @client.living_situation
+		@refugee_claim = @client.refugee_claim
+
+		render :client_edit
+	end
+
 	def referrals
 		referrer = User.find_by_id(current_user.id)
-		@clients = referrer.clients
+		@clients = referrer.forms.where(:form_type => 2)
 		render "referrals"
 	end
 
@@ -57,7 +91,7 @@ class UsersController < ApplicationController
 		@client_languages = @referrer.client_languages
 		@sex = @referrer.sex
 		@yes_no_unsure = @referrer.yes_no_unsure
-		@sexual_orientiation = @referrer.sexual_orientiation
+		@sexual_orientation = @referrer.sexual_orientation
 		@client_gender_identity = @referrer.client_gender_identity
 		@client_partner = @referrer.client_partner
 		@client_openness = @referrer.client_openness

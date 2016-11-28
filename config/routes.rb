@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
   get 'admins/:id' => 'admins#show'
 
+  get 'clients' => 'admins#show_clients', :as => "clients"
+  get 'referrals' => 'admins#show_referrals', :as => "admin_referrals"
+
   get 'referrers' => 'admins#show_referrers', :as => "referrers"
   get 'referrers/:id/edit' => 'users#edit_referrer_profile', :as => "referrer_edit"
   put 'referrers/:id' => 'users#update_referrer_profile', :as => "referrer_update"
@@ -16,6 +19,8 @@ Rails.application.routes.draw do
   get 'referrers/:id/refer_client' => 'users#refer_client', :as => "refer_client"
   post 'referrers/:id/update_status' => 'admins#mark_referrer_status', :as => 'mark_referrer_status'
 
+  get 'clients/:id' => 'users#show', :as => "client"
+  get 'clients/:id/edit' => 'users#edit_client_profile', :as => "client_edit"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

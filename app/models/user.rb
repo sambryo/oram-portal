@@ -75,7 +75,7 @@ class User < ActiveRecord::Base
     end
 
     def turkey_legal_status
-      return ["Undocumented", "Legal Temporary Resident (Non-Citizen)", "Legal Long-Term Resident (Non-Citizen)", "Legal Citizen", "Unsure"]
+      return ["Undocumented (no legal status)", "Legal Temporary Resident (Non-Citizen)", "Legal Long-Term Resident (Non-Citizen)", "Legal Citizen", "Unsure"]
     end
 
     def living_situation
@@ -109,7 +109,7 @@ class User < ActiveRecord::Base
     end
 
     def client_openness
-      return ["Only Their Close Friends?", "Only People They Know?", "Society in general?", "Unsure"]
+      return ["Only their close friends?", "Only people they know?", "Society in general?", "Unsure"]
     end
 
     def client_dangers
@@ -177,5 +177,22 @@ class User < ActiveRecord::Base
 
     def relationship_level
       return ["Very Good Friends", "Friends", "Acquaintances", "We Have Met Once"]
+    end
+
+    def self.remove_unsure(arr)
+      arr.delete("Unsure")
+      return arr
+    end
+
+    def self.they_to_you(arr)
+      arr.each do |line|
+        if line.include? "they"
+          line.replace(line.sub("they", "you"))
+        end
+        if line.include? "their"
+          line.replace(line.sub("their", "your"))
+        end
+      end
+      return arr
     end
 end
