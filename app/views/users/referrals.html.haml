@@ -9,12 +9,12 @@
             id: 'select_button',
             class: 'filter',
             :onchange => "filter_by_status(this.value)"
-      %th
+      -# %th
   %tbody
     - @clients.each do |client|
       %tr
         %td.first_name= client.first_name
         %td.last_name= client.last_name
         %td.status= client.status
-        %td
+        -# %td
         -# %td.more_info= link_to "View Profile", client_path(client)
