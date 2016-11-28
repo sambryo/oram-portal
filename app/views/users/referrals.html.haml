@@ -9,7 +9,7 @@
             id: 'select_button',
             class: 'filter',
             :onchange => "filter_by_status(this.value)"
-      %th
+      -# %th
   %tbody
     - @referrals.each do |referral|
       %tr
