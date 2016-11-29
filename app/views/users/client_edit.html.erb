@@ -1,10 +1,12 @@
 
 <div class="panel panel-default panel-form">
   <div class="panel-heading">
-  	<h4> Edit Client Profile </h4>
+  	<h4> Applicant Initial Questionnaire </h4>
   </div>
 	<div class="panel-body">
 		<%= form_tag("/clients/#{@client.id}", method: :put) do %>
+    <h3>Section I: Basic Information</h3>
+    <!-- Section I: Basic Information  -->
 			<div class="form-input">
 				<%= label_tag("form_response[First Name]", "First Name:") %>
 				<%= text_field_tag("form_response[First Name]") %>
@@ -68,7 +70,7 @@
 		        <%= text_field_tag("form_response[Kimlik Number]") %>
 	    	</div>
     	<!-- End of Additional Field -->
-    		
+
 			<div class="form-input">
         		<%= label_tag("form_response[Street Address]", "Street Address:") %>
         		<%= text_field_tag("form_response[Street Address]") %>
