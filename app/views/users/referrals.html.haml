@@ -1,4 +1,4 @@
-%h1#referral_list_title Referrals
+%h1#referrals_list_title Referrals
 %table#referrals
   %thead
     %tr
@@ -9,12 +9,11 @@
             id: 'select_button',
             class: 'filter',
             :onchange => "filter_by_status(this.value)"
-      -# %th
+      %th
   %tbody
     - @referrals.each do |referral|
       %tr
         %td.first_name= referral.first_name
         %td.last_name= referral.last_name
         %td.status= referral.status
-        %td
-        -# %td.more_info= link_to "View Profile", client_path(client)
+        %td.more_info= link_to "View Profile", referral_path(referral)
