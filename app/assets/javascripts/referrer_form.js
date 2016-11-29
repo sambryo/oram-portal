@@ -1,10 +1,9 @@
 //= require jquery
 
 function hideLGBTIQOptional() {
-	$('LGBTIQ-optional').hide();
 	var checked = false;
 	$('.LGBTIQ-option').each(function (_, el) {
-		if (el.checked) {
+		if ($(el).prop('checked')) {
 			checked = true;
 		}
 	});
@@ -16,8 +15,7 @@ function hideLGBTIQOptional() {
 }
 
 function hideORAMContactOptional() {
-	$('.ORAM-referrer-contact-optional').hide();
-	var checked = $('.referrer-contact-other')[0].checked;
+	var checked = $('.referrer-contact-other').first().prop('checked');
 	if (checked) {
 		$('.ORAM-referrer-contact-optional').slideDown();
 	} else {
@@ -26,8 +24,7 @@ function hideORAMContactOptional() {
 }
 
 function hideLGBTIQAssociationOptional() {
-	$('.LGBTIQ-association-optional').hide();
-	var checked = $('.LGBTIQ-association')[0].value === "Yes";
+	var checked = $('.LGBTIQ-association').first().val() === "Yes";
 	if (checked) {
 		$('.LGBTIQ-association-optional').slideDown();
 	} else {
@@ -36,8 +33,7 @@ function hideLGBTIQAssociationOptional() {
 }
 
 function hideVettingTrainingOptional() {
-	$('.vetting-training-optional').hide();
-	var checked = $('.vetting-training')[0].value === "Yes";
+	var checked = $('.vetting-training').first().val() === "Yes";
 	if (checked) {
 		$('.vetting-training-optional').slideDown();
 	} else {
@@ -46,11 +42,6 @@ function hideVettingTrainingOptional() {
 }
 
 $(document).ready(function() {
-	$('.LGBTIQ-optional').hide();
-	$('.ORAM-referrer-contact-optional').hide();
-	$('.LGBTIQ-association-optional').hide();
-	$('.vetting-training-optional').hide();
-
 	$(document).on('click', '.LGBTIQ-option', hideLGBTIQOptional);
 
 	$(document).on('click', '.referrer-contact-other', hideORAMContactOptional);
@@ -58,6 +49,11 @@ $(document).ready(function() {
 	$(document).on('change', '.LGBTIQ-association', hideLGBTIQAssociationOptional);
 
 	$(document).on('change', '.vetting-training', hideVettingTrainingOptional);
+
+	hideLGBTIQOptional();
+	hideORAMContactOptional();
+	hideLGBTIQAssociationOptional();
+	hideVettingTrainingOptional();
 });
 
 

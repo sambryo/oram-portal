@@ -7,7 +7,7 @@
 		<%= form_tag("/referrers/#{@referrer.id}", method: :put) do %>
 			<div class="form-input">
 				<%= label_tag("form_response[First Name]", "First Name:") %>
-				<%= text_field_tag("form_response[First Name]") %>
+				<%= text_field_tag("form_response[First Name]", ) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Middle Name(s)]", "Middle Name(s):") %>
@@ -53,7 +53,7 @@
 			</div>
 			<div class="form-input LGBTIQ-optional">
 				<%= label_tag("form_response[Do you describe yourself as an active member of the LGBTIQ Community?]", "Do you describe yourself as an active member of the LGBTIQ Community?:") %>
-				<%= select_tag("form_response[Do you describe yourself as an active member of the LGBTIQ Community?]", "<option>Yes</option><option selected=true>No</option>".html_safe) %>
+				<%= select_tag("form_response[Do you describe yourself as an active member of the LGBTIQ Community?]", "<option>Yes</option><option>No</option>".html_safe, options={:prompt => "Please select one:"}) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[What is the name of your current employer?]", "What is the name of your current employer?:") %>
@@ -89,7 +89,7 @@
 projects that work with the LGBTIQ community?]", "Have you worked for or been associated with any LGBTIQ groups, organizations or community
 projects that work with the LGBTIQ community?:") %>
 				<%= select_tag("form_response[Have you worked for or been associated with any LGBTIQ groups, organizations or community
-projects that work with the LGBTIQ community?]", "<option>Yes</option><option selected=true >No</option>".html_safe, options={:class => "LGBTIQ-association"}) %>
+projects that work with the LGBTIQ community?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "LGBTIQ-association", :prompt => "Please select one:"}) %>
 			</div>
 			<div class="form-input LGBTIQ-association-optional">
 				<%= label_tag("form_response[Which organization? Please give a brief overview of your role]", "Which organization? Please give a brief overview of your role:") %>
@@ -97,7 +97,7 @@ projects that work with the LGBTIQ community?]", "<option>Yes</option><option se
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Have you ever been trained to vet LGBTIQ individuals?]", "Have you ever been trained to vet LGBTIQ individuals?:") %>
-				<%= select_tag("form_response[Have you ever been trained to vet LGBTIQ individuals?]", "<option>Yes</option><option selected=true>No</option>".html_safe, options={:class => "vetting-training"}) %>
+				<%= select_tag("form_response[Have you ever been trained to vet LGBTIQ individuals?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "vetting-training", :prompt => "Please select one:"}) %>
 			</div>
 			<div class="form-input vetting-training-optional">
 				<%= label_tag("form_response[Which training? Please provide the training organization’s name, dates of the session and a

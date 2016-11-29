@@ -1,3 +1,19 @@
 // Place all the styles related to the Forms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.vetting-training-optional, .LGBTIQ-association-optional, .ORAM-referrer-contact-optional, .LGBTIQ-optional, .cannot-provide-assistance,
+.kimlik-number, .unhcr-case-number, .open-with, .client-dangers1, .client-dangers2, .client-dangers3, .other-violence-overview, .client-dangers4,
+.mental-illness-optional, .arrested-optional, .medical-concern-optional, .documentary-evidence-optional, .documentary-other-optional,
+.personal-relationship-yes, .personal-relationship-no, .organization-name, .friendship-level, .personal-relationship-organization {
+	display: none;
+}
+
+.cannot-provide-assistance {
+	display: none;
+
+}
+
+.cannot-provide-assistance {
+	color: red;
+}
