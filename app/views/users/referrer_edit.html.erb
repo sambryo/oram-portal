@@ -1,7 +1,7 @@
 
 <div class="panel panel-default panel-form">
   <div class="panel-heading">
-  	<h4> Edit Referrer Profile </h4>
+  	<h4> Referrer Profile Registration </h4>
   </div>
 	<div class="panel-body">
 		<%= form_tag("/referrers/#{@referrer.id}", method: :put) do %>
@@ -47,7 +47,7 @@
 							<%= check_box_tag("form_response[Gender Identity][]", g) %>
 						<% end %>
 						<%= label_tag("form_response[Gender Identity][]", g) %>
-						
+
 					</div>
 				<% end %>
 			</div>
