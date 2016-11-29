@@ -28,8 +28,3 @@ Scenario: Viewing the form for a client that was referred
   When I view the profile of "Billy Joe"
   Then I should see "Billy Joe"
   And I should see "First Name:"
-
-# Scenario: Filling out an empty form
-#	Given I follow "Refer Client"
-#	And I press "Submit"
-#	Then I should see "Cannot submit an incomplete form"

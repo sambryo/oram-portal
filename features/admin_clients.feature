@@ -29,7 +29,7 @@ Scenario: Admin trying to mark statuses of clients
   Then the status of "Bryan Adams" should be "Approved"
   And I view the profile of "George Clooney"
   And I press "Reject"
-  Then the status of "Geroge Clooney" should be "Rejected"
+  Then the status of "George Clooney" should be "Rejected"
   And I view the profile of "Michael Jordan"
   And I press "Incomplete"
   Then the status of "Michael Jordan" should be "Incomplete"
