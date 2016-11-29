@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:each) do
-    @user1 = User.create(email: "u1@email.com", first_name: "user", last_name: "one", status: "Incomplete")
+    @user1 = User.create(email: "u1@email.com", first_name: "user", last_name: "one")
     @user1.add_role :referrer
   end
 
@@ -19,7 +19,7 @@ RSpec.describe User, type: :model do
   end
   
   it "should return the correct Turkey legal status" do 
-    expect(@user1.turkey_legal_status).to eq(["Undocumented", "Legal Temporary Resident (Non-Citizen)", "Legal Long-Term Resident (Non-Citizen)", "Legal Citizen", "Unsure"])
+    expect(@user1.turkey_legal_status).to eq(["Undocumented (no legal status)", "Legal Temporary Resident (Non-Citizen)", "Legal Long-Term Resident (Non-Citizen)", "Legal Citizen", "Unsure"])
   end
   
   it "should return the correct living situation" do 
@@ -53,7 +53,7 @@ RSpec.describe User, type: :model do
   end
   
   it "should return the correct openness" do 
-    expect(@user1.client_openness).to eq(["Only Their Close Friends?", "Only People They Know?", "Society in general?", "Unsure"])
+    expect(@user1.client_openness).to eq(["Only their close friends?", "Only people they know?", "Society in general?", "Unsure"])
   end
   
   it "should return the correct dangers" do 

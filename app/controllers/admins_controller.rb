@@ -13,7 +13,7 @@ class AdminsController < ApplicationController
 	end
 
 	def show_clients
-		@clients = User.where(role: User.roles[:client]).where.not(invitation_accepted_at: nil).order("created_at DESC")
+		@clients = Form.where(form_type: 3).order("created_at DESC")
 		if params[:status] and params[:status] != 'Status'
 			@clients = @clients.where(status: params[:status]).all
 		end
@@ -39,6 +39,31 @@ class AdminsController < ApplicationController
 			NotifierMailer.incomplete_referrer_profile(@referrer).deliver_now # sends the email
 		end
 		redirect_to referrers_path
+	end
+
+	def mark_client_status
+		id = params[:id]
+		status = params[:status]
+		@client = User.find_by_id(id)
+		@form = Form.find_by_user_id(id)
+		@form.status = status
+		@form.save
+		flash[:notice] = "#{@form.first_name} #{@form.last_name} has been marked as #{@form.status.downcase}"
+		if status == "Incomplete"
+			# send notification to them via email
+			NotifierMailer.incomplete_referrer_profile(@client).deliver_now # sends the email
+		end
+		redirect_to clients_path
+	end
+
+	def mark_form_status
+		id = params[:id]
+		status = params[:status]
+		@form = Form.find(id)
+		@form.status = status
+		@form.save
+		flash[:notice] = "#{@form.first_name} #{@form.last_name} has been marked as #{@form.status.downcase}"
+		redirect_to admin_referrals_path
 	end
 
 	def show

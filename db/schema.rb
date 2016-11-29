@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127090025) do
+ActiveRecord::Schema.define(version: 20161128225859) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -33,18 +33,15 @@ ActiveRecord::Schema.define(version: 20161127090025) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
-  create_table "clients", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "forms", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "form_json"
-    t.integer "form_type"
-    t.string  "status"
-    t.string  "first_name"
-    t.string  "last_name"
+    t.integer  "user_id"
+    t.string   "form_json"
+    t.integer  "form_type"
+    t.string   "status"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "referrals", force: :cascade do |t|
@@ -56,11 +53,6 @@ ActiveRecord::Schema.define(version: 20161127090025) do
 
   add_index "referrals", ["client_id"], name: "index_referrals_on_client_id"
   add_index "referrals", ["user_id"], name: "index_referrals_on_user_id"
-
-  create_table "referrers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "user_roles", force: :cascade do |t|
     t.string   "name"

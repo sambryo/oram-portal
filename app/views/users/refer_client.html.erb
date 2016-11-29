@@ -4,7 +4,7 @@
   	<h4> Refer Client </h4>
   </div>
 	<div class="panel-body">
-		<%= form_tag("/referrers/#{@referrer.id}", method: :put) do %>
+		<%= form_tag("/referrers/#{@referrer.id}/create_referral", method: :post) do %>
 <!-- Section I: Basic Information  -->
 			<div class="form-input">
 				<%= label_tag("form_response[First Name]", "First Name:") %>
@@ -229,8 +229,8 @@
       </div>
       <!-- If marked Yes, an additional field appears with following statement: -->
       <div class="form-input">
-        <%= label_tag("form_response[Please give a brief overview:]","Please give a brief overview.") %>
-        <%= text_area_tag("form_response[Please give a brief overview:]") %>
+        <%= label_tag("form_response[Please give a brief overview]","Please give a brief overview:") %>
+        <%= text_area_tag("form_response[Please give a brief overview]") %>
       </div>
       <!-- End of additional field -->
       <div class="form-input">
@@ -347,8 +347,8 @@
 			</div>
       <!-- If marked Other, another additional field appears stating: -->
       <div class="form-input">
-        <%= label_tag("form_response[Please name the type of document:]","Please name the type of document:") %>
-        <%= text_area_tag("form_response[Please name the type of document:]") %>
+        <%= label_tag("form_response[Please name the type of document]","Please name the type of document:") %>
+        <%= text_area_tag("form_response[Please name the type of document]") %>
       </div>
       <!-- End of additional field -->
 <!-- Section III: Your Relationship with the Person -->
@@ -383,8 +383,8 @@
       </div>
         <!-- If marked other, an additional field appears -->
       <div class="form-input">
-				<%= label_tag("form_response[Other Organization.]", "Please Enter the Name of the Organization:") %>
-				<%= text_field_tag("form_response[Other Organization.]") %>
+				<%= label_tag("form_response[Other Organization]", "Please Enter the Name of the Organization:") %>
+				<%= text_field_tag("form_response[Other Organization]") %>
 			</div>
         <!-- End of Additional Field -->
       <div class="form-input">
@@ -399,8 +399,8 @@
       <!-- End of “Yes” Questionnaire -->
 <!-- Section IV: Additional Information  -->
       <div class="form-input">
-        <%= label_tag("form_response[Please provide any additional information you believe will be relevant (Maximum 500 words):]","Please provide any additional information you believe will be relevant (Maximum 500 words):") %>
-        <%= text_area_tag("form_response[Please provide any additional information you believe will be relevant (Maximum 500 words):]") %>
+        <%= label_tag("form_response[Please provide any additional information you believe will be relevant (Maximum 500 words)]","Please provide any additional information you believe will be relevant (Maximum 500 words):") %>
+        <%= text_area_tag("form_response[Please provide any additional information you believe will be relevant (Maximum 500 words)]") %>
       </div>
       <%= submit_tag("Submit") %>
     <% end %>
