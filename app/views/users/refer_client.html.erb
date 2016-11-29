@@ -188,14 +188,14 @@
 				<%= label_tag("form_response[From whom? Choose as many as are relevant.]", "From whom? Choose as many as are relevant.:") %>
 				<% @client_dangers.each do |d| %>
 					<div class="check-box-input">
-            <%= check_box_tag("form_response[From whom? Choose as many as are relevant.][]", d) %>
+            <%= check_box_tag("form_response[Verbal abuse from whom? Choose as many as are relevant.][]", d) %>
             <%= label_tag("form_response[From whom? Choose as many as are relevant.][]", d) %>
 					</div>
 				<% end %>
 			</div>
       <div class="form-input client-dangers2">
         <%= label_tag("form_response[Was this an isolated incident, or did it occur more than once?]", "Was this an isolated incident, or did it occur more than once?:") %>
-        <%= select_tag("form_response[Was this an isolated incident, or did it occur more than once?]", options_for_select(@client_incident), options={:prompt => "Please select one:"}) %>
+        <%= select_tag("form_response[Was this an isolated incident of verbal abuse, or did it occur more than once?]", options_for_select(@client_incident), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input client-dangers2">
         <%= label_tag("form_response[Does this person fear further verbal abuse?]", "Does this person fear further verbal abuse?:") %>
@@ -211,14 +211,14 @@
 				<%= label_tag("form_response[From whom? Choose as many as are relevant.]", "From whom? Choose as many as are relevant.:") %>
 				<% @client_dangers.each do |d| %>
 					<div class="check-box-input">
-            <%= check_box_tag("form_response[From whom? Choose as many as are relevant.][]", d) %>
+            <%= check_box_tag("form_response[Physical violence from whom? Choose as many as are relevant.][]", d) %>
             <%= label_tag("form_response[From whom? Choose as many as are relevant.][]", d) %>
 					</div>
 				<% end %>
 			</div>
       <div class="form-input client-dangers3">
         <%= label_tag("form_response[Was this an isolated incident, or did it occur more than once?]", "Was this an isolated incident, or did it occur more than once?:") %>
-        <%= select_tag("form_response[Was this an isolated incident, or did it occur more than once?]", options_for_select(@client_incident), options={:prompt => "Please select one:"}) %>
+        <%= select_tag("form_response[Was this an isolated incident of physical violence, or did it occur more than once?]", options_for_select(@client_incident), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input client-dangers3">
         <%= label_tag("form_response[Does this person fear further physical violence?]", "Does this person fear further physical violence?:") %>
@@ -244,14 +244,14 @@
         <%= label_tag("form_response[From whom? Choose as many as are relevant.]", "From whom? Choose as many as are relevant.:") %>
         <% @client_dangers.each do |d| %>
           <div class="check-box-input">
-            <%= check_box_tag("form_response[From whom? Choose as many as are relevant.][]", d) %>
+            <%= check_box_tag("form_response[Sexual violence from whom? Choose as many as are relevant.][]", d) %>
             <%= label_tag("form_response[From whom? Choose as many as are relevant.][]", d) %>
           </div>
         <% end %>
       </div>
       <div class="form-input client-dangers4">
         <%= label_tag("form_response[Was this an isolated incident, or did it occur more than once?]", "Was this an isolated incident, or did it occur more than once?:") %>
-        <%= select_tag("form_response[Was this an isolated incident, or did it occur more than once?]", options_for_select(@client_incident), options={:prompt => "Please select one:"}) %>
+        <%= select_tag("form_response[Was this an isolated incident of sexual violence, or did it occur more than once?]", options_for_select(@client_incident), options={:prompt => "Please select one:"}) %>
       </div>
       <div class="form-input client-dangers4">
         <%= label_tag("form_response[Does this person fear further sexual violence?]", "Does this person fear further sexual violence?:") %>
