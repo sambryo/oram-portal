@@ -17,6 +17,18 @@ Scenario: Referring a client correctly
 	Then I should see "Billy"
   #Then I should see "Client has been successfully referred"
 
+Scenario: Viewing the form for a client that was referred
+  Given I should see "ORAM Website"
+	Given I should see "Refer Client"
+  Given I follow "Refer Client"
+  And I complete the client referral form
+  And I press "Submit"
+	Then I should see "Billy"
+  When I follow "Referrals"
+  When I view the profile of "Billy Joe"
+  Then I should see "Billy Joe"
+  And I should see "First Name:"
+
 # Scenario: Filling out an empty form
 #	Given I follow "Refer Client"
 #	And I press "Submit"
