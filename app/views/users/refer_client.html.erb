@@ -1,11 +1,12 @@
 
 <div class="panel panel-default panel-form">
   <div class="panel-heading">
-  	<h4> Refer Client </h4>
+  	<h4> Client Referral </h4>
   </div>
 	<div class="panel-body">
 		<%= form_tag("/referrers/#{@referrer.id}/create_referral", method: :post) do %>
 <!-- Section I: Basic Information  -->
+    <h3>Section I: Basic Information</h3>
 			<div class="form-input">
 				<%= label_tag("form_response[First Name]", "First Name:") %>
 				<%= text_field_tag("form_response[First Name]") %>
@@ -110,6 +111,7 @@
         <%= select_tag("form_response[Has this person registered with the ASAM?]", options_for_select(@yes_no_unsure), options={:prompt => "Please select one:"}) %>
       </div>
 <!-- Section II: Personal Information  -->
+    <h3>Section II: Personal Information</h3>
       <div class="form-input">
         <%= label_tag("form_response[What was their sex at birth?]", "What was their sex at birth?:") %>
         <%= select_tag("form_response[What was their sex at birth?]", options_for_select(@sex), options={:prompt => "Please select one:"}) %>
@@ -359,6 +361,7 @@
       </div>
       <!-- End of additional field -->
 <!-- Section III: Your Relationship with the Person -->
+    <h3>Section III: Your Relationship with the Person</h3>
       <div class="form-input">
         <%= label_tag("form_response[Do you know this person personally?]", "Do you know this person personally?:") %>
         <%= select_tag("form_response[Do you know this person personally?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "personal-relationship-to-client", :prompt => "Please select one:"}) %>
@@ -405,6 +408,7 @@
       </div>
       <!-- End of “Yes” Questionnaire -->
 <!-- Section IV: Additional Information  -->
+    <h3>Section IV: Additional Information</h3>
       <div class="form-input">
         <%= label_tag("form_response[Please provide any additional information you believe will be relevant (Maximum 500 words):]","Please provide any additional information you believe will be relevant (Maximum 500 words):") %>
         <%= text_area_tag("form_response[Please provide any additional information you believe will be relevant (Maximum 500 words):]") %>
