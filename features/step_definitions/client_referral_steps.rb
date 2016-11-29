@@ -67,6 +67,6 @@ Given /I complete the client referral form/ do
   # fill_in "form_response_Other_Organization", :with => "Organization"
   find('#form_response_Do_you_have_a_personal_relationship_with_this_person_').find(:xpath, 'option[2]').select_option
   find('#form_response_How_well_do_you_know_each_other_').find(:xpath, 'option[2]').select_option
-  fill_in "form_response_Please_provide_any_additional_information_you_believe_will_be_relevant__Maximum_500_words_:", :with => "Stuff"
+  #fill_in "form_response_Please_provide_any_additional_information_you_believe_will_be_relevant__Maximum_500_words_:", :with => "Stuff"
 
 end

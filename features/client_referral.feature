@@ -14,8 +14,8 @@ Scenario: Referring a client correctly
   Given I follow "Refer Client"
   And I complete the client referral form
   And I press "Submit"
-	Then I should see "First Name:"
-#  Then I should see "Client has been successfully referred"
+	Then I should see "Billy"
+  #Then I should see "Client has been successfully referred"
 
 # Scenario: Filling out an empty form
 #	Given I follow "Refer Client"
