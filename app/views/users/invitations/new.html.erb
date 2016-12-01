@@ -8,12 +8,16 @@
 
     <% resource.class.invite_key_fields.each do |field| -%>
       <p><%= f.label field %><br />
-      <%= f.text_field field %></p>
+      <%= f.text_field(field, options={:class => "email-invite-input"})%></p>
     <% end -%>
 
       <p><%= f.label "Account Type" %><br />
       <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]},  {:include_blank => 'Select Account Type'}, {:class => "form-control slct-box"}) %>
       <p><%= f.submit t("devise.invitations.new.submit_button") %></p>
     <% end %>
+  </div>
+  <div class="panel-body email-preview">
+    <h4 class="email-preview-title"> Email Preview </h4>
+    <%= render 'users/shared/email_template' %>
   </div>
 </div>
