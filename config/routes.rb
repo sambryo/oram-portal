@@ -28,4 +28,7 @@ Rails.application.routes.draw do
 
   get 'referrals/:id' => 'forms#show', :as => 'referral'
   post 'referrals/:id/update_status' => 'admins#mark_form_status', :as => 'mark_form_status'
+
+  get 'clients/:id/documents' => 'users#client_documents', :as => 'documents'
+  post 'clients/:id/documents' => 'users#upload_document', :as => 'upload'
 end
