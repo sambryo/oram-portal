@@ -1,4 +1,4 @@
-<%= @document.url %>
+<%= link_to "Download Doc", @document.url %>
 <%= form_tag upload_path(@client) %>
   <div class="field">
     <%= label_tag :case_document %>
