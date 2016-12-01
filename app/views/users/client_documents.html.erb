@@ -1,0 +1,9 @@
+<%= @document.url %>
+<%= form_tag upload_path(@client) %>
+  <div class="field">
+    <%= label_tag :case_document %>
+    <%= file_field_tag :case_document %>
+  </div>
+  <div class="actions">
+    <%= submit_tag("Submit") %>
+  </div>

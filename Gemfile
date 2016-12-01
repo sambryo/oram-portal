@@ -48,6 +48,14 @@ gem 'devise_invitable', '~> 1.7.0'
 # toast notifications
 gem 'toastr-rails'
 
+# dropbox
+gem 'dropbox-sdk'
+gem 'carrierwave'
+gem 'carrierwave-dropbox'
+
+#app secrets
+gem 'figaro'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

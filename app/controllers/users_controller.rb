@@ -154,11 +154,26 @@ class UsersController < ApplicationController
 		redirect_to root_path
 	end
 
+	def client_documents
+		@client = User.find_by_id(params[:id])
+		@document = @client.case_document
+		render :client_documents
+	end
+
+	def upload_document
+		@client = User.find_by_id(params[:id])
+		@client.case_document = params[:case_document]
+		@client.save!
+	end
+
 	private
 		def user_params
 			if current_user
 				if current_user.referrer?
 					params[:user].permit(:status)
+				end
+				if current_user.client?
+					params[:user].permit(:status, :case_document)
 				end
 			end
 		end

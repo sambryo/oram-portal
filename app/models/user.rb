@@ -25,22 +25,25 @@
 #  invited_by_id          :integer
 #  invited_by_type        :string
 #  invitations_count      :integer          default(0)
-#  status                 :string           default("Incomplete")
 #  role                   :integer
+#  dropbox_session        :string
+#  case_document          :string
 #
 
 class User < ActiveRecord::Base
-  rolify :role_cname => 'UserRole'
+    rolify :role_cname => 'UserRole'
   	# Include default devise modules. Others available are:
   	# :confirmable, :lockable, :timeoutable and :omniauthable
   	devise :invitable, :database_authenticatable, :recoverable,
      :rememberable, :trackable, :validatable
 
-     enum role: [:referrer, :client]
+    enum role: [:referrer, :client]
 
     has_many :forms
     has_many :referrals, :foreign_key => "user_id", :class_name => "Referral"
     has_many :clients, :through => :referrals
+
+    mount_uploader :case_document, CaseDocumentUploader
 
     def full_name
         first_name + " " + last_name
