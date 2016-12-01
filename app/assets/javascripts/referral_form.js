@@ -166,7 +166,7 @@ function hideWhichOrganizationOptions() {
 	}
 }
 
-function hidePersonalRelaionshipLevel() {
+function hidePersonalRelationshipLevel() {
 	var checked = $('.yes-personal-relationship').first().val() === "Yes";
 	if (checked) {
 		$('.friendship-level').slideDown();
@@ -197,7 +197,7 @@ $(document).ready(function() {
 	$(document).on('click', '.documentary-evidence-other', hideDocumentaryOtherExplanation);
 	$(document).on('change', '.personal-relationship-to-client', togglePersonalRelationshipToClient);
 	$(document).on('change', '.which-organization', hideWhichOrganizationOptions);
-	$(document).on('change', '.yes-personal-relationship', hidePersonalRelaionshipLevel);
+	$(document).on('change', '.yes-personal-relationship', hidePersonalRelationshipLevel);
 	$(document).on('change', '.personal-relationship-professional', hideProfessionalRelationshipOptions);
 
 
@@ -218,6 +218,6 @@ $(document).ready(function() {
 	hideDocumentaryOtherExplanation();
 	togglePersonalRelationshipToClient();
 	hideWhichOrganizationOptions();
-	hidePersonalRelaionshipLevel();
+	hidePersonalRelationshipLevel();
 	hideProfessionalRelationshipOptions();
 });
