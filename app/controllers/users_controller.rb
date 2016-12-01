@@ -162,7 +162,8 @@ class UsersController < ApplicationController
 
 	def upload_document
 		@client = User.find_by_id(params[:id])
-		@client.case_document = params[:case_document]
+		case_document = params[:case_document]
+		@client.update_attribute(:case_document, case_document)
 		@client.save!
 		redirect_to documents_path(@client)
 	end
