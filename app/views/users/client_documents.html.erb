@@ -1,5 +1,5 @@
 <%= link_to "Document", @document.url %>
-<%= form_tag upload_path(@client) %>
+<%= form_tag upload_path(@client), :multipart => true %>
   <div class="field">
     <%= label_tag :case_document %>
     <%= file_field_tag :case_document %>
