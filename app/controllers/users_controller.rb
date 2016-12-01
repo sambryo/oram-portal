@@ -164,6 +164,7 @@ class UsersController < ApplicationController
 		@client = User.find_by_id(params[:id])
 		@client.case_document = params[:case_document]
 		@client.save!
+		redirect_to documents_path(@client)
 	end
 
 	private
