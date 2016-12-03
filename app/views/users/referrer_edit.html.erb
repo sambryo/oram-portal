@@ -42,9 +42,9 @@
 				<% @gender_identity_options.each do |g| %>
 					<div class="check-box-input">
 						<% if @referrer_LBGTIQ.include?(g) %>
-							<%= check_box_tag("form_response[Gender Identity][]", g, @current_form["Gender Identity"].include?(g), options={:class =>"LGBTIQ-option"}) %>
+							<%= check_box_tag("form_response[Gender Identity][]", g, @current_form["Gender Identity"] && @current_form["Gender Identity"].include?(g), options={:class =>"LGBTIQ-option"}) %>
 						<% else %>
-							<%= check_box_tag("form_response[Gender Identity][]", g, @current_form["Gender Identity"].include?(g)) %>
+							<%= check_box_tag("form_response[Gender Identity][]", g, @current_form["Gender Identity"] && @current_form["Gender Identity"].include?(g)) %>
 						<% end %>
 						<%= label_tag("form_response[Gender Identity][]", g) %>
 
