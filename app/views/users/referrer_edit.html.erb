@@ -7,44 +7,44 @@
 		<%= form_tag("/referrers/#{@referrer.id}", method: :put) do %>
 			<div class="form-input">
 				<%= label_tag("form_response[First Name]", "First Name:") %>
-				<%= text_field_tag("form_response[First Name]", ) %>
+				<%= text_field_tag("form_response[First Name]", @current_form["First Name"]) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Middle Name(s)]", "Middle Name(s):") %>
-				<%= text_field_tag("form_response[Middle Name(s)]") %>
+				<%= text_field_tag("form_response[Middle Name(s)]", @current_form["Middle Name(s)"]) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Surname(s)]", "Surname(s):") %>
-				<%= text_field_tag("form_response[Surname(s)]") %>
+				<%= text_field_tag("form_response[Surname(s)]", @current_form["Surname(s)"]) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Date of Birth]", "Date of Birth:") %>
-				<%= date_field_tag("form_response[Date of Birth]") %>
+				<%= date_field_tag("form_response[Date of Birth]", @current_form["Date of Birth"]) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[City/Town]", "City/Town:") %>
-				<%= text_field_tag("form_response[City/Town]") %>
+				<%= text_field_tag("form_response[City/Town]", @current_form["City/Town"]) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Province]", "Province:") %>
-				<%= text_field_tag("form_response[Province]") %>
+				<%= text_field_tag("form_response[Province]", @current_form["Province"]) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Country]", "Country:") %>
-				<%= text_field_tag("form_response[Country]") %>
+				<%= text_field_tag("form_response[Country]", @current_form["Country"]) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Nationality]", "Nationality:") %>
-				<%= country_select("form_response", "Nationality", {:prompt => "Please select one:"}) %>
+				<%= country_select("form_response", "Nationality", {selected: @current_form["Nationality"], :prompt => "Please select one:"}) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Gender Identity]", "I identify as (please select all that apply):") %>
 				<% @gender_identity_options.each do |g| %>
 					<div class="check-box-input">
 						<% if @referrer_LBGTIQ.include?(g) %>
-							<%= check_box_tag("form_response[Gender Identity][]", g, false, options={:class =>"LGBTIQ-option"}) %>
+							<%= check_box_tag("form_response[Gender Identity][]", g, @current_form["Gender Identity"] && @current_form["Gender Identity"].include?(g), options={:class =>"LGBTIQ-option"}) %>
 						<% else %>
-							<%= check_box_tag("form_response[Gender Identity][]", g) %>
+							<%= check_box_tag("form_response[Gender Identity][]", g, @current_form["Gender Identity"] && @current_form["Gender Identity"].include?(g)) %>
 						<% end %>
 						<%= label_tag("form_response[Gender Identity][]", g) %>
 
@@ -53,28 +53,28 @@
 			</div>
 			<div class="form-input LGBTIQ-optional">
 				<%= label_tag("form_response[Do you describe yourself as an active member of the LGBTIQ Community?]", "Do you describe yourself as an active member of the LGBTIQ Community?:") %>
-				<%= select_tag("form_response[Do you describe yourself as an active member of the LGBTIQ Community?]", "<option>Yes</option><option>No</option>".html_safe, options={:prompt => "Please select one:"}) %>
+				<%= select_tag("form_response[Do you describe yourself as an active member of the LGBTIQ Community?]", options_for_select(["Yes", "No"], @current_form["Do you describe yourself as an active member of the LGBTIQ Community?"]), options={:prompt => "Please select one:"}) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[What is the name of your current employer?]", "What is the name of your current employer?:") %>
-				<%= text_field_tag("form_response[What is the name of your current employer?]") %>
+				<%= text_field_tag("form_response[What is the name of your current employer?]", @current_form["What is the name of your current employer?"]) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[What position do you hold there?]", "What position do you hold there?:") %>
-				<%= text_field_tag("form_response[What position do you hold there?]") %>
+				<%= text_field_tag("form_response[What position do you hold there?]", @current_form["What position do you hold there?"]) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[How did you first come in contact with ORAM?]", "How did you first come in contact with ORAM?:") %>
-				<%= text_area_tag("form_response[How did you first come in contact with ORAM?]") %>
+				<%= text_area_tag("form_response[How did you first come in contact with ORAM?]", @current_form["How did you first come in contact with ORAM?"]) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Please describe your contact with ORAM about becoming a referrer]", "Please describe your contact with ORAM about becoming a referrer:") %>
 				<% @referrer_contact_options.each do |r| %>
 					<div class="check-box-input">
 						<% if r == 'Other' %>
-							<%= check_box_tag("form_response[Contact with ORAM about becoming a referrer][]", r, false, options={:class => "referrer-contact-other"}) %>
+							<%= check_box_tag("form_response[Contact with ORAM about becoming a referrer][]", r, @current_form["Contact with ORAM about becoming a referrer"] && @current_form["Contact with ORAM about becoming a referrer"].include?(r), options={:class => "referrer-contact-other"}) %>
 						<% else %>
-							<%= check_box_tag("form_response[Contact with ORAM about becoming a referrer][]", r) %>
+							<%= check_box_tag("form_response[Contact with ORAM about becoming a referrer][]", r, @current_form["Contact with ORAM about becoming a referrer"] && @current_form["Contact with ORAM about becoming a referrer"].include?(r)) %>
 						<% end %>
 						<%= label_tag("form_response[Contact with ORAM about becoming a referrer][]", r) %>
 					</div>
@@ -82,22 +82,20 @@
 			</div>
 			<div class="form-input ORAM-referrer-contact-optional">
 				<%= label_tag("form_response[Please describe how you came to the ORAM referrer program]", "Please describe how you came to the ORAM referrer program:") %>
-				<%= text_area_tag("form_response[Please describe how you came to the ORAM referrer program]") %>
+				<%= text_area_tag("form_response[Please describe how you came to the ORAM referrer program]", @current_form["Please describe how you came to the ORAM referrer program"]) %>
 			</div>
 			<div class="form-input">
-				<%= label_tag("form_response[Have you worked for or been associated with any LGBTIQ groups, organizations or community
-projects that work with the LGBTIQ community?]", "Have you worked for or been associated with any LGBTIQ groups, organizations or community
-projects that work with the LGBTIQ community?:") %>
-				<%= select_tag("form_response[Have you worked for or been associated with any LGBTIQ groups, organizations or community
-projects that work with the LGBTIQ community?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "LGBTIQ-association", :prompt => "Please select one:"}) %>
+				<%= label_tag("form_response[Have you worked for or been associated with any LGBTIQ groups, organizations or community projects that work with the LGBTIQ community?]", "Have you worked for or been associated with any LGBTIQ groups organizations or community projects that work with the LGBTIQ community?:") %>
+
+				<%= select_tag("form_response[Have you worked for or been associated with any LGBTIQ groups, organizations or community projects that work with the LGBTIQ community?]", options_for_select(["Yes", "No"], @current_form["Have you worked for or been associated with any LGBTIQ groups, organizations or community projects that work with the LGBTIQ community?"]), options={:class => "LGBTIQ-association", :prompt => "Please select one:"}) %>
 			</div>
 			<div class="form-input LGBTIQ-association-optional">
 				<%= label_tag("form_response[Which organization? Please give a brief overview of your role]", "Which organization? Please give a brief overview of your role:") %>
-				<%= text_area_tag("form_response[Which organization? Please give a brief overview of your role]") %>
+				<%= text_area_tag("form_response[Which organization? Please give a brief overview of your role]", @current_form["Which organization? Please give a brief overview of your role"]) %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Have you ever been trained to vet LGBTIQ individuals?]", "Have you ever been trained to vet LGBTIQ individuals?:") %>
-				<%= select_tag("form_response[Have you ever been trained to vet LGBTIQ individuals?]", "<option>Yes</option><option>No</option>".html_safe, options={:class => "vetting-training", :prompt => "Please select one:"}) %>
+				<%= select_tag("form_response[Have you ever been trained to vet LGBTIQ individuals?]", options_for_select(["Yes", "No"], @current_form["Have you ever been trained to vet LGBTIQ individuals?"]), options={:class => "vetting-training", :prompt => "Please select one:"}) %>
 			</div>
 			<div class="form-input vetting-training-optional">
 				<%= label_tag("form_response[Which training? Please provide the training organization’s name, dates of the session and a
@@ -109,14 +107,14 @@ brief overview of the training program:") %>
 				<%= label_tag("form_response[Have you ever used any LGBTI-specific social media platforms?]", "Have you ever used any LGBTI-specific social media platforms?:") %>
 				<% @referrer_LGBTIQ_social_media.each do |media| %>
 					<div class="check-box-input">
-						<%= check_box_tag("form_response[Have you ever used any LGBTI-specific social media platforms?][]", media) %>
+						<%= check_box_tag("form_response[Have you ever used any LGBTI-specific social media platforms?][]", media, @current_form["Have you ever used any LGBTI-specific social media platforms?"] && @current_form["Have you ever used any LGBTI-specific social media platforms?"].include?(media)) %>
 						<%= label_tag("form_response[Have you ever used any LGBTI-specific social media platforms?][]", media) %>
 					</div>
 				<% end %>
 			</div>
 			<div class="form-input">
 				<%= label_tag("form_response[Why do you want to be a referrer for ORAM? Please answer in less than 300 words]", "Why do you want to be a referrer for ORAM? Please answer in less than 300 words:") %>
-				<%= text_area_tag("form_response[Why do you want to be a referrer for ORAM? Please answer in less than 300 words]") %>
+				<%= text_area_tag("form_response[Why do you want to be a referrer for ORAM? Please answer in less than 300 words]", @current_form["Why do you want to be a referrer for ORAM? Please answer in less than 300 words"]) %>
 			</div>
 			<%= submit_tag("Submit") %>
 		<% end %>

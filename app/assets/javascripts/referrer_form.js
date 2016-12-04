@@ -41,14 +41,15 @@ function hideVettingTrainingOptional() {
 	}
 }
 
+$(document).on('click', '.LGBTIQ-option', hideLGBTIQOptional);
+
+$(document).on('click', '.referrer-contact-other', hideORAMContactOptional);
+
+$(document).on('change', '.LGBTIQ-association', hideLGBTIQAssociationOptional);
+
+$(document).on('change', '.vetting-training', hideVettingTrainingOptional);
+
 $(document).ready(function() {
-	$(document).on('click', '.LGBTIQ-option', hideLGBTIQOptional);
-
-	$(document).on('click', '.referrer-contact-other', hideORAMContactOptional);
-
-	$(document).on('change', '.LGBTIQ-association', hideLGBTIQAssociationOptional);
-
-	$(document).on('change', '.vetting-training', hideVettingTrainingOptional);
 
 	hideLGBTIQOptional();
 	hideORAMContactOptional();

@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 		@referrer_contact_options = @referrer.referrer_contact_options
 		@referrer_LGBTIQ_social_media = @referrer.referrer_LGBTI_social_media
 		@referrer_LBGTIQ = @referrer.LGBTIQ_options
+		@current_form = @referrer.getFormHash(@referrer.forms.first) || {}
 		render :referrer_edit
 	end
 

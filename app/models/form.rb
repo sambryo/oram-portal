@@ -15,4 +15,8 @@
 
 class Form < ActiveRecord::Base
   belongs_to :user
+
+  def getFormHash
+  	return form_json && JSON.parse(form_json)
+  end
 end

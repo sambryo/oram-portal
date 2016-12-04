@@ -182,6 +182,10 @@ class User < ActiveRecord::Base
       return ["Very Good Friends", "Friends", "Acquaintances", "We Have Met Once"]
     end
 
+    def getFormHash(form)
+      return form && form.getFormHash
+    end
+
     def self.remove_unsure(arr)
       arr.delete("Unsure")
       return arr
