@@ -17,3 +17,27 @@
 .cannot-provide-assistance {
 	color: red;
 }
+
+.file-input-button {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.file-input-label {
+	font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: #274491;
+  display: inline-block;
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.file-input-label:hover {
+    background-color: #274472;
+}
