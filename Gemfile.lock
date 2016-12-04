@@ -48,6 +48,8 @@ GEM
     arel (6.0.3)
     arrayfields (4.9.2)
     ast (2.3.0)
+    attr_encrypted (3.0.3)
+      encryptor (~> 3.0.0)
     autoprefixer-rails (6.5.1.1)
       execjs
     autotest-rails (4.2.1)
@@ -153,6 +155,7 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     dropbox-sdk (1.6.5)
       json
+    encryptor (3.0.0)
     equalizer (0.0.11)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -416,6 +419,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  attr_encrypted
   autotest-rails
   bootstrap-sass
   byebug

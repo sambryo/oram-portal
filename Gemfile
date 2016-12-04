@@ -56,6 +56,9 @@ gem 'carrierwave-dropbox'
 #app secrets
 gem 'figaro'
 
+#encryption
+gem 'attr_encrypted'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201070806) do
+ActiveRecord::Schema.define(version: 20161204030115) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -35,13 +35,14 @@ ActiveRecord::Schema.define(version: 20161201070806) do
 
   create_table "forms", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "form_json"
     t.integer  "form_type"
     t.string   "status"
     t.string   "first_name"
     t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "encrypted_form_json"
+    t.string   "encrypted_form_json_iv"
   end
 
   create_table "referrals", force: :cascade do |t|
@@ -89,6 +90,7 @@ ActiveRecord::Schema.define(version: 20161201070806) do
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
     t.integer  "role"
+    t.string   "dropbox_session"
     t.string   "case_document"
   end
 
