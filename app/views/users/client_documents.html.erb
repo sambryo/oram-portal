@@ -1,11 +1,19 @@
-<% if @document != nil %>
-  <%= link_to "Document", @document.url %>
-<% end %>
-<%= form_tag upload_path(@client), :multipart => true %>
-  <div class="field">
-    <%= label_tag :case_document %>
-    <%= file_field_tag :case_document %>
+<div class="panel panel-default panel-form">
+  <div class="panel-heading">
+  	<h4> Case Documents </h4>
   </div>
-  <div class="actions">
-    <%= submit_tag("Submit") %>
+	<div class="panel-body">
+    <% if @document.url != nil %>
+      <h3>Documents</h3>
+      <%= link_to "Document", @document.url %>
+    <% end %>
+    <%= form_tag upload_path(@client), :multipart => true %>
+      <div class="field">
+        <%= label_tag :case_document, "Choose a file", class: "file-input-label" %>
+        <%= file_field_tag :case_document, {:class => "file-input-button"} %>
+      </div>
+      <div class="actions">
+        <%= submit_tag("Upload") %>
+      </div>
   </div>
+</div>
