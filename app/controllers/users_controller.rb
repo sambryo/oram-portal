@@ -5,13 +5,15 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@form_hash = {}
 		if @user.role == "referrer"
-			if !@user.forms.empty?
-				@form_hash = JSON.parse(@user.forms.first.form_json)
+			if !@user.forms.empty? && !@user.forms.where(form_type: 1).empty?
+				referrer_forms = @user.forms.where(form_type: 1)
+				@form_hash = JSON.parse(referrer_forms.first.form_json)
 			end
 			render :referrer_profile
 		elsif @user.role == "client"
-			if !@user.forms.empty?
-				@form_hash = JSON.parse(@user.forms.first.form_json)
+			if !@user.forms.empty? && !@user.forms.where(form_type: 3).empty?
+				client_form = @user.forms.where(form_type: 3)
+				@form_hash = JSON.parse(client_form.first.form_json)
 			end
 			render :client_profile
 		end
