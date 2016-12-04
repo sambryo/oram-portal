@@ -5,6 +5,8 @@ SimpleCov.start do
   add_filter '/lib/'
   add_filter '/vendor/'
   add_filter '/features/'
+  add_filter '/app/uploaders/'
+  add_filter 'app/controllers/users/invitations_controller.rb'
 end
 
 require 'factory_girl_rails'
