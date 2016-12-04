@@ -16,7 +16,7 @@
 
 class Form < ActiveRecord::Base
   belongs_to :user
-  attr_encrypted :form_json, :key => ENV["form_key"]
+  attr_encrypted :form_json, :key => ENV["form_key"], :unless => Rails.env.development?
 
   def getFormHash
   	return form_json && JSON.parse(form_json)
