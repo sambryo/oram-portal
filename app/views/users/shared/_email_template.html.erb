@@ -1,7 +1,10 @@
-<p><%= t("devise.mailer.invitation_instructions.hello", email: '') %> <span class="invite-email-placeholder">[RECIPIENT] </span>,</p>
+<div style="background-color: #F3F3F3; border: 2px black solid; padding: 10px">
+	<img src="https://media.licdn.com/media/AAEAAQAAAAAAAASJAAAAJDFlMGNmMzNkLTNmYzctNDQ5MS1iMWMwLTZjNWQxOTQxYzdjZQ.png" style="width: 100%" />	
+	<p><%= t("devise.mailer.invitation_instructions.hello", email: '') %> <span class="invite-email-placeholder">[RECIPIENT] </span>,</p>
 
-<p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></p>
+	<p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></p>
 
-<p class="fake-invite-link"><%= t("devise.mailer.invitation_instructions.accept") %></p>
+	<div class="fake-invite-link" ><%= t("devise.mailer.invitation_instructions.accept") %></div>
 
-<p><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></p>
+	<p><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></p>
+</div>
