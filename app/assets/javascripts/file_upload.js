@@ -5,10 +5,16 @@ $(document).ready(function () {
     fileInput = fileInput.first();
     $(document).on("change", ".file-input-button", function(e) {
       var fileName = e.target.value.split( "\\" ).pop();
-
-      if (fileName && label) {
-        label.first().html(fileName);
+      if (fileName && fileName.split('.').reverse()[0].toLowerCase() !== "pdf") {
+        e.target.value = "";
+        $(".filetype-warning").html("Only .pdf files can be submitted");
+        label.first().html("Choose a file");
+      } else {
+        $(".filetype-warning").html("");
+        if (fileName && label) {
+          label.first().html(fileName);
+        }
       }
-    })
+    });
   }
 });

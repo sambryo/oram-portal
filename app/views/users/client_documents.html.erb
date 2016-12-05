@@ -8,9 +8,10 @@
       <%= link_to File.basename(@document.path), @document.url %>
     <% end %>
     <%= form_tag upload_path(@client), :multipart => true %>
-      <div class="field">
+      <div class="file-field">
         <%= label_tag :case_document, "Choose a file", class: "file-input-label" %>
         <%= file_field_tag :case_document, {:class => "file-input-button"} %>
+        <span class="filetype-warning"/> 
       </div>
       <div class="actions">
         <%= submit_tag("Upload") %>
