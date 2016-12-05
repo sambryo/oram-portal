@@ -17,9 +17,7 @@
 }
 
 .about-oram {
-	width: 50%;
 	padding: 0 16px;
-	margin-left: 50%;
 }
 
 .landing-links {
@@ -49,4 +47,13 @@
 .about-text {
 	white-space: pre-wrap;
 	tab-size: 3;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+	.about-text {
+		font-size: 32px;
+	}
 }
