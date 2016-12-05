@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 		@referrer_contact_options = @referrer.referrer_contact_options
 		@referrer_LGBTIQ_social_media = @referrer.referrer_LGBTI_social_media
 		@referrer_LBGTIQ = @referrer.LGBTIQ_options
-		@current_form = @referrer.getFormHash(@referrer.forms.first) || {}
+		@current_form = @referrer.getFormHash(@referrer.forms.where(form_type: 1).first) || {}
 		render :referrer_edit
 	end
 
@@ -79,6 +79,7 @@ class UsersController < ApplicationController
 		@turkey_legal_status = @client.turkey_legal_status
 		@living_situation = @client.living_situation
 		@refugee_claim = @client.refugee_claim
+		@current_form = @client.getFormHash(@client.forms.where(form_type: 3).first) || {}
 		render :client_edit
 	end
 
