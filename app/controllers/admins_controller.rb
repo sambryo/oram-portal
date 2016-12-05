@@ -28,9 +28,10 @@ class AdminsController < ApplicationController
 
 	def mark_referrer_status
 		id = params[:id]
+		form_id = params[:form_id]
 		status = params[:status]
 		@referrer = User.find_by_id(id)
-		@form = Form.find_by_user_id(id)
+		@form = Form.find_by_id(form_id)
 		@form.status = status
 		@form.save
 		flash[:notice] = "#{@form.first_name} #{@form.last_name} has been marked as #{@form.status.downcase}"
@@ -43,9 +44,10 @@ class AdminsController < ApplicationController
 
 	def mark_client_status
 		id = params[:id]
+		form_id = params[:form_id]
 		status = params[:status]
 		@client = User.find_by_id(id)
-		@form = Form.find_by_user_id(id)
+		@form = Form.find_by_id(form_id)
 		@form.status = status
 		@form.save
 		flash[:notice] = "#{@form.first_name} #{@form.last_name} has been marked as #{@form.status.downcase}"
