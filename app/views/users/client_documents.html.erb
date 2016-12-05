@@ -5,7 +5,7 @@
 	<div class="panel-body">
     <% if @document.url != nil %>
       <h3>Documents</h3>
-      <%= link_to "Document", @document.url %>
+      <%= link_to File.basename(@document.path), @document.url %>
     <% end %>
     <%= form_tag upload_path(@client), :multipart => true %>
       <div class="field">
