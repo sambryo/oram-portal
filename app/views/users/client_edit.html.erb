@@ -51,7 +51,7 @@
 		        <%= label_tag("form_response[Are you outside your country of nationality?]", "Are you outside your country of nationality?") %>
 		        <%= select_tag("form_response[Are you outside your country of nationality?]", options_for_select(@yes_no), options={:class => "client-outside-country", :prompt => "Please select one:", :required => true}) %>
 		    </div>
-		<!-- DONE If marked no, a message appears stating “Unfortunately, ORAM’s mandate is to protect exceptionally vulnerable refugees who by definition must be outside your country of origin, and as you is not, we are unable to provide assistance in this case.” -->
+		<!-- DONE If marked no, a message appears stating “Unfortunately, ORAM’s mandate is to protect exceptionally vulnerable refugees who by definition must be outside your country of origin, and as you are not, we are unable to provide assistance in this case.” -->
 			<div class="form-input client-cannot-provide-assistance">
 		        Unfortunately, ORAM’s mandate is to protect exceptionally vulnerable refugees who by definition must be outside your country of origin, and as you is not, we are unable to provide assistance in this case.
 			</div>
