@@ -4,7 +4,6 @@ And /I am logged in as the following admin/ do |admin_table|
     admin_table.hashes.each do |admin|
         @admin = Admin.create(admin)
     end
-    UserRole.create(name: "referrer")
     visit new_admin_session_path
     fill_in("admin_email", :with => @admin.email)
     fill_in("admin_password", :with => @admin.password)

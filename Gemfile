@@ -28,7 +28,6 @@ gem 'rename'
 gem 'poltergeist'
 
 # Gems for authenticating users and giving them roles
-gem 'rolify'
 gem 'cancancan'
 
 # haml gem

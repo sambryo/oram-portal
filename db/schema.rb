@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204030115) do
+ActiveRecord::Schema.define(version: 20161205094106) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -55,17 +55,6 @@ ActiveRecord::Schema.define(version: 20161204030115) do
   add_index "referrals", ["client_id"], name: "index_referrals_on_client_id"
   add_index "referrals", ["user_id"], name: "index_referrals_on_user_id"
 
-  create_table "user_roles", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "resource_id"
-    t.string   "resource_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "user_roles", ["name", "resource_type", "resource_id"], name: "index_user_roles_on_name_and_resource_type_and_resource_id"
-  add_index "user_roles", ["name"], name: "index_user_roles_on_name"
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -99,12 +88,5 @@ ActiveRecord::Schema.define(version: 20161204030115) do
   add_index "users", ["invitations_count"], name: "index_users_on_invitations_count"
   add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "users_user_roles", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "user_role_id"
-  end
-
-  add_index "users_user_roles", ["user_id", "user_role_id"], name: "index_users_user_roles_on_user_id_and_user_role_id"
 
 end

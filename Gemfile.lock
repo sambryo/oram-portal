@@ -320,7 +320,6 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rolify (5.1.0)
     roodi (3.3.1)
       ruby_parser (~> 3.2, >= 3.2.2)
     rspec-core (3.4.4)
@@ -450,7 +449,6 @@ DEPENDENCIES
   poltergeist
   rails (= 4.2.6)
   rename
-  rolify
   rspec-rails (= 3.4.2)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
