@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 20161205094106) do
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
     t.integer  "role"
-    t.string   "dropbox_session"
     t.string   "case_document"
   end
 
