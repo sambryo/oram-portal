@@ -1,7 +1,7 @@
 # oram-portal
 ORAM Refugee Portal
 
-[![Code Climate](https://codeclimate.com/github/andrewhalle/oram-portal/badges/gpa.svg)](https://codeclimate.com/github/nhiquach/oram-portal)
+[![Code Climate](https://codeclimate.com/github/andrewhalle/oram-portal/badges/gpa.svg)](https://codeclimate.com/github/andrewhalle/oram-portal)
 [![Build Status](https://travis-ci.org/andrewhalle/oram-portal.svg?branch=master)](https://travis-ci.org/andrewhalle/oram-portal)
 [![Test Coverage](https://codeclimate.com/github/andrewhalle/oram-portal/badges/coverage.svg)](https://codeclimate.com/github/andrewhalle/oram-portal/coverage)   
 http://oram-portal.herokuapp.com/
