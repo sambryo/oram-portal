@@ -1,14 +1,15 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=f50b790af973866ec24660d82c222e3a152fd57c97d2d8d344c7eab31bfcc2cf
 language: ruby
 rvm:
  - 2.2.4
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
 script:
   - bundle install
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
   - bundle exec rspec
   - bundle exec cucumber
-after_script:
-  - bundle exec rake send_to_codeclimate
-addons:
-    code_climate:
-        repo_token: f50b790af973866ec24660d82c222e3a152fd57c97d2d8d344c7eab31bfcc2cf
