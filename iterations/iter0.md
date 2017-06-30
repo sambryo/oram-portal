@@ -1,7 +1,7 @@
 Entry video: https://youtu.be/cK7VES_hqqQ
 
 Screencasts:
- - Andrew Halle - ## link ##
+ - Andrew Halle - https://youtu.be/WkwSYEG4eoo
  - Anna Leskova - ## link ##
  - Alice Ma - ## link ##
  - Shawn Shi - ## link ##
