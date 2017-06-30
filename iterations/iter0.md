@@ -1,4 +1,4 @@
-Entry video: ## link ##
+Entry video: https://youtu.be/cK7VES_hqqQ
 
 Screencasts:
  - Andrew Halle - ## link ##
