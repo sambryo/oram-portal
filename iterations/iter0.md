@@ -5,4 +5,4 @@ Screencasts:
  - Anna Leskova - ## link ##
  - Alice Ma - ## link ##
  - Shawn Shi - ## link ##
- - Samuel Terefe - ## https://youtu.be/Plj8yKN3h-c ##
+ - Samuel Terefe - ## https://youtu.be/Plj8yKN3h-c##
