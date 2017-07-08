@@ -1,5 +1,5 @@
 @javascript
-Feature: Administrator Login Portal
+Feature: Case Worker Login Portal
   As a user with administrator access to the ORAM portal
   In order to view all case documents
   I should be able to login under my user profile
@@ -24,7 +24,7 @@ Scenario: Valid administrator logging in
   Then I should not see "Invalid Email or password."
   And I should be on the home page
 
-Scenario: Administrator login info does not exist
+Scenario: Case Worker login info does not exist
  Given I am on the admin login page
  When I fill in "admin_email" with "invalid_email"
  When I fill in "admin_password" with "invalid_password"
@@ -32,12 +32,12 @@ Scenario: Administrator login info does not exist
  Then I should be on the admin login page
  Then I should see "Invalid Email or password."
 
-# Scenario: Administrator should be able to view all case documents
+# Scenario: Case Worker should be able to view all case documents
 #  Given I am on the admin user profile page
 #  When I press "All Cases"
 #  Then I should see all case documents
 
-# Scenario: Administrator should be able to invite lawyers to view relevant cases
+# Scenario: Case Worker should be able to invite lawyers to view relevant cases
 #  Given I am on the admin user profile page
 #  When I press "Invite Lawyers"
 #  Then I should be on the invite lawyers page
