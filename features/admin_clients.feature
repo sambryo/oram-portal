@@ -22,17 +22,17 @@ Scenario: Admin viewing the list of clients
   Then I should see "Michael"
   Then I should see "Joe"
 
-#Scenario: Admin trying to mark statuses of clients
-#  Given I follow "Clients"
-#  And I view the profile of "Bryan Adams"
-#  And I press "Approve"
-#  Then the status of "Bryan Adams" should be "Approved"
-#  And I view the profile of "George Clooney"
-#  And I press "Reject"
-#  Then the status of "George Clooney" should be "Rejected"
-#  And I view the profile of "Michael Jordan"
-#  And I press "Incomplete"
-#  Then the status of "Michael Jordan" should be "Incomplete"
+Scenario: Admin trying to mark statuses of clients
+  Given I follow "Clients"
+  And I view the profile of "Bryan Adams"
+  And I press "Approve"
+  Then the status of "Bryan Adams" should be "Approved"
+  And I view the profile of "George Clooney"
+  And I press "Reject"
+  Then the status of "George Clooney" should be "Rejected"
+  And I view the profile of "Michael Jordan"
+  And I press "Incomplete"
+  Then the status of "Michael Jordan" should be "Incomplete"
 
 Scenario: Admin trying to edit client profile 
   Given: I am on the clients page
