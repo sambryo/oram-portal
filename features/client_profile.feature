@@ -25,9 +25,9 @@ Scenario: Client trying to edit their profile
     And I should see "New password:"
     And I should see "Confirm new password"
   When I enter "Brian Adams" in "Name:"
-    And I click "Submit"
+    And I press "Submit"
   Then I should see "Name"
-    And my name should be "Brian Adams"
+    And I should see "Brian Adams"
     
 Scenario: Client trying to delete their profile
   Given I follow "Profile"
@@ -38,5 +38,5 @@ Scenario: Client trying to delete their profile
   Then I should see "Are you sure?"
     And I should see "Yes, delete my account."
     And I should see "No, go back"
-  When I click "Yes, delete my account"
+  When I press "Yes, delete my account"
   Then I should be on the home page
