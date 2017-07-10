@@ -26,19 +26,3 @@ Scenario: Administrator sign up info does not exist
  And I press "Sign up"
  Then I should be on the admin sign up page
  Then I should see "IYour Email is not valid ot Sign up"
-=======
-Feature: Administrator Signup Portal
-  As a user with administrator access to the ORAM portal
-  In order to signup to be an admin
-  I should be able to see the signup page
-
-Scenario: Accessing the signup page
-  Given I am on the home page
-  When I follow "Admin Sign Up"
-  Then I should be on the admin signup page
-  And I should see "Admin Log In"
-
-
-Scenario: Administrator accessing the signup  page
-  Given I am on the admin signup page
-  And I am an admin
