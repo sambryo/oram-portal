@@ -17,4 +17,5 @@ user.first_name = "oram"
 user.last_name = "user"
 user.email = "oram321@gmail.com"
 user.password = "password"
+user.role = "client"
 user.save
