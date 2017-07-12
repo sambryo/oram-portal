@@ -11,3 +11,10 @@ admin.last_name = "admin"
 admin.email = "admin321@gmail.com"
 admin.password = "password"
 admin.save
+
+user = User.new
+user.first_name = "oram" 
+user.last_name = "user"
+user.email = "oram321@gmail.com"
+user.password = "password"
+user.save
