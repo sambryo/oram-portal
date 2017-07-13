@@ -1,6 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-  <h3><%= t "Invite\-a\-User" %></h3>
+  <h3><%= t "Invite-a-Admin" %></h3>
   </div>
   <div class="panel-body">
     <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
@@ -12,7 +12,7 @@
     <% end -%>
 
       <p><%= f.label "Account Type" %><br />
-      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]},  {:include_blank => 'Select Account Type'}, {:class => "form-control slct-box"}) %>
+      <%#<%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]},  {:include_blank => 'Select Account Type'}, {:class => "form-control slct-box"}) %>
       <p><%= f.submit t("devise.invitations.new.submit_button") %></p>
     <% end %>
   </div>
