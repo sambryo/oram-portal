@@ -15,6 +15,11 @@ class Users::InvitationsController < Devise::InvitationsController
       end
     end
   end
+  
+  def create
+    byebug
+    super
+  end
 
   protected
 
@@ -31,6 +36,5 @@ class Users::InvitationsController < Devise::InvitationsController
         invitable.save!
      end
   end
-
 
 end
