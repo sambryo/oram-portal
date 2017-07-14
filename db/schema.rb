@@ -35,10 +35,13 @@ ActiveRecord::Schema.define(version: 20170713180040) do
     t.integer  "invitation_limit"
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
+    t.integer  "invitations_count",      default: 0
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["invitation_token"], name: "index_admins_on_invitation_token", unique: true
+  add_index "admins", ["invitations_count"], name: "index_admins_on_invitations_count"
+  add_index "admins", ["invited_by_id"], name: "index_admins_on_invited_by_id"
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "forms", force: :cascade do |t|
