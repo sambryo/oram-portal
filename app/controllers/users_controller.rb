@@ -168,7 +168,9 @@ class UsersController < ApplicationController
 	end
 	
     def client_settings_edit
-		@client = current_user
+		@user = User.find_by_id(params[:id])
+		@current_form = @user.forms.where(form_type:3).first
+		byebug
 		render :client_settings_edit
     end
     

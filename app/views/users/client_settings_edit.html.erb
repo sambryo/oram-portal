@@ -3,7 +3,7 @@
   	<h4> Your Profile Information </h4>
   </div>
 	<div class="panel-body">
-		<%= form_tag("/clients/#{@client.id}", method: :put) do %>
+		<%= form_tag("/clients/#{@user.id}", method: :put) do %>
     <!-- First Name -->
 			<div class="form-input">
 				<%= label_tag("form_response[First Name]", "First Name:") %>
