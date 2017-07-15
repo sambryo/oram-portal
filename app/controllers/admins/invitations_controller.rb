@@ -15,6 +15,11 @@ class Admins::InvitationsController < Devise::InvitationsController
       end
     end
   end
+  
+  def new
+    @curr_admin = current_admin
+    super
+  end
 
   protected
 

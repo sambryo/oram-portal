@@ -3,25 +3,36 @@ class AdminsController < ApplicationController
 	before_filter :authenticate_admin!
 
 	def show_referrers
+		@curr_admin = current_admin
 		#@referrers = User.where(role: User.roles[:referrer]).where.not(invitation_accepted_at: nil)
-		@referrers = Form.where(form_type: 1)
-		if params[:status] and params[:status] != 'Status'
-			@referrers = @referrers.where(status: params[:status])
+		if @curr_admin.role == "central"
+			@referrers = User.where(role: 0).all
+		elsif @curr_admin.role == "employee"
+			@referrers = Form.where(form_type: 1)
+			if params[:status] and params[:status] != 'Status'
+				@referrers = @referrers.where(status: params[:status])
+			end
+			@status = params[:status]
 		end
-		@status = params[:status]
 		render :show_referrers
 	end
 
 	def show_clients
-		@clients = Form.where(form_type: 3).order("created_at DESC")
-		if params[:status] and params[:status] != 'Status'
-			@clients = @clients.where(status: params[:status]).all
+		@curr_admin = current_admin
+		if @curr_admin.role == "central"
+			@clients = User.where(role: 1).all
+		elsif @curr_admin.role == "employee"
+			@clients = Form.where(form_type: 3).order("created_at DESC")
+			if params[:status] and params[:status] != 'Status'
+				@clients = @clients.where(status: params[:status]).all
+			end
+			@status = params[:status]
 		end
-		@status = params[:status]
 		render :show_clients
 	end
 
 	def show_referrals
+		@curr_admin = current_admin
 		@forms = Form.where(:form_type => 2)
 		render :show_referrals
 	end
@@ -69,14 +80,14 @@ class AdminsController < ApplicationController
 	end
 
 	def show
-		@admin = current_admin
+		@curr_admin = current_admin
 		if params[:id]
 			@user = Admin.find_by_id(params[:id])
 		else
-			if @admin == nil
+			if @curr_admin == nil
 				flash[:notice] = "You must be admin to do that!"
 				redirect_to root_path and return
-			elsif @admin.role == 'employee'
+			elsif @curr_admin.role == 'employee'
 				flash[:warning] = "You must be central admin to do that!"
 				redirect_to root_path and return
 			else
