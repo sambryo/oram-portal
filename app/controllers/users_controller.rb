@@ -166,12 +166,17 @@ class UsersController < ApplicationController
 		@document = @client.case_document
 		render :client_documents
 	end
+	
+    def client_settings_edit
+		@client = current_user
+		render :client_settings_edit
+    end
     
     def client_setting
 		@client = User.find_by_id(params[:id])
 		@document = @client.setting
 		render :client_setting
-	end
+    end
 
 
 	def upload_document

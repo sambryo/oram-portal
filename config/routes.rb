@@ -32,4 +32,7 @@ Rails.application.routes.draw do
 
   get 'clients/:id/documents' => 'users#client_documents', :as => 'documents'
   post 'clients/:id/documents' => 'users#upload_document', :as => 'upload'
+  
+  get 'clients/:id/client_settings_edit' => 'users#client_settings_edit', :as => 'client_settings_edit'
+  #post 'clients/:id/documents' => 'users#upload_document', :as => 'upload'
 end
