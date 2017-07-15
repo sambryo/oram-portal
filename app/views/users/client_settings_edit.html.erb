@@ -1,0 +1,51 @@
+
+<div class="panel panel-default panel-form">
+ 
+  <div class="panel-heading">
+  	<h4> Edit Your Profile </h4>
+  </div>
+	<div class="panel-body">
+		<%= form_tag("/clients/#{@client.id}", method: :put) do %>
+    <!-- First Name -->
+			<div class="form-input">
+				<%= label_tag("form_response[First Name]", "First Name:") %>
+				<%= text_field_tag("form_response[First Name]", @current_form["First Name"]) %>
+			</div>
+	<!-- Last Name -->		
+			<div class="form-input">
+				<%= label_tag("form_response[Surname(s)]", "Surname(s):") %>
+				<%= text_field_tag("form_response[Surname(s)]", @current_form["Surname(s)"]) %>
+			</div>
+	<!-- Address -->		
+			<div class="form-input">
+        		<%= label_tag("form_response[Street Address]", "Street Address:") %>
+        		<%= text_field_tag("form_response[Street Address]", @current_form["Street Address"]) %>
+        	</div>
+			<div class="form-input">
+				<%= label_tag("form_response[City/Town]", "City/Town:") %>
+				<%= text_field_tag("form_response[City/Town]", @current_form["City/Town"]) %>
+			</div>
+			<div class="form-input">
+				<%= label_tag("form_response[Province]", "Province:") %>
+				<%= text_field_tag("form_response[Province]", @current_form["Province"]) %>
+			</div>
+			<div class="form-input">
+				<%= label_tag("form_response[Country]", "Country:") %>
+				<%= text_field_tag("form_response[Country]", @current_form["Country"]) %>
+			</div>
+	<!-- Phone CHECK IF THIS IS CORRECT! -->
+			<div class="form-input">
+				<%= label_tag("form_response[Phone Number]", "Phone:") %>
+				<%= text_field_tag("form_response[Phone Number]", @current_form["Phone Number"]) %>
+			</div>
+	<!-- Skype CHECK IF THIS IS CORRECT! -->
+			<div class="form-input">
+				<%= label_tag("form_response[Skype ID]", "Skype ID:") %>
+				<%= text_field_tag("form_response[Skype ID]", @current_form["Skype ID"]) %>
+			</div>
+	<!-- INSERT PASSWORD CHANGE OPTION -->		
+			
+			<%= submit_tag("Submit") %>
+		<% end %>
+	</div>
+</div>
