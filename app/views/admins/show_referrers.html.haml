@@ -4,7 +4,7 @@
     %tr
       %th First Name
       %th Last Name
-      %th= select_tag "status",
+      -#%th= select_tag "status",
             options_for_select(["Status", "Incomplete", "Complete", "Approved", "Rejected"], @status),
             id: 'select_button',
             class: 'filter',
@@ -15,5 +15,5 @@
       %tr
         %td.first_name= referrer.first_name
         %td.last_name= referrer.last_name
-        %td.status= referrer.status
-        %td.more_info= link_to "View Profile", referrer_path(referrer.user_id)
+        -#%td.status= referrer.status
+        %td.more_info= link_to "View Profile", referrer_path(referrer.id)

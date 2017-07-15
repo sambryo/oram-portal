@@ -15,6 +15,11 @@ class Admins::InvitationsController < Devise::InvitationsController
       end
     end
   end
+  
+  def new
+    @curr_admin = current_admin
+    super
+  end
 
   protected
 
@@ -25,9 +30,9 @@ class Admins::InvitationsController < Devise::InvitationsController
   private
 
   def invite_resource
-     #role = params[:user][:role]
+     role = params[:admin][:role]
      resource_class.invite!(invite_params, current_inviter) do |invitable|
-        #invitable.role = role
+        invitable.role = role
         invitable.save!
      end
   end
