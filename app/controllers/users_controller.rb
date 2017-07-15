@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 	before_action :require_login
 
 	def show
+		@curr_admin = current_admin
 		@user = User.find(params[:id])
 		@form_hash = {}
 		if @user.role == "referrer"

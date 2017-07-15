@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
   get 'users/:id' => 'users#show'
-  get 'admins' => 'admins#show'
+  get 'admins' => 'admins#show_all', :as => 'admins'
   get 'admins/:id' => 'admins#show', :as => 'admin'
   get 'referrers/:id' => 'users#show', :as => 'referrer'
 

@@ -79,20 +79,22 @@ class AdminsController < ApplicationController
 		redirect_to admin_referrals_path
 	end
 
+	def show_all
+		@curr_admin = current_admin
+		if @curr_admin == nil
+			flash[:notice] = "You must be admin to do that!"
+			redirect_to root_path and return
+		elsif @curr_admin.role == 'employee'
+			flash[:warning] = "You must be central admin to do that!"
+			redirect_to root_path and return
+		else
+			@admins = Admin.all
+		end
+	end
+	
 	def show
 		@curr_admin = current_admin
-		if params[:id]
-			@user = Admin.find_by_id(params[:id])
-		else
-			if @curr_admin == nil
-				flash[:notice] = "You must be admin to do that!"
-				redirect_to root_path and return
-			elsif @curr_admin.role == 'employee'
-				flash[:warning] = "You must be central admin to do that!"
-				redirect_to root_path and return
-			else
-				@admins = Admin.all
-			end
-		end
+		@admin = Admin.find_by_id(params[:id])
+		render :admin_profile
 	end
 end
