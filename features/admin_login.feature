@@ -6,8 +6,8 @@ Feature: Case Worker Login Portal
 
 Background: Admins in the database
   Given the following admins exist:
-    | first_name  | last_name | email               | password   |
-    | oram        | admin     | admin321@gmail.com  | oramadmin  |
+    | first_name  | last_name | email               | password   | role     |
+    | oram        | admin     | admin321@gmail.com  | oramadmin  | central  |
 
 Scenario: Accessing the login page
   Given I am on the home page

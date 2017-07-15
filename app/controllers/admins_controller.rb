@@ -69,6 +69,19 @@ class AdminsController < ApplicationController
 	end
 
 	def show
-		@user = Admin.find_by_id(params[:id])
+		@admin = current_admin
+		if params[:id]
+			@user = Admin.find_by_id(params[:id])
+		else
+			if @admin == nil
+				flash[:notice] = "You must be admin to do that!"
+				redirect_to root_path and return
+			elsif @admin.role == 'employee'
+				flash[:warning] = "You must be central admin to do that!"
+				redirect_to root_path and return
+			else
+				@admins = Admin.all
+			end
+		end
 	end
 end

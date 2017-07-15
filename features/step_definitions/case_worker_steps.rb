@@ -30,5 +30,5 @@ When(/^I enter "([^"]*)" in "([^"]*)"$/) do |arg1, arg2|
 end
 
 When(/^I click "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  click_button(arg1)
 end

@@ -5,17 +5,34 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-admin = Admin.create
-admin.first_name = "oram"
-admin.last_name = "admin"
-admin.email = "admin321@gmail.com"
-admin.password = "password"
-admin.save
+central = Admin.create
+central.first_name = "central"
+central.last_name = "admin"
+central.email = "central@admin.com"
+central.password = "password"
+central.role = 0
+central.save
 
-user = User.create()
-user.first_name = "oram" 
-user.last_name = "user"
-user.email = "oram321@gmail.com"
-user.password = "password"
-user.role = "client"
-user.save
+employee = Admin.create
+employee.first_name = "employee"
+employee.last_name = "admin"
+employee.email = "employee@admin.com"
+employee.password = "password"
+employee.role = 1
+employee.save
+
+referrer = User.create()
+referrer.first_name = "referrer" 
+referrer.last_name = "user"
+referrer.email = "referrer@user.com"
+referrer.password = "password"
+referrer.role = 0
+referrer.save
+
+client = User.create()
+client.first_name = "client" 
+client.last_name = "user"
+client.email = "client@user.com"
+client.password = "password"
+client.role = 1
+client.save
