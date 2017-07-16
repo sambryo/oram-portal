@@ -2,12 +2,12 @@
 <html>
 <body>
 
-<form action="/client/:id/setting/edit">
+<form method = "post" action=<%=edit_save_path(@user.id)%>>
   First name:<br>
   <input type="text" name="firstname" value=<%=@user.first_name%>>
   <br>
   Last name:<br>
-  <input type="text" name="lastname" value="user.last_name">
+  <input type="text" name="lastname" value=<%=@user.last_name%>>
   <br><br>
   <input type="submit" value="user.submit">
 </form>

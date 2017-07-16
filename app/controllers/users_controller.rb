@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :require_login
+	#before_action :require_login
 
 	def show
 		@curr_admin = current_admin
@@ -176,6 +176,15 @@ class UsersController < ApplicationController
     def client_setting
     	@client = current_user
 		render :client_setting
+    end
+    
+    def client_edit_update
+    	byebug
+    	@client = current_user
+    	@client.first_name = params["firstname"]
+    	@client.last_name = params["lastname"]
+    	@client.save
+    	redirect_to :client_setting
     end
 
 	def upload_document
