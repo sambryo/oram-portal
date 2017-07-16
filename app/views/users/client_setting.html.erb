@@ -1,5 +1,11 @@
-
-   <h2 class="header-link content-link"><%= link_to "Edit", client_settings_edit_path(current_user.id), class: "hvr-underline-from-left"%> </h2>
+<div class="panel panel-default panel-form">
+  <div class="panel-heading">
+  	<h4> Change Your Profile </h4>
+  </div>
+  <div class="panel-body">
+   
+   <h2 class="header-link content-link"><%= button_to "Edit Profile", client_settings_edit_path(current_user.id), class: "hvr-underline-from-left"%> </h2>
   
-   <h2 class="header-link content-link"><%= link_to "Delete", client_destroy_path(current_user.id), data: {confirm: "Are you sure?"},  class: "hvr-underline-from-left"%> </h2>
-  
+   <h2 class="header-link content-link"><%= button_to "Delete Pofile", client_destroy_path(current_user.id), data: {confirm: "Are you sure?"},  class: "hvr-underline-from-left"%> </h2>
+	</div>
+</div>
