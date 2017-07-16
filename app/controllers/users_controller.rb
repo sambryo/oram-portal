@@ -178,10 +178,14 @@ class UsersController < ApplicationController
 		render :client_setting
     end
     
-    def client_edit_update
+    def client_edit_save
     	@client = current_user
     	@client.first_name = params["firstname"]
     	@client.last_name = params["lastname"]
+    	@client.email = params["email"]
+    	@client.phone = params["phone"]
+    	@client.address = params["address"]
+    	@client.skype = params["skype"]
     	@client.save
     	redirect_to :client_setting
     end
