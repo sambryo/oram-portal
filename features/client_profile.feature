@@ -10,12 +10,14 @@ Background: Logging in as a client with an account
     | Bryan       | Adams     	| bryan@adams.com       | oram123         | client			  |
 
 Scenario: Client trying to view their profile
+  Given PENDING
   Given I follow "Profile"
   Then I should see "Name:"
     And my name should be "Bryan Adams"
     And my email should be "bryan@adams.com"
     
 Scenario: Client trying to edit their profile
+  Given PENDING
   Given I follow "Profile"
   Then I should see "Settings"
   When I follow "Settings"
@@ -30,6 +32,7 @@ Scenario: Client trying to edit their profile
     And I should see "Brian Adams"
     
 Scenario: Client trying to delete their profile
+  Given PENDING
   Given I follow "Profile"
   Then I should see "Settings"
   When I follow "Settings"

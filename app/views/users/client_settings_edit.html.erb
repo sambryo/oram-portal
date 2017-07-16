@@ -1,20 +1,39 @@
+<<<<<<< HEAD
 <div class="panel panel-default panel-form">
   <div class="panel-heading">
   	<h4> Your Profile Information </h4>
   </div>
 	<div class="panel-body">
 		<%= form_tag("/clients/#{@user.id}", method: :put) do %>
+=======
+
+<div class="panel panel-default panel-form">
+ 
+  <div class="panel-heading">
+  	<h4> Edit Your Profile </h4>
+  </div>
+	<div class="panel-body">
+		<%= form_tag("/clients/#{@client.id}", method: :put) do %>
+>>>>>>> 46d4c786ee02cfef6f46fcf59900234fa2dd2bfd
     <!-- First Name -->
 			<div class="form-input">
 				<%= label_tag("form_response[First Name]", "First Name:") %>
 				<%= text_field_tag("form_response[First Name]", @current_form["First Name"]) %>
 			</div>
+<<<<<<< HEAD
 	<!-- Last Name -->
+=======
+	<!-- Last Name -->		
+>>>>>>> 46d4c786ee02cfef6f46fcf59900234fa2dd2bfd
 			<div class="form-input">
 				<%= label_tag("form_response[Surname(s)]", "Surname(s):") %>
 				<%= text_field_tag("form_response[Surname(s)]", @current_form["Surname(s)"]) %>
 			</div>
+<<<<<<< HEAD
 	<!-- Address -->
+=======
+	<!-- Address -->		
+>>>>>>> 46d4c786ee02cfef6f46fcf59900234fa2dd2bfd
 			<div class="form-input">
         		<%= label_tag("form_response[Street Address]", "Street Address:") %>
         		<%= text_field_tag("form_response[Street Address]", @current_form["Street Address"]) %>
@@ -31,6 +50,7 @@
 				<%= label_tag("form_response[Country]", "Country:") %>
 				<%= text_field_tag("form_response[Country]", @current_form["Country"]) %>
 			</div>
+<<<<<<< HEAD
 	<!-- Phone Number NEED TO MAKE THE FIELDS-->
 			<div class="form-input">
 				<%= label_tag("form_response[Phone Number]", "Phone Number:") %>
@@ -48,6 +68,20 @@
 			</div>
 	<!-- ADD A FEILD TO CHANGE YOUR PASSWORD -->		
 	
+=======
+	<!-- Phone CHECK IF THIS IS CORRECT! -->
+			<div class="form-input">
+				<%= label_tag("form_response[Phone Number]", "Phone:") %>
+				<%= text_field_tag("form_response[Phone Number]", @current_form["Phone Number"]) %>
+			</div>
+	<!-- Skype CHECK IF THIS IS CORRECT! -->
+			<div class="form-input">
+				<%= label_tag("form_response[Skype ID]", "Skype ID:") %>
+				<%= text_field_tag("form_response[Skype ID]", @current_form["Skype ID"]) %>
+			</div>
+	<!-- INSERT PASSWORD CHANGE OPTION -->		
+			
+>>>>>>> 46d4c786ee02cfef6f46fcf59900234fa2dd2bfd
 			<%= submit_tag("Submit") %>
 		<% end %>
 	</div>
