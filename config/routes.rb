@@ -31,4 +31,7 @@ Rails.application.routes.draw do
 
   get 'clients/:id/documents' => 'users#client_documents', :as => 'documents'
   post 'clients/:id/documents' => 'users#upload_document', :as => 'upload'
+  get 'clients/:id/setting' => 'users#client_setting', :as => 'client_setting'
+  get 'clients/:id/setting/delete' => 'users#client_destroy', :as => 'client_destroy'
+  
 end
