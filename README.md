@@ -10,6 +10,7 @@ https://www.pivotaltracker.com/n/projects/2069417
 
 ORAM (http://oramrefugee.org/) is an international non-profit organization dedicated to protecting the world's most vulnerable refugees. We seek to create a multi-language registration system allowing LGBTI refugees worldwide to enter information and upload documents on a secure platform that will save time and increase accuracy.
 
+export form_key=iDEDgbGZr0nVHshYs8jK0TnJpWo2fOSyhZlQdmtCHJv2eXXFVlZlGiAGbA2h5CKdM4DTfyBbh8BuFhCn
 ###Notes
 * phantomjs installation is required for testing with cucumber and rspec
 * form_key: iDEDgbGZr0nVHshYs8jK0TnJpWo2fOSyhZlQdmtCHJv2eXXFVlZlGiAGbA2h5CKdM4DTfyBbh8BuFhCn

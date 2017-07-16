@@ -32,14 +32,12 @@ Scenario: Client trying to edit their profile
     And I should see "Brian Adams"
     
 Scenario: Client trying to delete their profile
-  Given PENDING
   Given I follow "Profile"
   Then I should see "Settings"
   When I follow "Settings"
-  Then I should see "Delete Account"
-  When I follow "Delete Account"
+  Then I should see "Delete"
+  When I press "Delete"
   Then I should see "Are you sure?"
-    And I should see "Yes, delete my account."
-    And I should see "No, go back"
-  When I press "Yes, delete my account"
+    And I should see "OK"
+    When I have pressed "OK"
   Then I should be on the home page
