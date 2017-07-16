@@ -181,6 +181,16 @@ class UsersController < ApplicationController
 		@client.save!
 		redirect_to setting_path(@client)
 	end
+	
+	def client_setting
+		render :client_setting
+	end 
+	
+	def client_destroy
+		redirect_to destroy_user_session_path
+		@client = User.find_by_id(params[:id])
+		@client.destroy
+	end 
 
 	private
 		def require_login
