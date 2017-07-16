@@ -192,6 +192,14 @@ class UsersController < ApplicationController
 	def client_setting
 		render :client_setting
 	end 
+	def referrer_setting
+		render :client_setting
+	end 
+	def referrer_destroy
+		redirect_to destroy_user_session_path
+		@client = User.find_by_id(params[:id])
+		@client.destroy
+	end 
 	
 	def client_destroy
 		redirect_to destroy_user_session_path

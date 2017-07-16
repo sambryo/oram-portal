@@ -37,5 +37,7 @@ Rails.application.routes.draw do
   get 'clients/:id/setting/edit' => 'users#client_settings_edit', :as => 'settings_edit'
   get 'clients/:id/setting/delete' => 'users#client_destroy', :as => 'client_destroy'
   put 'clients/:id/setting' => 'users#client_settings_edit', :as => 'edit_save'
+  get 'referrer/:id/setting' => 'users#referrer_setting', :as => 'referrer_setting'
+  #get 'referrer/:id/setting' => 'users#referrer_setting', :as => 'refferer_setting'
 
 end
