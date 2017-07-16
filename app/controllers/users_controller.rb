@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	#before_action :require_login
+	before_action :require_login
 
 	def show
 		@curr_admin = current_admin
@@ -179,7 +179,6 @@ class UsersController < ApplicationController
     end
     
     def client_edit_update
-    	byebug
     	@client = current_user
     	@client.first_name = params["firstname"]
     	@client.last_name = params["lastname"]
