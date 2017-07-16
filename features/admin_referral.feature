@@ -13,8 +13,8 @@ Background: Referrer creating referrals and loggin in as admin
   And I press "Submit"
 
   Given that I am logged in as the following admin:
-    | first_name  | last_name | email               | password   |
-    | oram        | admin     | admin321@gmail.com  | oramadmin  |
+    | first_name  | last_name | email               | password   | role     |
+    | oram        | admin     | admin321@gmail.com  | oramadmin  | employee |
 
 Scenario: Case Worker checking to see if the client appears in the table
   Given I follow "Referrals"

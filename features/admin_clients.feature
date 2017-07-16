@@ -12,8 +12,8 @@ Background: Clients in the database and logged in as an admin
     | Joe         | Bob     	  | joe@bob.com           | oram123         | client			  | 'test'                 |
 
   And I am logged in as the following admin:
-    | first_name  | last_name | email               | password   |
-    | oram        | admin     | admin321@gmail.com  | oramadmin  |
+    | first_name  | last_name | email               | password   | role     |
+    | oram        | admin     | admin321@gmail.com  | oramadmin  | employee |
 
 Scenario: Admin viewing the list of clients
   Given I follow "Clients"
@@ -35,12 +35,14 @@ Scenario: Admin trying to mark statuses of clients
   Then the status of "Michael Jordan" should be "Incomplete"
 
 Scenario: Admin trying to edit client profile 
-  Given: I am on the clients page
+  Given PENDING
+  Given I am on the clients page
   And I view the profile of "Quach Nhi"
   And I press "Edit Profile"
   Then I should be on the edit profile page
 
-Scenario: Admin trying to delete client profile 
+Scenario: Admin trying to delete client profile
+  Given PENDING
   Given I am on the clients page
   And I view the profile of "Kelly Yen"
   And I press "Delete Profile"

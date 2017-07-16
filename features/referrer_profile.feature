@@ -13,8 +13,8 @@ Scenario: Only referrer should see the edit link
 
 Scenario: Admin should not be able to edit the referrer profile
     Given I am logged in as the following admin:
-      | first_name  | last_name | email               | password   |
-      | oram2        | admin     | admin321@gmail.com  | oramadmin  |
+      | first_name  | last_name | email               | password   | role     |
+      | oram2       | admin     | admin321@gmail.com  | oramadmin  | employee |
 
     And the following referrers exist:
       | first_name	| last_name	| email             	| password	| invitation_accepted_at |

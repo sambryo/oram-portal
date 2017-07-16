@@ -15,8 +15,8 @@ Background: referrers in the database
 	  	| Donald		  | Trump		  | donald@trump.com		| oram123	  | 'test' |
 
 	And I am logged in as the following admin:
-	    | first_name  | last_name | email               | password   |
-	    | oram        | admin     | admin321@gmail.com  | oramadmin  |
+	    | first_name  | last_name | email               | password   | role     |
+	    | oram        | admin     | admin321@gmail.com  | oramadmin  | employee |
 
 Scenario: Approving the prospective Referrer profile
 	Given I am on the referrers page
