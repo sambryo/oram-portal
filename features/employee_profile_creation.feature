@@ -8,8 +8,8 @@ Feature: update the status of a pending application
 Background: Logging in as an admin
 
   Given I am logged in as the following admin:
-    | first_name  | last_name | email               | password   |
-    | oram        | admin     | admin321@gmail.com  | oramadmin  |
+    | first_name  | last_name | email               | password   | role     |
+    | oram        | admin     | admin321@gmail.com  | oramadmin  | employee |
 
 Scenario: Admins can invite users to make an account
   When I follow "Invite User"

@@ -108,6 +108,7 @@ class UsersController < ApplicationController
 	end
 
 	def referrals
+		@curr_admin = current_admin
 		referrer = User.find_by_id(current_user.id)
 		@referrals = referrer.forms.where(:form_type => 2)
 		render "referrals"
