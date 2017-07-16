@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   post 'clients/:id/documents' => 'users#upload_document', :as => 'upload'
   
   get 'clients/:id/setting' => 'users#client_setting', :as => 'client_setting'
-  get 'clients/:id/setting/edit' => 'users#client_settings_edit', :as => 'settings_edit'
+  get 'clients/:id/setting/edit' => 'users#client_settings_edit', :as => 'client_settings_edit'
   get 'clients/:id/setting/delete' => 'users#client_destroy', :as => 'client_destroy'
   put 'clients/:id/setting' => 'users#client_settings_edit', :as => 'edit_save'
 

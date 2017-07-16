@@ -169,17 +169,14 @@ class UsersController < ApplicationController
 	end
 	
     def client_settings_edit
-		@user = User.find_by_id(params[:id])
-		@current_form = @user.forms.where(form_type:3).first
-		render :client_settings_edit
+		@user = current_user
+		render :client_edit_profile
     end
     
     def client_setting
-		@client = User.find_by_id(params[:id])
-		@document = @client.setting
+    	@client = current_user
 		render :client_setting
     end
-
 
 	def upload_document
 		@client = User.find_by_id(params[:id])
@@ -188,10 +185,6 @@ class UsersController < ApplicationController
 		@client.save!
 		redirect_to setting_path(@client)
 	end
-	
-	def client_setting
-		render :client_setting
-	end 
 	
 	def client_destroy
 		redirect_to destroy_user_session_path
