@@ -23,6 +23,8 @@ Scenario: central admin can view all admins
     When I follow "Admins"
     Then I should see "central admin"
         And I should see "employee admin"
+    When I view the first profile
+    Then I should see "central admin"
 
 Scenario: employee admin can't view all admins
     Given I am logged in with credentials "employee@admin.com" and "password"

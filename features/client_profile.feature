@@ -19,19 +19,27 @@ Scenario: Client trying to view their profile
     
     
 Scenario: Client trying to edit their profile
-  Given PENDING
   Given I follow "Settings"
   When I press "Edit Profile"
   Then I should see "First name:"
-#  When I fill in the following: 
-#    | first_name | Test |
-#    | last_name  | User |
-#    And I press "Update User"
-  And I go to profile page
-    Then I should see "Test User"
+  When I fill in "user[first_name]" with "Andrew"
+    And I press "Update User"
+    And I go to the home page
+    And I follow "Profile"
+  Then I should see "Andrew Adams"
     
-#Scenario: Client trying to delete their profile
-#  Given I follow "Settings"
-#  When I press "Delete Profile"
-#  When I confirm
-#  Then I should be on the home page
+Scenario: Client trying to delete their profile
+  Given PENDING
+  Given I follow "Settings"
+  When I press "Delete Profile"
+  When I confirm
+  Then I should be on the home page
+
+Scenario: Client trying to view and edit their profile
+  Given I follow "Profile"
+  Then I should see "Edit"
+  When I follow "Edit"
+  Then I should see "First Name:"
+  When I say I'm outside my country of origin
+    And I press "Submit"
+  #Then I should see "Edit"

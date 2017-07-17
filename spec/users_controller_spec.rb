@@ -30,4 +30,9 @@ RSpec.describe UsersController, type: :controller do
     # get :upload_document, {:id => @user1.id}
     # expect(response).to redirect_to(upload_path(@user1))
   end
+  
+  it "should delete users" do
+    get :client_destroy, {:id => 1}
+    expect(response).to redirect_to(:root)
+  end
 end

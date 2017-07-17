@@ -10,3 +10,6 @@ When /^(?:|I )have pressed "([^"]*)"$/ do |button|
   end
 end
 
+When(/^I say I'm outside my country of origin$/) do
+  find('.client-outside-country').find(:xpath, 'option[1]').select_option
+end

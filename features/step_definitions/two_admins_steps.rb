@@ -9,3 +9,7 @@ end
 When(/^I request the admins page$/) do
   visit admins_path
 end
+
+When(/^I view the first profile$/) do
+  first(:link, "View Profile").click
+end
