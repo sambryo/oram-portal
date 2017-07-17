@@ -17,18 +17,21 @@ Scenario: Client trying to view their profile
     And my name should be "Bryan Adams"
     And my email should be "bryan@adams.com"
     
+    
 Scenario: Client trying to edit their profile
+  Given PENDING
   Given I follow "Settings"
   When I press "Edit Profile"
   Then I should see "First name:"
-  When I enter "Test" in "First name:"
-    And I enter "User" in "Last name:"
-    And I press "Update User"
-  And I go back to the profile page
-    And I should see "Test User"
+#  When I fill in the following: 
+#    | first_name | Test |
+#    | last_name  | User |
+#    And I press "Update User"
+  And I go to profile page
+    Then I should see "Test User"
     
-Scenario: Client trying to delete their profile
-  Given I follow "Settings"
-  When I press "Delete Profile"
-  When I confirm
-  Then I should be on the home page
+#Scenario: Client trying to delete their profile
+#  Given I follow "Settings"
+#  When I press "Delete Profile"
+#  When I confirm
+#  Then I should be on the home page

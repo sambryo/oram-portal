@@ -36,6 +36,9 @@ module NavigationHelpers
 
     when /^the admin login page$/
       '/admins/sign_in'
+      
+    when /^profile page$/
+       #change later '/clients/' + current_user.id
 
     when /^the referrer profile creation page$/
       '/users/sign_up' #change later
