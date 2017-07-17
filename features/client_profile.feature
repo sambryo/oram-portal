@@ -1,3 +1,4 @@
+@javascript
 Feature: Client Profile
   As an approved client
   In order to provide the necessary information to be considered for refugee status
@@ -17,29 +18,17 @@ Scenario: Client trying to view their profile
     And my email should be "bryan@adams.com"
     
 Scenario: Client trying to edit their profile
-  Given PENDING
-  Given I follow "Profile"
-  Then I should see "Settings"
-  When I follow "Settings"
-  Then I should see "Name:"
-    And I should see "E-mail:"
-    And I should see "Current password:"
-    And I should see "New password:"
-    And I should see "Confirm new password"
-  When I enter "Brian Adams" in "Name:"
-    And I press "Submit"
-  Then I should see "Name"
-    And I should see "Brian Adams"
+  Given I follow "Settings"
+  When I press "Edit Profile"
+  Then I should see "First name:"
+  When I enter "Test" in "First name:"
+    And I enter "User" in "Last name:"
+    And I press "Update User"
+  And I go back to the profile page
+    And I should see "Test User"
     
 Scenario: Client trying to delete their profile
-  Given PENDING
-  Given I follow "Profile"
-  Then I should see "Settings"
-  When I follow "Settings"
-  Then I should see "Delete Account"
-  When I follow "Delete Account"
-  Then I should see "Are you sure?"
-    And I should see "Yes, delete my account."
-    And I should see "No, go back"
-  When I press "Yes, delete my account"
+  Given I follow "Settings"
+  When I press "Delete Profile"
+  When I confirm
   Then I should be on the home page
