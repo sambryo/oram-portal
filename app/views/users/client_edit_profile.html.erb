@@ -3,26 +3,14 @@
   	<h4> Your Profile Information </h4>
   </div>
 	<div class="panel-body">
-	  <form method = "put" action=<%=edit_save_path(@user.id)%>>
-      First name:<br>
-      <input type="text" name="firstname" value=<%=@user.first_name%>>
-      <br>
-      Last name:<br>
-      <input type="text" name="lastname" value=<%=@user.last_name%>>
-      <br>
-      Email:<br>
-      <input type="text" name="email" value=<%=@user.email%>>
-      <br>
-      Phone:<br>
-      <input type="text" name="phone" value=<%=@user.phone%>>
-      <br>
-      Address:<br>
-      <input type="text" name="address" value=<%=@user.address%>>
-      <br>
-      Skype ID:<br>
-      <input type="text" name="skype" value=<%=@user.skype%>>
-      <br><br>
-      <input type="submit" value="Save">
-    </form>
+	 <%= form_for @user, :url => edit_save_path(@user.id)  do |f| %>
+  First name: <%= f.text_field :first_name %><br />
+  Last name : <%= f.text_field :last_name %><br />
+  Email: <%= f.text_field :email %><br />
+  Phone : <%= f.text_field :phone %><br />
+  Address: <%= f.text_field :address %><br />
+  Skype : <%= f.text_field :skype %><br />
+  <%= f.submit %>
+<% end %>
 	</div>
 </div>

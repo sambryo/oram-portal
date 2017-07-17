@@ -179,14 +179,13 @@ class UsersController < ApplicationController
     end
     
     def client_edit_save
-    	@client = current_user
-    	@client.first_name = params["firstname"]
-    	@client.last_name = params["lastname"]
-    	@client.email = params["email"]
-    	@client.phone = params["phone"]
-    	@client.address = params["address"]
-    	@client.skype = params["skype"]
-    	@client.save
+    	User.update(params[:id], 
+    	{:first_name => params["user"]["first_name"], 
+    	:last_name => params["user"]["last_name"], 
+    	:email => params["user"]["email"], 
+    	:phone => params["user"]["phone"], 
+    	:address => params["user"]["address"],
+    	:skype => params["user"]["skype"]})
     	redirect_to :client_setting
     end
 
