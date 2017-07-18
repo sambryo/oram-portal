@@ -211,7 +211,14 @@ class UsersController < ApplicationController
 		redirect_to destroy_user_session_path
 		@client = User.find_by_id(params[:id])
 		@client.destroy
+	end
+	
+	def case_status
+		#this method should call another method so the employe can update the status of the client.
+		@status = {phase_one: "Applicant vetting"}
+		
 	end 
+	
 
 	private
 		def require_login
