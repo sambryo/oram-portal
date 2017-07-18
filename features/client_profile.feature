@@ -43,3 +43,10 @@ Scenario: Client trying to view and edit their profile
   When I say I'm outside my country of origin
     And I press "Submit"
   #Then I should see "Edit"
+  
+Scenario: Client trying to change their password
+  Given PENDING
+  Given I follow "Settings"
+  Then I should see "Change Password"
+  When I follow "Change Password"
+  
