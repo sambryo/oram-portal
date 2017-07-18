@@ -1,6 +1,6 @@
 @javascript
-Feature: client signing up should setup their profile 
-  As a new client
+Feature: admin signing up should setup their profile 
+  As a new admin
   I should be able to setup my profile
   
 Scenario: signup with profile attributes
