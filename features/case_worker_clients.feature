@@ -33,3 +33,9 @@ Scenario: Case Worker trying to mark statuses of clients
   And I view the profile of "Michael Jordan"
   And I press "Incomplete"
   Then the status of "Michael Jordan" should be "Incomplete"
+
+Scenario: Case Worker trying to follow case status of clients
+  Given PENDING
+  Given I follow "Clients"
+  And I view the profile of "Bryan Adams"
+  
