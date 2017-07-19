@@ -39,3 +39,7 @@ client.email = "client@user.com"
 client.password = "password"
 client.role = 1
 client.save
+
+o = Ownership.create
+o.user = client
+employee.ownerships << o
