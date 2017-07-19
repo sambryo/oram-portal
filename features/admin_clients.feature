@@ -26,6 +26,7 @@ Scenario: Admin viewing the list of clients
   And the phase of "George Clooney" should be "Phase 3"
 
 Scenario: Admin trying to mark statuses of clients
+  Given Pending
   Given I follow "Clients"
   And I view the profile of "Bryan Adams"
   And I press "Approve"

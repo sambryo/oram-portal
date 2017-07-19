@@ -21,18 +21,6 @@ Given(/^that I am assigned to the following clients:$/) do |clients|
   pending
 end
 
-Then(/^my name should be "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^my email should be "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^my phase should be "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 When(/^I enter "([^"]*)" in "([^"]*)"$/) do |arg1, arg2|
   pending # Write code here that turns the phrase above into concrete actions
 end

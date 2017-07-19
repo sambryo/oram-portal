@@ -11,10 +11,8 @@ Background: Logging in as a client with an account
     | Bryan       | Adams     	| bryan@adams.com       | oram123         | client			  | Phase 1 |
 
 Scenario: Client trying to view their profile
-  Given PENDING
   Given I follow "Profile"
-  Then I should see "Name:"
-    And my name should be "Bryan Adams"
+  Then my name should be "Bryan Adams"
     And my email should be "bryan@adams.com"
     And my phase should be "Phase 1"
     
