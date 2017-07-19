@@ -13,7 +13,7 @@ Background: Logging is an a client
     | applied | 06302017    |
   
 Scenario: I want to check the status of my application 
-  Given Pending
+  Given PENDING
   Given I am on the home page 
   Then I should see "Your application status"
     And I should see "approved"

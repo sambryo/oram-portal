@@ -15,14 +15,14 @@ Background: Logging is an an Admin to check statuses
     | Joe         | Bob        	| joe@bob.com           | oram123         | client			  | 'test'                 | Approved |
 
 Scenario: Checking if RASF (Referrer Approval Status Feed) exists 
-  Given Pending
+  Given PENDING
   Given I am on the home page 
   Then I should see "Referrer Approval Status Feed"
     And I should see "Joe Bob"
     And I should see "Approved"
       
 Scenario: Checking if CASF (Client Approval Status Feed) exists 
-  Given Pending
+  Given PENDING
   Given I am on the home page 
   Then I shoulds ee "Client Approval Status Feed"
     And I should see "Bryan Adams"
