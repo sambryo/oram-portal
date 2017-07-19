@@ -41,10 +41,18 @@ class User < ActiveRecord::Base
     has_many :forms
     has_many :referrals, :foreign_key => "user_id", :class_name => "Referral"
     has_many :clients, :through => :referrals
-    belongs_to :admin
+    has_many :events
+    has_many :ownerships
+    has_many :admins, :through => :ownerships
 
     mount_uploader :case_document, CaseDocumentUploader
 
+
+    #Adding stuff for tracker 
+    def Application_status
+      return ["Phase 1", "Phase 2", "Phase 3", "Phase 4", "Phase 5", "Phase 6"]
+    end 
+    
     def full_name
         first_name + " " + last_name
     end

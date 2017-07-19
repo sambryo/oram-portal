@@ -33,9 +33,13 @@ client = User.create()
 client.first_name = "client" 
 client.last_name = "user"
 client.email = "client@user.com"
-#client.address = "123 Berkeley Street, Berkeley, CA, 94709"
-#client.phone = "+01-234-567-8910"
-#client.skype = "skype_id"
+client.address = "123 Berkeley Street, Berkeley, CA, 94709"
+client.phone = "+01-234-567-8910"
+client.skype = "skype_id"
 client.password = "password"
 client.role = 1
 client.save
+
+o = Ownership.create
+o.user = client
+employee.ownerships << o

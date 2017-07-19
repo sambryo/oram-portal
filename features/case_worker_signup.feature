@@ -1,6 +1,6 @@
 @javascript
-Feature: admin signing up should setup their profile 
-  As a new admin
+Feature: caseworker signing up should setup their profile 
+  As a new caseworker
   I should be able to setup my profile
   
 Scenario: signup with profile attributes

@@ -29,4 +29,7 @@ class Admin < ActiveRecord::Base
   has_many :users
   
   enum role: [:central, :employee]
+  
+  has_many :ownerships
+  has_many :users, :through => :ownerships
 end

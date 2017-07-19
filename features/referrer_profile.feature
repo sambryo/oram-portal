@@ -24,3 +24,9 @@ Scenario: Admin should not be able to edit the referrer profile
     Then I should see "Bryan"
     And I view the profile of "Bryan Adams"
     Then I should not see "Edit"
+    
+Scenario: Client trying to change their password
+  Given PENDING
+  Given I follow "Settings"
+  Then I should see "Change Password"
+  When I follow "Change Password"
