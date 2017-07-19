@@ -15,6 +15,7 @@ Background: Clients in the database and logged in as an Case Worker
     | oram        | Case Worker                     | Case Worker321@gmail.com  | oramCase Worker  |
 
 Scenario: A referrer checking a client status 
+  Given Pending
   Given I follow "Clients"
   And I view the profile of "Bryan Adams"
   And I press "Case Status"
