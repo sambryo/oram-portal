@@ -27,4 +27,7 @@ class Admin < ActiveRecord::Base
   include DeviseInvitable::Inviter
   
   enum role: [:central, :employee]
+  
+  has_many :ownerships
+  has_many :users, :through => :ownerships
 end
