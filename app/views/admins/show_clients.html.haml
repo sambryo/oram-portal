@@ -19,3 +19,8 @@
         -if @curr_admin.role == "employee"
           %td.status= client.status
         %td.more_info= link_to "View Profile", client_path(client.id)
+        %td.assign_client= f.label "Caseworker"
+        %br
+        = f.select(:role, Admin.roles.keys.map {|role| [role.titleize,role]},  {:include_blank => 'Select Account Type'}, {:class => "form-control slct-box"})
+        %p= f.submit t("devise.invitations.new.submit_button")
+    <% end %>

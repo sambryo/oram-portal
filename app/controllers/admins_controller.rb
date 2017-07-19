@@ -50,6 +50,9 @@ class AdminsController < ApplicationController
 			# send notification to them via email
 			NotifierMailer.incomplete_referrer_profile(@referrer).deliver_now # sends the email
 		end
+		if status == "Complete"
+			
+		end
 		redirect_to referrers_path
 	end
 

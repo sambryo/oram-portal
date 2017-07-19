@@ -41,6 +41,7 @@ class User < ActiveRecord::Base
     has_many :forms
     has_many :referrals, :foreign_key => "user_id", :class_name => "Referral"
     has_many :clients, :through => :referrals
+    belongs_to :admin
 
     mount_uploader :case_document, CaseDocumentUploader
 

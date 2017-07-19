@@ -26,5 +26,7 @@ class Admin < ActiveRecord::Base
    :rememberable, :trackable, :validatable
   include DeviseInvitable::Inviter
   
+  has_many :users
+  
   enum role: [:central, :employee]
 end
