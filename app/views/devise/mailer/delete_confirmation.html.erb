@@ -1,0 +1,9 @@
+<p><%= t('.greeting', :recipient => @resource.email, :default => "Welcome #{@resource.email}!") %></p>
+
+<p><%= t('.instruction', :default => "You can confirm the deletion of your account by clicking the link below:") %></p>
+
+<p><%= link_to t('.action', :default => "Delete My Account"),
+         confirmation_url(@resource, :delete_token => @token, locale: I18n.locale) %></p>
+
+<p><%= t('.instruction_2', :default => "If you didn't request this, please ignore this email.") %></p>
+<p><%= t('.instruction_3', :default => "Your account won't be deleted until you click the link above.") %></p>
