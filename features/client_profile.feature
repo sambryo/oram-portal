@@ -7,8 +7,8 @@ Feature: Client Profile
 Background: Logging in as a client with an account
 
   Given I am logged in as the following client:
-    | first_name  | last_name   | email                 | password     	  | role					|
-    | Bryan       | Adams     	| bryan@adams.com       | oram123         | client			  |
+    | first_name  | last_name   | email                 | password     	  | role					| phase   |
+    | Bryan       | Adams     	| bryan@adams.com       | oram123         | client			  | Phase 1 |
 
 Scenario: Client trying to view their profile
   Given PENDING
@@ -16,6 +16,7 @@ Scenario: Client trying to view their profile
   Then I should see "Name:"
     And my name should be "Bryan Adams"
     And my email should be "bryan@adams.com"
+    And my phase should be "Phase 1"
     
     
 Scenario: Client trying to edit their profile

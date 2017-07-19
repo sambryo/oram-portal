@@ -104,9 +104,10 @@ ActiveRecord::Schema.define(version: 20170719180939) do
     t.integer  "invitations_count",      default: 0
     t.integer  "role"
     t.string   "case_document"
-    t.string   "address",                default: ""
-    t.string   "phone",                  default: ""
-    t.string   "skype",                  default: ""
+    t.string   "address"
+    t.string   "phone"
+    t.string   "skype"
+    t.string   "phase",                  default: ""
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
