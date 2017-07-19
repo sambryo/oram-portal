@@ -201,6 +201,10 @@ class UsersController < ApplicationController
 		render :client_setting
 	end 
 	
+	def delete_confirm 
+		redirect_to new_user_invitation_path
+	end 
+	
 	def referrer_destroy
 		redirect_to destroy_user_session_path
 		@client = User.find_by_id(params[:id])

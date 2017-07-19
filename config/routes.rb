@@ -39,4 +39,5 @@ Rails.application.routes.draw do
   patch 'clients/:id/setting' => 'users#client_edit_save', :as => 'edit_save'
   get 'referrer/:id/setting' => 'users#referrer_setting', :as => 'referrer_setting'
   get 'referrer/:id/case_status' => 'users#case_status', :as => 'case_status'
+  get 'clients/:id/setting/confirm_delete' => 'user#delete_confirm', :as => 'delete_confirm'
 end
