@@ -68,6 +68,8 @@ class AdminsController < ApplicationController
 		if status == "Incomplete"
 			# send notification to them via email
 			NotifierMailer.incomplete_referrer_profile(@client).deliver_now # sends the email
+		elsif status == "Complete"
+			@client.phase = "Phase 2"
 		end
 		redirect_to clients_path
 	end

@@ -27,6 +27,7 @@ Scenario: Case Worker marking referrals as approved
   Then I should see "Billy Joe"
   When I press "Approve"
   Then the status of "Billy Joe" should be "Approved"
+  And the phase of "Billy Joe" should be "Phase 3"
 
 Scenario: Case Worker marking referrals as rejected
   Given I follow "Referrals"
