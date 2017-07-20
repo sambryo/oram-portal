@@ -38,6 +38,7 @@ client.phone = "+01-234-567-8910"
 client.skype = "skype_id"
 client.password = "password"
 client.role = 1
+client.phase = "Phase 1"
 client.save
 
 o = Ownership.create

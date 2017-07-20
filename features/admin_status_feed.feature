@@ -5,7 +5,7 @@ Feature: ORAM Employee checking the status of clients via the status feed.
 Background: Logging is an an Admin to check statuses
   Given that I am logged in as the following referrer:
     | first_name	| last_name	| email             	| password	| invitation_accepted_at | role        |
-    | Central	    | Admin       | central@admin.com   | password	| 'test'               | employee    |
+    | Central	    | Admin       | central@admin.com   | password	| 'test'               | referrer    |
 
   Given the following clients exist:
     | first_name  | last_name   | email                 | password     	  | role			    | invitation_accepted_at | status   |
