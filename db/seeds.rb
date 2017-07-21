@@ -43,3 +43,13 @@ client.save
 o = Ownership.create
 o.user = client
 employee.ownerships << o
+
+referral = Referral.create
+referral.user_id = 3
+referral.client_id = 2
+
+referral_form = Form.create
+referral_form.form_type = 2
+referral_form.user_id = 3
+referral_form.first_name = "Test"
+referral_form.last_name = "Referral"

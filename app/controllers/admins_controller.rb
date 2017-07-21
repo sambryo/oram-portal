@@ -20,7 +20,7 @@ class AdminsController < ApplicationController
 	def show_clients
 		@curr_admin = current_admin
 		if @curr_admin.role == "central"
-			@clients = User.where(role: 1).all
+			@clients = User.all
 		elsif @curr_admin.role == "employee"
 			@clients = Form.where(form_type: 3).order("created_at DESC")
 			if params[:status] and params[:status] != 'Status'
@@ -28,6 +28,7 @@ class AdminsController < ApplicationController
 			end
 			@status = params[:status]
 		end
+
 		render :show_clients
 	end
 
@@ -69,7 +70,7 @@ class AdminsController < ApplicationController
 			# send notification to them via email
 			NotifierMailer.incomplete_referrer_profile(@client).deliver_now # sends the email
 		elsif status == "Complete"
-			@client.phase = "Phase 2"
+			@client.phase = "Phase 3"
 		end
 		redirect_to clients_path
 	end
@@ -80,7 +81,13 @@ class AdminsController < ApplicationController
 		@form = Form.find(id)
 		@form.status = status
 		@form.save
-		flash[:notice] = "#{@form.first_name} #{@form.last_name} has been marked as #{@form.status.downcase}"
+		if status == "Approved"
+			flash[:notice] = "#{@form.first_name} #{@form.last_name} has been marked as #{@form.status.downcase}, next step is to invite as client."
+			redirect_to new_user_invitation_path
+			return
+		else
+			flash[:notice] = "#{@form.first_name} #{@form.last_name} has been marked as #{@form.status.downcase}"
+		end
 		redirect_to admin_referrals_path
 	end
 
